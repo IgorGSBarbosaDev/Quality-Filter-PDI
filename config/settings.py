@@ -1,19 +1,14 @@
-"""
-Configurações do sistema de análise de PDI
-"""
+from typing import Dict, List
 
-# Configurações de análise
-ANALYSIS_CONFIG = {
-    'min_word_count': 10,
-    'min_sentence_count': 2,
-    'quality_thresholds': {
-        'low': 0.3,
-        'medium': 0.6,
-        'high': 0.8
-    }
+MIN_WORD_COUNT = 10
+MIN_SENTENCE_COUNT = 2
+
+QUALITY_THRESHOLDS = {
+    'low': 0.3,
+    'medium': 0.6,
+    'high': 0.8
 }
 
-# Pesos para diferentes métricas
 METRIC_WEIGHTS = {
     'clarity': 0.25,
     'specificity': 0.25,
@@ -22,7 +17,6 @@ METRIC_WEIGHTS = {
     'smart_criteria': 0.10
 }
 
-# Configurações de colunas da planilha
 EXCEL_COLUMNS = {
     'nome': 'Nome',
     'matricula': 'Matrícula',
@@ -31,8 +25,7 @@ EXCEL_COLUMNS = {
     'objetivo_desenvolvimento': 'Objetivo de desenvolvimento'
 }
 
-# Palavras-chave para análise SMART
-SMART_KEYWORDS = {
+SMART_KEYWORDS: Dict[str, List[str]] = {
     'specific': ['específico', 'especifica', 'claro', 'preciso', 'definido', 'detalhado'],
     'measurable': ['medir', 'mensurar', 'métrica', 'indicador', 'quantidade', 'percentual', '%', 'prazo'],
     'achievable': ['possível', 'viável', 'realista', 'alcançável', 'factível'],
@@ -40,14 +33,12 @@ SMART_KEYWORDS = {
     'time_bound': ['prazo', 'até', 'em', 'durante', 'mês', 'ano', 'trimestre', 'semestre', 'data']
 }
 
-# Palavras que indicam baixa qualidade
-NEGATIVE_INDICATORS = [
+NEGATIVE_INDICATORS: List[str] = [
     'não sei', 'talvez', 'pode ser', 'acho que', 'vou tentar',
     'espero', 'gostaria', 'pretendo', 'deveria', 'poderia'
 ]
 
-# Palavras que indicam alta qualidade
-POSITIVE_INDICATORS = [
+POSITIVE_INDICATORS: List[str] = [
     'implementar', 'desenvolver', 'executar', 'realizar', 'concluir',
     'atingir', 'alcançar', 'obter', 'conseguir', 'finalizar'
 ]
