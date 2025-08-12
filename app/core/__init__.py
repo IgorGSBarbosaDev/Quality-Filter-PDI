@@ -1,1 +1,1 @@
-"""Módulo core da aplicação."""
+

@@ -1,7 +1,3 @@
-"""
-Módulo principal da aplicação de análise de qualidade PDI.
-"""
-
 from .pdi_analyzer import PDIAnalyzer
 from .core.config import (
     QUALITY_THRESHOLDS, METRIC_WEIGHTS, COLUMN_MAPPING,
@@ -18,7 +14,7 @@ __author__ = "Sistema de Análise de Qualidade PDI"
 __all__ = [
     "PDIAnalyzer",
     "PDIAnalysisService",
-    "QualityMetricsService", 
+    "QualityMetricsService",
     "FileService",
     "TextUtils",
     "QUALITY_THRESHOLDS",

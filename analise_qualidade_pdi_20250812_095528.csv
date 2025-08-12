@@ -1,386 +1,0 @@
-ProprietÃ¡rio do Meta Empresa,ProprietÃ¡rio do Meta MatrÃ­cula,Nome Completo,UsuÃ¡rio do Gestor Imediato,Nome do Gestor Imediato,Sobrenome do Gestor Imediato,Nome do gerente de RH,Sobrenome do gerente de RH,ID do Objetivo de Desenvolvimento,Objetivo de Desenvolvimento (GAP),InÃ­cio,Vencimento,Data da criaÃ§Ã£o,Data da Ãºltima modificaÃ§Ã£o do proprietÃ¡rio do Objetivo de Desenvolvimento,SituaÃ§Ã£o,AÃ§Ãµes a serem realizadas,Andamento geral do Objetivo de Desenvolvimento,Finalidade,ID da Atividade de Aprendizagem,InstituiÃ§Ã£o,Local,InÃ­cio.1,Vencimento.1,Status,Tipo de Iniciativa,Investimento Previsto,ResponsÃ¡vel pelo Investimento,ObservaÃ§Ãµes,Ativo,Carga HorÃ¡ria,Atividade de Aprendizagem,DescriÃ§Ã£o,clarity_score,specificity_score,completeness_score,structure_score,smart_criteria_score,overall_score,quality_level,texto_analisado
-MINERACAO USIMINAS S.A. (MUSA),10004460,NAYARA VILACA DA SILVA,10138841,JOAO TOMAZ DOS,SANTOS FILHO,BRUNO,ALVES SILVA COSTA,211186,Desenvolver habilidades no SAP 4HANA.,01/02/2025,31/12/2025,30/10/2024,11/08/2025,Planejado,Fazer curso de SAP 4 HANA do mÃ³dulo SD.,Ainda nÃ£o estÃ¡ fora de prazo,Desenvolvimento Futuro,9779.0,Treinar,online,01/02/2025,31/12/2025,Planejado,Treinamento Formal,0.0,Empresa,,Sim,160.0,Fazer curso SAP 4 HANA mÃ³dulo SD,Treinamento SAP 4 HANA mÃ³dulo SD,1.0,0.95,0.7999999999999999,0.8,0.0,0.8075,Alta,Desenvolver habilidades no SAP 4HANA.  Fazer curso SAP 4 HANA mÃ³dulo SD
-MINERACAO USIMINAS S.A. (MUSA),10004467,LADIR ANTUNES TELES,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,25272,Empatia e tolerancia,04/04/2018,29/06/2018,04/04/2018,11/08/2025,Planejado,Leitura do livro inteligencia emocional no trabalho,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.7,0.3,0.1,0.4,0.2,0.35500000000000004,Baixa,Empatia e tolerancia  nan
-MINERACAO USIMINAS S.A. (MUSA),10004467,LADIR ANTUNES TELES,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,25269,Melhorar a competÃªncia de lideranÃ§a,04/04/2018,31/12/2018,04/04/2018,11/08/2025,Planejado,Treinamento conversas essenciais para supervisores,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.8500000000000001,0.2571428571428571,0.375,0.6000000000000001,0.0,0.4605357142857143,Baixa,Melhorar a competÃªncia de lideranÃ§a  nan
-MINERACAO USIMINAS S.A. (MUSA),10004467,LADIR ANTUNES TELES,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,25268,melhorar competÃªncia de lideranÃ§a.,04/04/2018,31/12/2018,04/04/2018,11/08/2025,Planejado,Treinamento liderando equipe para otimizar resultado,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.8,0.3,0.35,0.7,0.0,0.4675,Baixa,melhorar competÃªncia de lideranÃ§a.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004467,LADIR ANTUNES TELES,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,25271,desenvolver profissionais de alta perfomace,04/04/2018,31/12/2018,04/04/2018,11/08/2025,Planejado,Identificar e desenvolver sucessores atravÃ©s de plano de PDI,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.8,0.3,0.55,0.5,0.0,0.48750000000000004,Baixa,desenvolver profissionais de alta perfomace  nan
-MINERACAO USIMINAS S.A. (MUSA),10004467,LADIR ANTUNES TELES,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,25270,Construir melhor relacionamento com o cliente interno,04/04/2018,30/09/2018,04/04/2018,11/08/2025,Planejado,Desenvolver em conjunto com a operaÃ§Ã£o um projeto de reduÃ§Ã£o de custo e ou inovaÃ§Ã£o e apresentar no workshop de projeto,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.9,0.375,0.4,0.6000000000000001,0.0,0.5087499999999999,Baixa,Construir melhor relacionamento com o cliente interno  nan
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,91581,AtualizaÃ§Ã£o IFRS - Normas internacionais de contabilidade,15/10/2019,16/10/2019,24/09/2019,11/08/2025,ConcluÃ­do,Treinamento especializado com empresa de auditoria externa,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.95,0.26666666666666666,0.42500000000000004,0.6000000000000001,0.0,0.5004166666666666,Baixa,AtualizaÃ§Ã£o IFRS - Normas internacionais de contabilidade  nan
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175274,AperfeiÃ§oamento da lideranÃ§a,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos on-line e presenciais, mentoria, bechmarking, leitura de livros e artigos, job rotation.",Atrasado,PosiÃ§Ã£o Atual,6206.0,,,,,ConcluÃ­do,,,,,Sim,,Como construir um PDI?,Sem DescriÃ§Ã£o,0.95,0.26666666666666666,0.42500000000000004,0.8,0.0,0.5304166666666666,Baixa,AperfeiÃ§oamento da lideranÃ§a  Como construir um PDI?
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6232.0,,,,,Planejado,,,,,Sim,,Strategic Leader-coach,"OBJETIVO:01 - DESENVOLVER LÃDERES TRANSFORMADORES, COM PENSAMENTOS, COMPETÃNCIAS E POSTURA DE ALTA PERFORMANCE.CONTEÃDO:01 - O COACHING â DEFINIÃÃES02 -  HISTÃRIA E RESULTADOS DO COACHING03 - COMPETÃNCIAS DE UM LÃDER COACH04 - ATITUDES, ESTRATÃGIAS E CRENÃAS DO LÃDER COACH05 -  ESCUTAR NA ESSÃNCIA | PERGUNTAS PODEROSAS06 -  CONSTRUÃÃO DA CONFIANÃA E EMPATIA | RAPPORT07 -  ESTRUTURA DE DIÃLOGO EM COACHING08 - FERRAMENTAS DE COACHING | COMUNICAÃÃO ASSERTIVA E PESSOAL",0.8,0.5,0.35,0.6000000000000001,0.0,0.5025,Baixa,Desenvolvimento de habilidades  Strategic Leader-coach
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175276,AperfeiÃ§oamento TÃ©cnico,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos corporativos, releitura de normas e procedimentos, revisÃ£o de procedimento, leitura de livros e atigos",Atrasado,PosiÃ§Ã£o Atual,6210.0,,,,,Planejado,,,,,Sim,,8 Melhores PrÃ¡ticas de GestÃ£o de Estoque,"OBJETIVO:01 â VOCÃ IRÃ APRENDER COMO DETERMINAR QUAL MODELO DE GESTÃO DE ESTOQUES Ã MELHOR PARA CADA SITUAÃÃO E TIPO DE  NEGÃCIO, COMO PREVER MELHOR AS NECESSIDADES E MANTER O MÃNIMO DE ESTOQUE POSSÃVEL, COMO REDUZIR OS CUSTOS E A OBSOLESCÃNCIA, COMO MELHORAR A PRECISÃO E A REALIZAR ANÃLISES PARA REDUZIR LEAD-TIMES.CONTEÃDO:01 - ALINHAR A POLÃTICA DE ESTOQUE COM A ESTRATÃGIA DE SUPPLY CHAIN     1.1 - Mapeando as variÃ¡veis de impacto na estratÃ©gia de estoque.     1.2 - Ciclo de vida do produto.     1.3 - InfluÃªncias externas e internas no estoque.     1.4 - Modelo centralizado e descentralizado.     1.5 - Diagnosticando a necessidade dos stakeholders na cadeia.02 - ANALISAR A RENTABILIDADE DO ESTOQUE E PRODUTOS     2.1 - AnÃ¡lise da rentabilidade do produto     2.2 - TCO: custos de armazenagem, custo do produto, margem e mÃ£o de obra     2.3 - Make or buy     2.4 - Impacto em custo, tamanho de lote e nÃ­vel de inventÃ¡rio     2.5 - Como encontrar os custos escondidos de um estoque e como reduzi-lo     2.6 - ClassificaÃ§Ã£o ABC e XYZ03 - MAPEAR OS TIPOS DE DEMANDAS EXISTENTES     3.1 - Identificando o Tipo de demanda: regular, irregular e sazonal.     3.2 - DinÃ¢mica de consumo     3.3 - Matriz Incerteza de Supply x Incerteza de Demanda04 - MANTER UMA COMUNICAÃÃO INTEGRADA ENTRE OS STAKEHOLDERS     4.1 - Jogo da Cadeia de Abastecimento     4.2 - Os vÃ­nculos dinÃ¢micos e simbiÃ³ticos entre suprimentos e demanda     4.3 - Simulando o efeito chicote     4.4 - Otimizando as relaÃ§Ãµes entre pedido de compra, estoque e inventÃ¡rio fÃ­sico     4.5 - O funcionamento da integraÃ§Ã£o e comunicaÃ§Ã£o na cadeia05 - DEFINIR O NÃVEL DE ESTOQUE DE SEGURANÃA     5.1	 - TÃ©cnicas para desvendar problemas que estÃ£o matando a precisÃ£o do seu estoque     5.2 - Muito estoque de seguranÃ§a? Insuficiente? Como encontrar o equilÃ­brio ideal     5.3 - Usando o nÃ­vel de serviÃ§o para determinar apropriadamente o tamanho do estoque e nunca ser pego despreparado06 - GARANTIR TEMPO DE RESSUPRIMENTO     6.1 - ReposiÃ§Ã£o contÃ­nua e periÃ³dica     6.2 - Lead time dos fornecedores     6.3 - Tempo de ressuprimento e ponto de pedido.07 - DEFINIR GOVERNANÃA ATRAVÃS DE INDICADORES      7.1 - Alinhamento das mÃ©tricas com a estratÃ©gia do negÃ³cio      7.2 - Indicadores de complexidade e risco      7.3 - Indicadores de tempo      7.4 - Indicadores de custo      7.5 - ApresentaÃ§Ã£o dos principais KPIs utilizados no mercado08 -ANALISAR E IMPLEMENTAR PROCESSO DE MELHORIA CONTÃNUA     8.1 - Co-relaÃ§Ã£o de quais indicadores afetam quais Ã¡reas e nÃ­veis dos stakeholders envolvidos.     8.2 - MÃ©todos de anÃ¡lise de caso e perda.     8.3 - AnÃ¡lise de causa raiz.     8.4 - Desenvolvimento de iniciativas de melhoria.",1.0,0.423076923076923,0.625,0.6000000000000001,0.0,0.6020192307692307,Média,AperfeiÃ§oamento TÃ©cnico  8 Melhores PrÃ¡ticas de GestÃ£o de Estoque
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,118425,"AperfeiÃ§oamento no idioma InglÃªs, na busca da fluÃªncia.",10/08/2017,31/12/2021,07/10/2020,11/08/2025,Em Andamento,Treinamento formal com aulas em grupo e individuais,Atrasado,Desenvolvimento Futuro,2221.0,Number One,On line,01/02/2020,31/12/2021,Em Andamento,Treinamento Formal,3000.0,Empresa,,Sim,2.0,Aulas de InglÃªs,Aulas de inglÃªs em grupo e Individual,1.0,0.39999999999999997,0.6,0.8,0.0,0.62,Média,"AperfeiÃ§oamento no idioma InglÃªs, na busca da fluÃªncia.  Aulas de InglÃªs"
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6222.0,,,,,Planejado,,,,,Sim,,A Arte de Lidar com Pessoas,"OBJETIVO: 01 - LEVAR O TREINANDO A TRABALHAR O SEU JEITO DE SER, PARA LIDAR COM OS MAIS DIVERSOS TIPOS DE PESSOAS.CONTEÃDO: 01 - ENTROSAMENTO.02 - TIPOS MAIS COMUNS DE PESSOAS DE DIFÃCIL RELACIONAMENTO.03 - CAPACIDADE DE AUTO-AFIRMAÃÃO.04 - VOCÃ SE CONSIDERA EFICIENTE.05 - APRENDENDO A DIZER NÃO.06 - FALE DE VOCÃ.07 - COMO LIDAR COM PESSOAS QUE VOCÃ NÃO SUPORTA.",0.95,0.26666666666666666,0.42500000000000004,0.6000000000000001,0.0,0.5004166666666666,Baixa,Desenvolvimento de habilidades  A Arte de Lidar com Pessoas
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175276,AperfeiÃ§oamento TÃ©cnico,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos corporativos, releitura de normas e procedimentos, revisÃ£o de procedimento, leitura de livros e atigos",Atrasado,PosiÃ§Ã£o Atual,6212.0,,,,,Planejado,,,,,Sim,,Administrador de Treinamento,"OBJETIVO:01 - ADMINISTRAR O SISTEMA DE TREINAMENTO NO SAP.CONTEÃDO:01 - GRUPO DE EVENTO;02 - TIPO DE EVENTO;03 - EVENTO;04 - QUALIFICAÃÃES;05 - ENTIDADE;06 - LOCAL;07 - ORGANIZADOR;08 - INSTRUTOR EXTERNO;09 - ENTIDADE EXTERNA;10 - TERCEIROS;11 - RELATÃRIOS;12 - VALIDADE DO TIPO DO EVENTO;13 - EDIÃÃO.",0.8500000000000001,0.5785714285714285,0.375,0.6000000000000001,0.0,0.5408928571428572,Baixa,AperfeiÃ§oamento TÃ©cnico  Administrador de Treinamento
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,118425,"AperfeiÃ§oamento no idioma InglÃªs, na busca da fluÃªncia.",10/08/2017,31/12/2021,07/10/2020,11/08/2025,Em Andamento,Treinamento formal com aulas em grupo e individuais,Atrasado,Desenvolvimento Futuro,2222.0,LCI/Sumitomo,Denver-CO,10/08/2017,30/09/2017,ConcluÃ­do,Visitas tÃ©cnicas,15000.0,Empresa,"Empregado pagou despesas com locomoÃ§Ã£o, moradia e curso",Sim,40.0,IntercÃ¢mbio,IntercÃ¢mbio Sumitomo em Denver-CO,1.0,0.3818181818181818,0.5750000000000001,0.8,0.0,0.6092045454545455,Média,"AperfeiÃ§oamento no idioma InglÃªs, na busca da fluÃªncia.  IntercÃ¢mbio"
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6236.0,,,,,Planejado,,,,,Sim,,OratÃ³ria,"OBJETIVOEXEMPLOS E DICAS PRÃTICAS, ONDE VOCÃ VAI APRENDER O PODER DA HISTÃRIA NO CÃREBRO. ENTENDER TÃCNICAS ESSENCIAIS PARA DEFINIR SEU PÃBLICO, ESTRUTURAR E CONTAR UMA IDEIA ATRAVÃS DE UM FRAMEWORK PARA CRIAR NARRATIVA PODEROSA, COM ALTO PODER DE CONVENCIMENTO.",0.63,0.44999999999999996,0.1,0.4,0.0,0.35500000000000004,Baixa,Desenvolvimento de habilidades  OratÃ³ria
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175276,AperfeiÃ§oamento TÃ©cnico,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos corporativos, releitura de normas e procedimentos, revisÃ£o de procedimento, leitura de livros e atigos",Atrasado,PosiÃ§Ã£o Atual,6213.0,,,,,Planejado,,,,,Sim,,Adm Contas a Pagar Receber e Tesouraria,"OBJETIVO:01 - APERFEIÃOAR O PARTICIPANTE PARA EXECUTAR ROTINAS DE CONTAS A PAGAR, CONTAS A RECEBER E TESOURARIA, OBSERVANDO NORMAS E PROCEDIMENTOS DA EMPRESA E LEGISLAÃÃES DA ÃREA, PROPICIANDO SUBSÃDIOS PARA A TOMADA DE DECISÃO DA GESTÃO FINANCEIRA.CONTEÃDO:01 - TÃPICOS ESTUDADOS:02 - ROTINAS DOS DEPARTAMENTOS DE CONTAS A PAGAR, CONTAS A RECEBER E TESOURARIA;03 - ELABORAÃÃO DE CONTROLES FINANCEIROS: FLUXO DE CAIXA;04 - INADIMPLÃNCIA;08 - RISCOS OPERACIONAIS.",1.0,0.3818181818181818,0.5750000000000001,0.6000000000000001,0.0,0.5792045454545455,Baixa,AperfeiÃ§oamento TÃ©cnico  Adm Contas a Pagar Receber e Tesouraria
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175274,AperfeiÃ§oamento da lideranÃ§a,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos on-line e presenciais, mentoria, bechmarking, leitura de livros e artigos, job rotation.",Atrasado,PosiÃ§Ã£o Atual,6205.0,,,,,Planejado,,,,,Sim,,Construindo Tropas de Elite ,Sem DescriÃ§Ã£o,0.95,0.39999999999999997,0.42500000000000004,0.6000000000000001,0.0,0.53375,Baixa,AperfeiÃ§oamento da lideranÃ§a  Construindo Tropas de Elite
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6225.0,,,,,Planejado,,,,,Sim,,AnÃ¡lise de Indicadores de Mercado,"AnÃ¡lise de Indicadores de Mercado",0.95,0.26666666666666666,0.42500000000000004,0.6000000000000001,0.2,0.5204166666666666,Baixa,Desenvolvimento de habilidades  AnÃ¡lise de Indicadores de Mercado
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175276,AperfeiÃ§oamento TÃ©cnico,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos corporativos, releitura de normas e procedimentos, revisÃ£o de procedimento, leitura de livros e atigos",Atrasado,PosiÃ§Ã£o Atual,6234.0,CRC e outras,On line e presencial,01/01/2022,31/12/2022,Planejado,Treinamento Formal,2000.0,Empregado,,Sim,40.0,EducaÃ§Ã£o Continuada CRC,EducaÃ§Ã£o Continuada exigida pelo CRC,0.95,0.3333333333333333,0.42500000000000004,0.6000000000000001,0.0,0.5170833333333333,Baixa,AperfeiÃ§oamento TÃ©cnico  EducaÃ§Ã£o Continuada CRC
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175274,AperfeiÃ§oamento da lideranÃ§a,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos on-line e presenciais, mentoria, bechmarking, leitura de livros e artigos, job rotation.",Atrasado,PosiÃ§Ã£o Atual,6204.0,,,,,Planejado,,,,,Sim,,Criatividade e Coragem para Se Reinventar,"OBJETIVO:
-
-01 - SÃO TRATADAS QUESTÃES COMO AUTOCONHECIMENTO, AMOR, CORAGEM, HUMANIZAÃÃO E CRIATIVIDADE PARA LIDAR COM OS DESAFIOS.
-",1.0,0.3272727272727272,0.5750000000000001,0.6000000000000001,0.2,0.5855681818181818,Baixa,AperfeiÃ§oamento da lideranÃ§a  Criatividade e Coragem para Se Reinventar
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6224.0,,,,,Planejado,,,,,Sim,,Analise de Investimentos,"OBJETIVO:01 - DESENVOLVER OS PRINCIPAIS CONCEITOS E PRÃTICAS INERENTES AO CAMPO DE ANÃLISE DE INVESTIMENTOS;02 - APRESENTAR/CAPACITAR OS PARTICIPANTES NA APLICAÃÃO DA ANÃLISE DE INVESTIMENTOS NA USIMINAS;03 - OPERACIONALIZAR OS CONCEITOS DA AVALIAÃÃO ECONÃMICO-FINANCEIRA.CONTEÃDO:01 - INTRODUÃÃO Ã ANÃLISE DE INVESTIMENTOS; DEMONSTRATIVOS CONTÃBEIS;02 - CONSTRUÃÃO DO FLUXO DE CAIXA; METODOLOGIAS DE AVALIAÃÃO DO FLUXO DE CAIXA; 03 - ANÃLISANDO A SENSIBILIDADE; APLICAÃÃO DA ANÃLISE DE INVESTIMENTOS NA USIMINAS; ELABORAÃÃO DA AVALIAÃÃO ECONÃMICO-FINANCEIRA; MODELOS DA ÃREA DE ESTUDOS ESPECIAIS.",0.7200000000000001,0.39999999999999997,0.35,0.6000000000000001,0.0,0.4575000000000001,Baixa,Desenvolvimento de habilidades  Analise de Investimentos
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175276,AperfeiÃ§oamento TÃ©cnico,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos corporativos, releitura de normas e procedimentos, revisÃ£o de procedimento, leitura de livros e atigos",Atrasado,PosiÃ§Ã£o Atual,6235.0,PREVIC,On line e presencial,01/01/2022,31/12/2022,Planejado,Treinamento Formal,3000.0,Empresa,,Sim,40.0,EducaÃ§Ã£o Continuada PrevidÃªncia Usiminas,"EducaÃ§Ã£o Continuada PrevidÃªncia Usiminas, necessÃ¡ria para a certificaÃ§Ã£o na PREVIC",1.0,0.42,0.45,0.6000000000000001,0.0,0.5575,Baixa,AperfeiÃ§oamento TÃ©cnico  EducaÃ§Ã£o Continuada PrevidÃªncia Usiminas
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175274,AperfeiÃ§oamento da lideranÃ§a,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos on-line e presenciais, mentoria, bechmarking, leitura de livros e artigos, job rotation.",Atrasado,PosiÃ§Ã£o Atual,6203.0,,,,,Planejado,,,,,Sim,,A arte de liderar ,"NO TREINAMENTO ""A ARTE DE LIDERAR"" Ã TRATADO DOS ASPECTOS FUNDAMENTAIS DA LIDERANÃA, DISCUTINDO AS COMPETÃNCIAS NECESSÃRIAS EM UM LÃDER, ALÃM DE REFLETIR SOBRE A EXPERIÃNCIA DE LÃDER E A RELAÃÃO ENTRE LIDERANÃA E LIDERADO. O TÃTULO TAMBÃM CONTA COM TEXTOS DE APOIO E INFORMAÃÃES ADICIONAIS PARA APROFUNDAR OS CONCEITOS APRESENTADOS.
-",0.95,0.26666666666666666,0.42500000000000004,0.6000000000000001,0.0,0.5004166666666666,Baixa,AperfeiÃ§oamento da lideranÃ§a  A arte de liderar
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6237.0,,,,,Planejado,,,,,Sim,,Papo de LideranÃ§a - DecisÃ£o: NegÃ³cio ,"CONTEÃDO:
-
-01 - TOMADA DE DECISÃO: TEMOS CONVERSADO AO LONGO DE NOSSOS ENCONTROS SOBRE AS DIVERSAS TRANSFORMAÃÃES QUE ESTAMOS VIVENDO. EM UM AMBIENTE DE TANTAS INCERTEZAS, A TOMADA DE DECISÃO TORNA-SE AINDA MAIS CRÃTICA E EXIGE NOVAS POSTURAS E ABORDAGENS.
-
-02- FALAR SOBRE DECISÃO NATURALMENTE SIGNIFICA REFLETIR SOBRE A QUALIDADE E QUANTIDADE DAS FONTES DE INFORMAÃÃES. NESSE CAMINHO, MAIS COLABORAÃÃO, MAIS DADOS E MAIOR CAPACIDADE DE FAZER ANÃLISES SOFISTICADAS Ã UMA DEMANDA PARA OS LÃDERES CONTEMPORÃNEOS QUE PRECISAM ESTAR ATENTOS E HÃPERCONSCIENTES PARA TOMAR DECISÃES COM VELOCIDADE E ASSERTIVIDADE. 
-
-",1.0,0.3,0.45,0.6000000000000001,0.0,0.5275,Baixa,Desenvolvimento de habilidades  Papo de LideranÃ§a - DecisÃ£o: NegÃ³cio
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6223.0,,,,,Planejado,,,,,Sim,,AdministraÃ§Ã£o de Conflitos,"OBJETIVO:01 - COMPREENDER COMO OCORRE E A IMPORTÃNCIA DE UMA GESTÃO DE CONFLITOS ADAPTATIVA NOS RELACIONAMENTOS PROFISSIONAIS. ESTIMULAR COMPORTAMENTOS QUE FACILITEM A SOLUÃÃO DE CONFLITOS NEGATIVOS E QUE ESTIMULEM CONFLITOS POSITIVOS. CONTRIBUIR PARA O DESENVOLVIMENTO DA CAPACIDADE DE BUSCAR UM PONTO DE CONSENSO.CONTEÃDO: 01 - POR QUE ESTÃ ACONTECENDO TANTAS DESAVENÃAS NO MUNDO EMPRESARIAL?02 - DIVERSIDADE DE GERAÃÃES EM UM SÃ AMBIENTE DE TRABALHO.03 - QUAIS OS EFEITOS DOS CONFLITOS NOS RELACIONAMENTOS?04 - MECANISMOS DEFENSIVOS PARA LIDAR COM CONFLITOS.05 - CONFLITOS SÃO NECESSÃRIOS PARA QUE NÃO HAJA ESTAGNAÃÃO.06 - TÃCNICAS DE ADMINISTRAÃÃO DE CONFLITOS.",0.9,0.3,0.4,0.6000000000000001,0.0,0.49000000000000005,Baixa,Desenvolvimento de habilidades  AdministraÃ§Ã£o de Conflitos
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6226.0,,,,,Planejado,,,,,Sim,,AnÃ¡lise de Investimentos,"OBJETIVO: 
-
-01 - O OBJETIVO DESTE TREINAMENTO Ã APRESENTAR OS PRINCIPAIS CONCEITOS E PRÃTICAS INERENTES AO CAMPO DE ANÃLISE DE INVESTIMENTOS, ATRAVÃS DE EXPLANAÃÃO DA TEORIA E REALIZAÃÃO DE EXERCÃCIOS PRÃTICOS. 
-
-CONTEÃDO: 
-
-01 - INTRODUÃÃO 
-
-1.1 - DEFINIÃÃO DE ANÃLISE DE INVESTIMENTOS
-
-1.2 - EXEMPLOS
-
-1.3 - ETAPAS
-
-1.4 - QUALIDADE DE DADOS E DA DECISÃO
-
-1.5 - PRINCIPAIS ÃREAS ENVOLVIDAS/STAKEHOLDERS
-
-1.6 - PRINCIPAIS DRIVERS DE DECISÃO
-
-1.7 - DIAGRAMA DE FLUXO DE CAIXA
-
-1.8 - VALOR DO DINHEIRO NO TEMPO
-
-1.9 - METODOLOGIAS DE AVALIAÃÃO DE FLUXOS DE CAIXA
-
-02 - CONSTRUINDO A ANÃLISE DE INVESTIMENTOS
-
-2.1 - DEMONSTRATIVOS CONTÃBEIS
-
-2.2 - RECEITA
-
-2.3 - VOLUME
-
-2.4 - CUSTOS
-
-2.5 - DESPESAS
-
-2.6 - PERDAS
-
-2.7 - PREMISSAS MACROECONÃMICAS
-
-2.8 - CAPEX
-
-2.9 - CAPEX VS. OPEX
-
-2.10 - DEPRECIAÃÃO
-
-2.11 - INFLAÃÃO
-
-2.12 - ESPÃCIES TRIBUTÃRIAS
-
-2.13 - IMPOSTO DE RENDA/CSLL
-
-2.14 - PIS/COFINS
-
-2.15 - ICMS
-
-2.16 - EXEMPLOS
-
-2.17 - PERPETUIDADE
-
-2.18 - CICLO OPERACIONAL E CICLO FINANCEIRO
-
-2.19 - CAPITAL DE GIRO
-
-2.20 -VALOR RESIDUAL
-
-2.21 - CUSTO DE CAPITAL
-
-2.22 - FLUXO DE CAIXA
-
-2.23 - METODOLOGIAS DE AVALIAÃÃO DE FLUXOS DE CAIXA
-
-2.23.1 - VPL
-
-2.23.2 - SUL
-
-2.23.3 - TIR
-
-2.23.4 - TIR-M
-
-2.23.5 - PAYBACK E PAYBACK DESCONTADO
-
-2.23.6 - IB/C (MÃTODO DO ÃNDICE BENEFÃCIO/CUSTO)
-
-2.23.7 - CONFLITOS DE DECISÃO
-
-2.23.8 - EXEMPLOS
-
-2.24 - ANÃLISE DE SENSIBILIDADE
-
-03 - ANÃLISE DE INVESTIMENTOS NA USIMINAS
-
-",0.8500000000000001,0.2571428571428571,0.375,0.6000000000000001,0.0,0.4605357142857143,Baixa,Desenvolvimento de habilidades  AnÃ¡lise de Investimentos
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6221.0,,,,,Planejado,,,,,Sim,,Accountability,"POR MEIO DO ACCOUNTABILITY Ã POSSÃVEL ASSUMIR O PAPEL DE PROTAGONISTA DA RESOLUÃÃO DE PROBLEMAS E EVOLUIR SEU NÃVEL DE RESPONSABILIDADE NA VIDA PESSOAL E NO TRABALHO.
-NOS VÃDEOS, CORDEIRO APRESENTA QUAIS SÃO OS BENEFÃCIOS DA ACCOUNTABILITY BEM COMO A RELAÃÃO DIRETA DESSA VIRTUDE COM PESSOAS BEM SUCEDIDAS. ALÃM DISSO, O CONSULTOR EXPLICA A DIFERENÃA ENTRE PESSOAS COMUNS E PESSOAS EXCELENTES (OU ACCOUNTABLE) E COMO ESTAS AGREGAM VALOR NA GESTÃO DAS ORGANIZAÃÃES. E PARA ILUSTRAR TUDO ISSO, CORDEIRO TRAZ DIVERSOS CASES DE PESSOAS ACCOUNTABLE QUE TRANSFORMAM AS EMPRESAS E A SI PRÃPRIAS.
-",0.63,0.44999999999999996,0.1,0.4,0.0,0.35500000000000004,Baixa,Desenvolvimento de habilidades  Accountability
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6227.0,,,,,Planejado,,,,,Sim,,AnÃ¡lise de Carta de CrÃ©dito na ExportaÃ§Ã£o e ImportaÃ§Ã£o,"OBJETIVO: 
-MOSTRAR AOS ALUNOS A IMPORTÃNCIA DA CARTA DE CRÃDITO NUMA TRANSAÃÃO INTERNACIONAL DE MERCADORIAS; TRANSMITIR CONHECIMENTOS SOBRE A UCP 600 E A EUCP DA ICC-PARIS E COMO USÃ-LAS; DEMONSTRAR A INTERAÃÃO ENTRE AS UCP 600, EUCP, CARTA DE CRÃDITO E OS DOCUMENTOS DE COMÃRCIO EXTERIOR; ORIENTAR A EMISSÃO DOS DOCUMENTOS SOLICITADOS PELO IMPORTADOR NA CARTA DE CRÃDITO; MOSTRAR AOS PARTICIPANTES OS DOCUMENTOS RELATIVOS AO COMÃRCIO EXTERIOR: DO EXPORTADOR, DE ENTIDADES EXTERNAS, DE TRANSPORTES MARÃTIMO, AÃREO, RODOVIÃRIO, FERROVIÃRIO E SEGURO.
-
-CONTEÃDO:
-
-1 - CONDIÃÃES DE PAGAMENTO
-
-2 - CARTA DE CRÃDITO
-
-3 - UCPDC 600, EUCP, PUBL. 745
-
-4 - CONTRATOS DE COMPRA/VENDA, DOCUMENTOS COMERCIAIS E FINANCEIRO E EMITIDOS POR ENTIDADES EXTERNAS
-
-5 - DOCUMENTOS DE TRANSPORTE MARÃTIMO
-
-6 - DOCUMENTOS DE TRANSPORTE AÃREO
-
-7 - DOCUMENTOS DE TRANSPORTE RODOVIÃRIO
-
-8 - DOCUMENTOS DE TRANSPORTE FERROVIÃRIO
-",1.0,0.16666666666666666,0.75,0.6000000000000001,0.0,0.5691666666666667,Baixa,Desenvolvimento de habilidades  AnÃ¡lise de Carta de CrÃ©dito na ExportaÃ§Ã£o e ImportaÃ§Ã£o
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6228.0,,,,,Planejado,,,,,Sim,,Como Fazer RelaÃ§Ãµes Governam e Instituci,"OBJETIVO:01 - AMPLIAR AS POSSIBILIDADES DE CRESCIMENTO PROFISSIONAL ATRAVÃS DA EXPOSIÃÃO DOS FUNDAMENTOS DAS RELAÃÃES GOVERNAMENTAIS E INSTITUCIONAIS.02 - APRESENTAR AS IMPLICAÃÃES DAS INICIATIVAS GOVERNAMENTAIS E DE OUTROS PÃBLICOS DE INTERESSE SOBRE A EMPRESA.03 - FORNECER A BASE CONCEITUAL DO LEQUE DE FERRAMENTAS E TÃCNICAS QUE PERMITEM UMA ATUAÃÃO EFICAZ NO CAMPO DAS PRÃTICAS RELACIONAIS.04 - DISCUTIR TEMAS LIGADOS Ã ÃTICA E AOS DILEMAS QUE AS EMPRESAS E OS PROFISSIONAIS ENFRENTAM NO CAMPO DO RELACIONAMENTO.05 - PROMOVER O ENTENDIMENTO SOBRE OS PÃBLICOS ENVOLVIDOS, EM ESPECIAL O GOVERNO E AS ASSOCIAÃÃES DE CLASSE.INSTRUIR SOBRE A CONQUISTA DOS ESPAÃOS INTERNOS E SOBRE O POSICIONAMENTO DAS ATIVIDADES RELACIONAIS COMO ÃREAS DE VALOR ESTRATÃGICO, QUE CONTRIBUEM PARA OS RESULTADOS NOS NEGÃCIOS.06 - DISCUTIR O PERFIL DOS PROFISSIONAIS, AS QUALIFICAÃÃES E AS PERSPECTIVAS DE CARREIRA.CONTEÃDO:01 - CONCEITUAÃÃO DE RELAÃÃES GOVERNAMENTAIS E INSTITUCIONAIS.02 - GOVERNO, POLÃTICAS PÃBLICAS, LOBBY, ADVOCACY, PÃBLICOS DE INTERESSE E DE PRESSÃO.03 - PROCESSO DECISÃRIO GOVERNAMENTAL: REGRAS E PERFIL DOS INTERLOCUTORES.04 - OBJETIVOS, ESTRATÃGIAS E PLANOS.05 - ISSUES MANAGEMENT.06 - PRINCIPAIS FERRAMENTAS E TÃCNICAS DE ABORDAGEM.07 - RELAÃÃES GOVERNAMENTAIS, LOBBY, THINK TANK, WHITE PAPERS, POSITION PAPERS, ALIANÃAS, PARCERIAS COM O GOVERNO, COALIZÃES, BANCADAS E FRENTES PARLAMENTARES, EVENTOS, ASSOCIAÃÃES DE CLASSE.08 - DESAFIOS DE CARREIRA.",1.0,0.36,0.45,0.6000000000000001,0.0,0.5425,Baixa,Desenvolvimento de habilidades  Como Fazer RelaÃ§Ãµes Governam e Instituci
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6229.0,,,,,Planejado,,,,,Sim,,Comercio Exterior,"OBJETIVO:01 â ATUALIZAÃÃO SOBRE A NOVA LEI DE IMIGRAÃÃO QUE IMPACTA DIRETAMENTE OS PROCESSOS JUNTO AOS EXPATRIADOS DA USIMINASCONTEÃDO:01 â INTRODUÃÃO AO COMÃRCIO EXTERIOR02 - REGISTRO DO EXPORTADOR/IMPORTADOR     2.1 - REI - Registro de Exportador e Importad or     2.1 - habilitaÃ§Ã£o no Siscomex (Registro no Rada r)03 - TRANSPORTE INTERNACIONAL     3.1 - modais de transporte     3.2 - Incoterms 201004 - CONDIÃÃES DE PAGAMENTO05 - CLASSIFICAÃÃO FISCAL DE MERCADORIAS     5.1 - TEC, Tipi, Naladi06 - IMPORTAÃÃO     6.1 - contatos impo rtador/exportador     6.2 - cotaÃ§Ã£o (fatura pro forma)     6.3 - LI - Licenciamento de Impor taÃ§Ã£o      6.4 - dispensa de LI     6.5 - exigÃªncia de LI     6.6 - contrataÃ§Ã£o e liq uidaÃ§Ã£o de cÃ¢mbio     6.7 - requisitos fiscais     6.8 - tributaÃ§Ã£o: sistem Ã¡tica do cÃ¡lculo     6.9 - despacho aduaneiro     6.10 - pessoas habilitadas     6.11 - registro da DI no Sisc omex     6.12 - conferÃªncia aduaneira     6.13 - liberaÃ§Ã£o alfandegÃ¡ria ( desembaraÃ§o)07 - EXPORTAÃÃO     7.1 - contatos expor tador/importador     7.2 - cotaÃ§Ã£o     7.3 - fatura pro forma e lista de preÃ§os     7.4 - RE - Registro de ExportaÃ§Ã£o (Sisco mex)     7.5 - tratamentos fiscais      7.6 - IPI, ICMS, PIS, Co fins e Drawback     7.7 - despacho aduaneiro     7.8 - cÃ¢mbio na exportaÃ§Ã£o     7.9 - ACC e ACE     7.10 - financiamento",0.675,0.48,0.125,0.6000000000000001,0.0,0.41000000000000003,Baixa,Desenvolvimento de habilidades  Comercio Exterior
-MINERACAO USIMINAS S.A. (MUSA),10004470,BRUNO FONSECA CAMPOS,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,175279,Desenvolvimento de habilidades,01/01/2022,31/12/2022,09/05/2022,11/08/2025,Planejado,"Treinamentos, mentoria, job rotation",Atrasado,Desenvolvimento Futuro,6233.0,Universidade Corporativa,Usiminas,01/04/2022,31/12/2022,Planejado,Coaching,0.0,Empresa,,Sim,20.0,Mentoria 2022,"Programa de mentoria 2022, onde estarei sendo mentorado",0.75,0.45999999999999996,0.225,0.6000000000000001,0.0,0.44875000000000004,Baixa,Desenvolvimento de habilidades  Mentoria 2022
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,138712,DomÃ­nio pleno do Excel,01/03/2025,31/12/2025,03/09/2021,11/08/2025,Planejado,Cursos e apresentaÃ§Ãµes em Excel,Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,7756.0,,,,,Planejado,,,,,Sim,,Excel - Planilhas prÃ¡ticas,"OBJETIVO:
-NESTE CURSO, VOCÃ IRA APRENDER RECURSOS E POSSIBILIDADES MAIS RELEVANTES PARA APLICAÃÃO EM PLANILHAS, OFERECENDO AOS PROFISSIONAIS E ÃS EMPRESAS GANHOS EM PRODUTIVIDADE E FLEXIBILIDADE.
-
-CONTEÃDO:
--INTRODUÃÃO: ""PENSANDO EXCEL""
--NECESSIDADE E PLANEJAMENTO
--INSERINDO FÃRMULAS PARA EFETUAR CÃLCULOS
--COPIANDO FÃRMULAS E CONTEÃDOS DE CÃLULAS
--FUNÃÃES SE, MÃNIMO, MÃXIMO, AUTOSOMA
--COMBINANDO O USO DE FUNÃÃES
--USANDO DADOS DE OUTRAS PLANILHAS
--FORMATANDO CÃLULAS E MELHORANDO A APRESENTAÃÃO DE PLANILHAS",0.95,0.3333333333333333,0.42500000000000004,0.6000000000000001,0.0,0.5170833333333333,Baixa,DomÃ­nio pleno do Excel  Excel - Planilhas prÃ¡ticas
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,3408,Adquirir conhecimento na norma corporativa: NCADMGE0006 - ApuraÃ§Ã£o de FrequÃªncia,01/12/2015,31/12/2016,04/08/2016,11/08/2025,ConcluÃ­do,Estudar a norma NCADMGE0006 - ApuraÃ§Ã£o de FrequÃªncia e verificar quais as novidades que afetam a MUSA,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.45000000000000007,0.6,0.6000000000000001,0.0,0.6025,Média,Adquirir conhecimento na norma corporativa: NCADMGE0006 - ApuraÃ§Ã£o de FrequÃªncia  nan
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,117374,Employee Experience,01/07/2020,31/12/2021,18/06/2020,11/08/2025,ConcluÃ­do,Estudar material sobre esta metodologia/tÃ©cnica,Atrasado,Desenvolvimento Futuro,2663.0,prÃ³pria,on-line,03/03/2021,30/09/2021,ConcluÃ­do,Autodesenvolvimento,1.0,Empregado,,Sim,40.0,ApresentaÃ§Ã£o de iniciativas para employee experience,Apresentar na proxima reuniÃ£o de acompanhamento de PDI o conceito e proposta de iniciativas na Musa,1.0,0.36,0.45,0.6000000000000001,0.2,0.5625,Baixa,Employee Experience  ApresentaÃ§Ã£o de iniciativas para employee experience
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,138712,DomÃ­nio pleno do Excel,01/03/2025,31/12/2025,03/09/2021,11/08/2025,Planejado,Cursos e apresentaÃ§Ãµes em Excel,Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,7757.0,,,,,Planejado,,,,,Sim,,Dashboard com Excel,"OBJETIVO:
-
-01 - NESTE CURSO, VOCÃ APRENDERÃ A TRANSFORMAR UM CONJUNTO DE DADOS EM INFORMAÃÃES RELEVANTES, ALÃM DE REPRESENTÃ-LAS VISUALMENTE POR MEIO DE UM DASHBOARD EM EXCEL.
-
-CONTEÃDO:
-
-01 - POR ONDE COMEÃAR.
-
-02 - BASE DE DADOS E GRÃFICOS.
-
-03 - MONTANDO O DASHBOARD.
-
-04 â ENCERRAMENTO.
-",0.9,0.3,0.4,0.6000000000000001,0.0,0.49000000000000005,Baixa,DomÃ­nio pleno do Excel  Dashboard com Excel
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,117370,DomÃ­nio do Direito do Trabalho,01/08/2020,01/08/2021,18/06/2020,11/08/2025,ConcluÃ­do,Concluir pÃ³s graduaÃ§Ã£o em Direito do Trabalho,Atrasado,Desenvolvimento Futuro,2664.0,Puc Minas,on-line,02/11/2020,30/06/2023,ConcluÃ­do,Treinamento Formal,5800.0,Empregado,,Sim,360.0,EspecializaÃ§Ã£o,Aulas de especializaÃ§Ã£o via EAD,0.95,0.19999999999999998,0.42500000000000004,0.6000000000000001,0.0,0.48375,Baixa,DomÃ­nio do Direito do Trabalho  EspecializaÃ§Ã£o
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,117371,FluÃªncia no InglÃªs,06/02/2025,31/12/2028,18/06/2020,11/08/2025,Planejado,Desenvolver minha fluÃªncia no inglÃªs,Ainda nÃ£o estÃ¡ fora de prazo,Desenvolvimento Futuro,2660.0,Particular,on-line,05/04/2024,29/12/2028,Planejado,Treinamento Online,0.0,Empregado,,Sim,1.0,Aulas on-line,Fazer aulas on-line de ingles,0.8,0.3,0.35,0.6000000000000001,0.0,0.45250000000000007,Baixa,FluÃªncia no InglÃªs  Aulas on-line
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,117374,Employee Experience,01/07/2020,31/12/2021,18/06/2020,11/08/2025,ConcluÃ­do,Estudar material sobre esta metodologia/tÃ©cnica,Atrasado,Desenvolvimento Futuro,2662.0,On-line,On-line,01/10/2020,26/02/2021,ConcluÃ­do,Autodesenvolvimento,0.0,Empregado,,Sim,1.0,Leitura de material,Leitura de artigos especÃ­ficos sobre o tema,0.75,0.48,0.125,0.6000000000000001,0.2,0.44875000000000004,Baixa,Employee Experience  Leitura de material
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,212518,DomÃ­nio em RelaÃ§Ãµes Sindicais e Trabalhistas.,01/01/2025,26/07/2025,27/12/2024,11/08/2025,ConcluÃ­do,Curso de EspecializaÃ§Ã£o em RelaÃ§Ãµes Sindicais e Trabalhistas na WC Consultores Associados (EAD) iniciado em 18/05/2024.,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.95,0.19999999999999998,0.42500000000000004,0.8,0.2,0.53375,Baixa,DomÃ­nio em RelaÃ§Ãµes Sindicais e Trabalhistas.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,117372,DomÃ­nio do software Ronda,17/06/2020,17/12/2020,18/06/2020,11/08/2025,ConcluÃ­do,Buscar nos colegas da Usiminas aquele que tem mais domÃ­nio do software,Atrasado,PosiÃ§Ã£o Atual,2668.0,empregados do gurpo,empresa,04/01/2021,22/06/2021,ConcluÃ­do,Autodesenvolvimento,0.0,Empregado,,Sim,1.0,busca de conhecimento,melhorar o conhecimento do programa e apresentar um relatÃ³rio com analise de  qualidade de acesso e frequÃªncias.,0.9,0.3,0.4,0.6000000000000001,0.0,0.49000000000000005,Baixa,DomÃ­nio do software Ronda  busca de conhecimento
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,117373,Melhorar oratÃ³ria e escrita.,01/08/2020,01/08/2021,18/06/2020,11/08/2025,ConcluÃ­do,Realizar curso preparatÃ³rio,Atrasado,Desenvolvimento Futuro,2659.0,Microllins,on line,14/06/2020,17/07/2021,ConcluÃ­do,Treinamento Formal,0.0,Empregado,,Sim,2.0,Mini curso a distancia,Estudo de cursos a distancias  como vÃ­deo: Perca o Medo de Falar em PÃºblico,0.9,0.525,0.4,0.8,0.0,0.57625,Baixa,Melhorar oratÃ³ria e escrita.  Mini curso a distancia
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,138711,Aprimorar as apresentaÃ§Ãµes com uso de tecnologia,05/03/2025,25/12/2025,03/09/2021,11/08/2025,Planejado,Curso de apresentaÃ§Ã£o e Powerpoint,Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,4218.0,SOAP,Online,20/09/2021,25/09/2021,ConcluÃ­do,Treinamento Online,0.0,Empresa,,Sim,10.0,Curso de ApresentaÃ§Ãµes,Curso de ApresentaÃ§Ãµes Power Point on-line,1.0,0.4,0.6,0.6000000000000001,0.0,0.59,Baixa,Aprimorar as apresentaÃ§Ãµes com uso de tecnologia  Curso de ApresentaÃ§Ãµes
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,138711,Aprimorar as apresentaÃ§Ãµes com uso de tecnologia,05/03/2025,25/12/2025,03/09/2021,11/08/2025,Planejado,Curso de apresentaÃ§Ã£o e Powerpoint,Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,7758.0,,,,,Planejado,,,,,Sim,,Power Bi,"OBJETIVO:
-NESTE CURSO, APRENDA A CRIAR E COMPARTILHAR RELATÃRIOS ATRATIVOS E INTERATIVOS A PARTIR DE UM GRANDE VOLUME DE DADOS. TUDO ISSO DE FORMA PRÃTICA E SIMPLES.
-
-CONTEÃDO:
-â¢ APRESENTAÃÃO DO CONTEÃDO
-â¢ O QUE Ã POWER BI
-â¢ CONHEÃA A INTERFACE DO POWER BI
-â¢ COMO MONTAR UM RELATÃRIO â PARTE 1
-â¢ COMO MONTAR UM RELATÃRIO â PARTE 2
-â¢ COMO PUBLICAR
-â¢ POWER BI Ã O MESMO QUE EXCEL?
-â¢ CONCLUSÃO",1.0,0.24,0.45,0.6000000000000001,0.0,0.5125,Baixa,Aprimorar as apresentaÃ§Ãµes com uso de tecnologia  Power Bi
-MINERACAO USIMINAS S.A. (MUSA),10004637,JOANA DARC DE OLIVEIRA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,212511,FluÃªncia no Espanhol,06/02/2025,31/12/2028,27/12/2024,11/08/2025,Planejado,Desenvolver minha fluÃªncia no espanhol,Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.7,0.3,0.1,0.4,0.0,0.335,Baixa,FluÃªncia no Espanhol  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2309,Adquirir conhecimento em legislaÃ§Ã£o trabalhista;,01/01/2025,31/12/2025,28/04/2016,11/08/2025,Em Andamento,Realizar estudos na internet e em livros sobre legislaÃ§Ã£o trabalhista;,Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,7793.0,Musa,Musa,01/05/2023,31/12/2023,Planejado,ParticipaÃ§Ã£o em Projetos,0.0,Empresa,,Sim,30.0,Levantar os pedidos nas aÃ§Ãµes judiciais trabalhistas,Levantar  e analisar os pedidos nas aÃ§Ãµes judiciais trabalhistas MUSA e montar um plano de aÃ§Ãµes preventivo.,1.0,0.32,0.6749999999999999,0.6000000000000001,0.2,0.60875,Média,Adquirir conhecimento em legislaÃ§Ã£o trabalhista;  Levantar os pedidos nas aÃ§Ãµes judiciais trabal...
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2305,Aprimorar conhecimento no portal RH;,01/03/2016,30/04/2016,28/04/2016,11/08/2025,ConcluÃ­do,"Conhecer o Portal RH, realizar cadastro das coes do PDI e verificar se Ã© possÃ­vel a atualizaÃ§Ã£o de endereÃ§o no portal;",Atrasado,PosiÃ§Ã£o Atual,781.0,MUSA,Mina Oeste,02/09/2016,31/12/2016,ConcluÃ­do,Treinamento On The Job,0.0,Empregado,,Sim,2.0,2Âº acompanhamento,verificar se podemos aceitar formulÃ¡rio da Ã¡rea de serviÃ§os aos empregados para atualizaÃ§Ã£o do endereÃ§o dos empregados,0.8500000000000001,0.44285714285714284,0.475,0.6000000000000001,0.0,0.5319642857142857,Baixa,Aprimorar conhecimento no portal RH;  2Âº acompanhamento
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2308,Aprimorar conhecimento em Excel;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Excel intermediÃ¡rio e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7789.0,,,,,Planejado,,,,,Sim,,Excel - GrÃ¡ficos,"OBJETIVO:
-NESTE CURSO, VOCÃ IRA APRENDER UMA SÃRIE DE RECURSOS DO EXCEL QUE PERMITEM TRANSFORMAR RAPIDAMENTE GRANDES QUANTIDADES DE DADOS EM GRÃFICOS EFICIENTES E DE APARÃNCIA PROFISSIONAL.
-
-CONTEÃDO:
-- CRIAR UM GRÃFICO BÃSICO NO EXCEL
-UM GRÃFICO EM POUCOS CLIQUES
-COMO OS DADOS DE UMA PLANILHA SÃO EXIBIDOS EM UM GRÃFICO
-MOVER GRÃFICO PARA A FOLHA GRAF
-FERRAMENTAS DE GRÃFICO
-ALTERAR O MODO DE EXIBIÃÃO DO GRÃFICO
-ADICIONAR TÃTULOS AO GRÃFICO
-
-- PERSONALIZAR UM GRÃFICO
-ALTERE A APARÃNCIA DO SEU GRÃFICO
-FORMATAR COLUNAS ESPECÃFICAS
-INSERIR IMAGENS ILUSTRATIVAS
-
-- MAIS TIPOS DE GRÃFICOS 
-COLUNAS EMPILHADAS, COLUNAS 100% EMPILHADAS E LINHAS
-CRIAR UM GRÃFICO EM PIZZA
-ALTERAR A FAIXA DE DADOS DO GRÃFICO",0.8500000000000001,0.42857142857142855,0.375,0.6000000000000001,0.2,0.5233928571428572,Baixa,Aprimorar conhecimento em Excel;  Excel - GrÃ¡ficos
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2307,Aprimorar conhecimento em Power Point;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Power Point bÃ¡sico e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7785.0,,,,,Planejado,,,,,Sim,,SOAP ApresentaÃ§Ãµes - Na prÃ¡tica,Sem DescriÃ§Ã£o,1.0,0.2727272727272727,0.5750000000000001,0.6000000000000001,0.2,0.5719318181818182,Baixa,Aprimorar conhecimento em Power Point;  SOAP ApresentaÃ§Ãµes - Na prÃ¡tica
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,11109,Desenvolvimento pessoal,01/09/2016,31/12/2018,20/02/2017,11/08/2025,Em Andamento,Participar de algumas reuniÃµes de RH itinerante (3 por mÃªs),Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.5850000000000001,0.39999999999999997,0.075,0.4,0.0,0.325,Baixa,Desenvolvimento pessoal  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2306,"Desenvolver relatÃ³rios, apresentaÃ§Ãµes e anÃ¡lise dos processos;",01/03/2016,30/04/2016,28/04/2016,11/08/2025,ConcluÃ­do,Desenvolver apresentaÃ§Ã£o sobre o sistema de frequÃªncia e incluir a relaÃ§Ã£o de gestores de frequÃªncia/Ã¡reas;,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.24,0.65,0.6000000000000001,0.0,0.5625,Baixa,"Desenvolver relatÃ³rios, apresentaÃ§Ãµes e anÃ¡lise dos processos;  nan"
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2308,Aprimorar conhecimento em Excel;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Excel intermediÃ¡rio e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7792.0,,,,,Planejado,,,,,Sim,,Excel - FÃ³rmulas Poderosas,"OBJETIVO:
-NESTE CURSO, VOCÃ IRA APRENDER COMO UTILIZAR O EXCEL DE MANEIRA MAIS EFICAZ, TRANSFORMANDO FÃRMULAS COMUNS EM FÃRMULAS PODEROSAS E ENSINANDO OUTRAS FÃRMULAS â AINDA MAIS PODEROSAS â QUE LHE DARÃO CONTROLE ABSOLUTO E UMA VISÃO MAIS COMPLETA SOBRE AS PLANILHAS.
-
-CONTEÃDO:
--TRANSFORMANDO FÃRMULAS COMUNS EM FÃRMULAS PODEROSAS:
-FUNÃÃO SOMA
-SOMAR INTERVALOS DE CÃLULAS
-FUNÃÃO MÃDIA
-FUNÃÃO MÃXIMO
-FUNÃÃO MÃNIMO
-FORMATAÃÃO CONDICIONAL COM FUNÃÃES
-DESTACANDO OS VALORES MÃXIMOS
-DESTACANDO OS VALORES MÃNIMOS
-FUNÃÃO MAIOR
-FUNÃÃO MENOR
-
--APRENDENDO MAIS FÃRMULAS PODEROSAS:
-FUNÃÃO PROCV
-RESOLVENDO PROBLEMAS COM INFORMAÃÃES DESORDENADAS
-MULTIPLICAÃÃO
-FUNÃÃO SOMASE
-FUNÃÃO CONT.SE
-DIVISÃO
-MÃDIA COM O BOTÃO AUTOSOMA
-FUNÃÃO SE",0.8500000000000001,0.5142857142857142,0.375,0.6000000000000001,0.2,0.5448214285714286,Baixa,Aprimorar conhecimento em Excel;  Excel - FÃ³rmulas Poderosas
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2307,Aprimorar conhecimento em Power Point;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Power Point bÃ¡sico e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7788.0,,,,,Planejado,,,,,Sim,,"SOAP ApresentaÃ§Ãµes - EstratÃ©gias da HistÃ³ria ""Objetivo""",Sem DescriÃ§Ã£o,1.0,0.36923076923076925,0.625,0.6000000000000001,0.2,0.6085576923076923,Média,"Aprimorar conhecimento em Power Point;  SOAP ApresentaÃ§Ãµes - EstratÃ©gias da HistÃ³ria ""Objetivo"""
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,11108,Adquirir conhecimento em legislaÃ§Ã£o trabalhista,01/09/2016,01/07/2017,20/02/2017,11/08/2025,Em Andamento,Realizar curso de RelaÃ§Ãµes trabalhistas no portal RH,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.9,0.3,0.4,0.6000000000000001,0.2,0.51,Baixa,Adquirir conhecimento em legislaÃ§Ã£o trabalhista  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2308,Aprimorar conhecimento em Excel;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Excel intermediÃ¡rio e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7790.0,,,,,Planejado,,,,,Sim,,Dashboard com Excel,"OBJETIVO:
-
-01 - NESTE CURSO, VOCÃ APRENDERÃ A TRANSFORMAR UM CONJUNTO DE DADOS EM INFORMAÃÃES RELEVANTES, ALÃM DE REPRESENTÃ-LAS VISUALMENTE POR MEIO DE UM DASHBOARD EM EXCEL.
-
-CONTEÃDO:
-
-01 - POR ONDE COMEÃAR.
-
-02 - BASE DE DADOS E GRÃFICOS.
-
-03 - MONTANDO O DASHBOARD.
-
-04 â ENCERRAMENTO.
-",0.8500000000000001,0.42857142857142855,0.375,0.6000000000000001,0.2,0.5233928571428572,Baixa,Aprimorar conhecimento em Excel;  Dashboard com Excel
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2307,Aprimorar conhecimento em Power Point;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Power Point bÃ¡sico e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7787.0,,,,,Planejado,,,,,Sim,,"SOAP ApresentaÃ§Ãµes - EstratÃ©gias da HistÃ³ria ""AudiÃªncia""",Sem DescriÃ§Ã£o,1.0,0.36923076923076925,0.625,0.6000000000000001,0.2,0.6085576923076923,Média,"Aprimorar conhecimento em Power Point;  SOAP ApresentaÃ§Ãµes - EstratÃ©gias da HistÃ³ria ""AudiÃªncia..."
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,11107,"Desenvolver controle emocional, para aumento da eficiÃªncia e satisfaÃ§Ã£o profissional, reduzindo o stress",01/11/2016,31/12/2017,20/02/2017,11/08/2025,Em Andamento,"Ler o livro: inteligencia Emocional no Trabalho 2Âª capÃ­tulo
-Autor: Daniel Goleman",Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.33749999999999997,0.9,0.6000000000000001,0.2,0.6693749999999999,Média,"Desenvolver controle emocional, para aumento da eficiÃªncia e satisfaÃ§Ã£o profissional, reduzindo o..."
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2308,Aprimorar conhecimento em Excel;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Excel intermediÃ¡rio e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7791.0,,,,,Planejado,,,,,Sim,,Excel - Planilhas prÃ¡ticas,"OBJETIVO:
-NESTE CURSO, VOCÃ IRA APRENDER RECURSOS E POSSIBILIDADES MAIS RELEVANTES PARA APLICAÃÃO EM PLANILHAS, OFERECENDO AOS PROFISSIONAIS E ÃS EMPRESAS GANHOS EM PRODUTIVIDADE E FLEXIBILIDADE.
-
-CONTEÃDO:
--INTRODUÃÃO: ""PENSANDO EXCEL""
--NECESSIDADE E PLANEJAMENTO
--INSERINDO FÃRMULAS PARA EFETUAR CÃLCULOS
--COPIANDO FÃRMULAS E CONTEÃDOS DE CÃLULAS
--FUNÃÃES SE, MÃNIMO, MÃXIMO, AUTOSOMA
--COMBINANDO O USO DE FUNÃÃES
--USANDO DADOS DE OUTRAS PLANILHAS
--FORMATANDO CÃLULAS E MELHORANDO A APRESENTAÃÃO DE PLANILHAS",0.9,0.44999999999999996,0.4,0.6000000000000001,0.2,0.5475,Baixa,Aprimorar conhecimento em Excel;  Excel - Planilhas prÃ¡ticas
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2307,Aprimorar conhecimento em Power Point;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Power Point bÃ¡sico e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7784.0,,,,,Planejado,,,,,Sim,,SOAP ApresentaÃ§Ãµes - IntroduÃ§Ã£o,Sem DescriÃ§Ã£o,1.0,0.3272727272727272,0.5750000000000001,0.6000000000000001,0.2,0.5855681818181818,Baixa,Aprimorar conhecimento em Power Point;  SOAP ApresentaÃ§Ãµes - IntroduÃ§Ã£o
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,11110,Desenvolver projeto Auto atendimento,30/09/2016,31/12/2017,20/02/2017,11/08/2025,Planejado,"Participar do Projeto ""Autoatendimento"".",Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.75,0.36,0.325,0.6000000000000001,0.0,0.44875,Baixa,Desenvolver projeto Auto atendimento  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2307,Aprimorar conhecimento em Power Point;,01/08/2022,31/12/2024,28/04/2016,11/08/2025,Em Andamento,Realizar os cursos on-line no portal RH: Power Point bÃ¡sico e avanÃ§ado;,Atrasado,PosiÃ§Ã£o Atual,7786.0,,,,,Planejado,,,,,Sim,,SOAP ApresentaÃ§Ãµes  - Contando a histÃ³ria,Sem DescriÃ§Ã£o,1.0,0.3818181818181818,0.5750000000000001,0.6000000000000001,0.2,0.5992045454545455,Baixa,Aprimorar conhecimento em Power Point;  SOAP ApresentaÃ§Ãµes  - Contando a histÃ³ria
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2313,Desenvolver comunicaÃ§Ã£o.,01/12/2015,31/03/2016,28/04/2016,11/08/2025,ConcluÃ­do,"Realizar leitura do artigo: ""como se comunicar melhor""(artigo da revista VocÃª S/A)",Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.75,0.24,0.325,0.8,0.0,0.44875,Baixa,Desenvolver comunicaÃ§Ã£o.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2310,Adquirir conhecimento sobre E-social;,01/12/2015,31/12/2017,28/04/2016,11/08/2025,ConcluÃ­do,Conversar com colegas de trabalhÃ£o sobre o E-Socila e realizar pesquisas na internet para identificar melhores prÃ¡ticas;,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.8,0.39999999999999997,0.35,0.6000000000000001,0.0,0.4775,Baixa,Adquirir conhecimento sobre E-social;  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,177347,LideranÃ§a,01/05/2023,31/12/2024,04/10/2022,11/08/2025,Planejado,Treinamentos,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.65,0.19999999999999998,0.075,0.4,0.0,0.29125,Baixa,LideranÃ§a  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,177348,LideranÃ§a,01/05/2023,31/12/2024,04/10/2022,11/08/2025,Planejado,Treinamentos,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.65,0.19999999999999998,0.075,0.4,0.0,0.29125,Baixa,LideranÃ§a  nan
-MINERACAO USIMINAS S.A. (MUSA),10004644,BRUNA HERCULANO LARA,10403898,GUSTAVO TORRES DA CUNHA,JARDIM,JAQUELINE CRISTINE VIEIRA,TORRES,2312,"Desenvolver relatÃ³rios, apresentaÃ§Ãµes e anÃ¡lise dos processos;",01/12/2015,31/12/2016,28/04/2016,11/08/2025,ConcluÃ­do,Desenvolver relatÃ³rios de justificativa do time;,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.24,0.65,0.6000000000000001,0.0,0.5625,Baixa,"Desenvolver relatÃ³rios, apresentaÃ§Ãµes e anÃ¡lise dos processos;  nan"
-MINERACAO USIMINAS S.A. (MUSA),10004647,MARCELO CELESTINO DA SILVA,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,139985,MELHORAR ORATÃRIA / APRESENTAÃÃES EM PUBLICO.,01/02/2022,01/01/2024,09/12/2021,11/08/2025,Planejado,CURSOS ON LINE E PRESENCIAIS;,Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,0.95,0.26666666666666666,0.42500000000000004,0.8,0.2,0.5504166666666667,Baixa,MELHORAR ORATÃRIA / APRESENTAÃÃES EM PUBLICO.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004647,MARCELO CELESTINO DA SILVA,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,139939,APRIMORAR CONHECIMENTO NA ÃREA DE INSTRUMENTAÃÃO / AUTOMAÃÃO.,01/04/2022,05/01/2024,09/12/2021,11/08/2025,Planejado,SEGUIR A BUSCA POR CONTEÃDO NAS DIVERSAS FONTES DISPONÃVEIS (PRESENCIAL A ON LINE),Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,1.0,0.18461538461538463,0.625,0.8,0.0,0.5724038461538461,Baixa,APRIMORAR CONHECIMENTO NA ÃREA DE INSTRUMENTAÃÃO / AUTOMAÃÃO.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004647,MARCELO CELESTINO DA SILVA,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,139988,"Aprimorar ResiliÃªncia, poder de persuasÃ£o e gerenciamento de conflitos.",31/01/2022,31/01/2023,10/12/2021,11/08/2025,Planejado,Treinamentos nas diversas fontes de conhecimento disponÃ­veis.,Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,1.0,0.3272727272727272,0.5750000000000001,0.8,0.0,0.5955681818181818,Baixa,"Aprimorar ResiliÃªncia, poder de persuasÃ£o e gerenciamento de conflitos.  nan"
-MINERACAO USIMINAS S.A. (MUSA),10004647,MARCELO CELESTINO DA SILVA,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,139987,APRIMORAR MÃTODO PARA ELABORAÃÃO DE ANÃLISE DE FALHA;,31/01/2022,31/01/2025,10/12/2021,11/08/2025,ConcluÃ­do,BUSCAR CONHECIMENTO NAS DIVERSAS FONTES DE INFORMAÃÃO (ON LINE E PRESENCIAL);,Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,1.0,0.13846153846153847,0.625,0.6000000000000001,0.0,0.5308653846153846,Baixa,APRIMORAR MÃTODO PARA ELABORAÃÃO DE ANÃLISE DE FALHA;  nan
-MINERACAO USIMINAS S.A. (MUSA),10004647,MARCELO CELESTINO DA SILVA,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,139936,Conhecimento da lÃ­ngua inglesa.,14/01/2022,15/03/2024,09/12/2021,11/08/2025,Planejado,"Entrar em curso regular de lÃ­ngua inglesa, assistir filmes em inglÃªs, escutar musicas em inglÃªs.",Atrasado,Desenvolvimento Futuro,5228.0,A SELECIONAR,ITAUNA,02/01/2022,01/03/2026,Planejado,Treinamento Online,3600.0,Empresa,,Sim,180.0,CURSO DE INGLÃS,CURSO DE INGLÃS ON_LINE OU PRESENCIAL.,0.95,0.41666666666666663,0.42500000000000004,0.8,0.0,0.5679166666666666,Baixa,Conhecimento da lÃ­ngua inglesa.  CURSO DE INGLÃS
-MINERACAO USIMINAS S.A. (MUSA),10004647,MARCELO CELESTINO DA SILVA,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,139986,CURSO DO GREN BELT,01/08/2021,31/03/2022,09/12/2021,11/08/2025,Planejado,CONCLUIR CURSO DO GREEN BELT.,Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,0.75,0.27,0.125,0.6000000000000001,0.0,0.37625000000000003,Baixa,CURSO DO GREN BELT  nan
-MINERACAO USIMINAS S.A. (MUSA),10004660,LUIZ CARLOS DE SOUZA JUNIOR,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,92206,Me tornar um lÃ­der.,01/03/2019,26/08/2023,27/11/2019,11/08/2025,ConcluÃ­do,Bacharelado em administraÃ§Ã£o .,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.8,0.09999999999999999,0.35,0.8,0.0,0.4325,Baixa,Me tornar um lÃ­der.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004660,LUIZ CARLOS DE SOUZA JUNIOR,75195,ELIFAS LEVI DA,SILVA,BRUNO,ALVES SILVA COSTA,199558,Aprimorar as soft skills na Ã¡rea da gestÃ£o.,01/07/2023,01/01/2024,30/08/2023,11/08/2025,Em Andamento,PÃ³s graduaÃ§Ã£o em gestÃ£o estratÃ©gica de pessoas.,Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,1.0,0.1636363636363636,0.5750000000000001,0.8,0.0,0.5546590909090909,Baixa,Aprimorar as soft skills na Ã¡rea da gestÃ£o.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175298,Desenvolvimento pessoal,01/05/2022,31/12/2022,10/05/2022,11/08/2025,Em Andamento,Leitura de livros,Atrasado,PosiÃ§Ã£o Atual,8264.0,Faculdade Descomplica,on-line,01/05/2022,31/05/2023,Em Andamento,Autodesenvolvimento,800.0,Empregado,Curso pago pelo empregado,Sim,390.0,Pos GraduaÃ§Ã£o,MBA em GestÃ£o Fiscal e TributÃ¡ria,0.8,0.3,0.35,0.6000000000000001,0.0,0.45250000000000007,Baixa,Desenvolvimento pessoal  Pos GraduaÃ§Ã£o
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175294,AvaliaÃ§Ã£o tributÃ¡ria dos projetos relacionados a CAPEX.,01/05/2022,30/06/2023,10/05/2022,11/08/2025,Planejado,Treinamento on the job,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.2727272727272727,0.5750000000000001,0.8,0.0,0.5819318181818182,Baixa,AvaliaÃ§Ã£o tributÃ¡ria dos projetos relacionados a CAPEX.  nan
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175292,Planilha de MarcaÃ§Ã£o ao Mercado (MTM),01/09/2021,30/04/2023,10/05/2022,11/08/2025,ConcluÃ­do,Treinamento on the job,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.95,0.19999999999999998,0.42500000000000004,0.6000000000000001,0.0,0.48375,Baixa,Planilha de MarcaÃ§Ã£o ao Mercado (MTM)  nan
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175297,AperfeiÃ§oamento sobre impostos Diretos e Indiretos,01/05/2022,01/12/2022,10/05/2022,11/08/2025,Planejado,cursos e leitura de leis/livros,Atrasado,PosiÃ§Ã£o Atual,7888.0,Ingrid de Lima Dantas,online,10/08/2022,06/09/2022,ConcluÃ­do,Treinamento Online,0.0,Empregado,,Sim,20.0,"Curso ImersÃ£o em ICMS SubstituiÃ§Ã£o Tributaria, Difal e antecipaÃ§Ã£o","No curso foi apresentado vÃ¡rios pontos como:
-Diferencial de alÃ­quota base Ãºnica e dupla;
-Difal a tÃ­tulo de Subst. TributÃ¡ria;
-Fundo de combate a pobreza 
-ReduÃ§Ã£o da Base de cÃ¡lculo;
-Estudo da Lei Kandir;
-NÃ£o cumulatividade de ICMS;
-Estudo convenio 142/2018;
-AntecipaÃ§Ã£o ICMS.",1.0,0.49285714285714277,0.7999999999999999,0.6000000000000001,0.2,0.6832142857142857,Média,AperfeiÃ§oamento sobre impostos Diretos e Indiretos  Curso ImersÃ£o em ICMS SubstituiÃ§Ã£o Tributari...
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175293,Curso sobre VF/DAMEF,23/03/2022,23/03/2022,10/05/2022,11/08/2025,ConcluÃ­do,Curso ministrado fora da MUSA,Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,0.75,0.51,0.125,0.6000000000000001,0.0,0.43625,Baixa,Curso sobre VF/DAMEF  nan
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175298,Desenvolvimento pessoal,01/05/2022,31/12/2022,10/05/2022,11/08/2025,Em Andamento,Leitura de livros,Atrasado,PosiÃ§Ã£o Atual,8263.0,Faculdade Descomplica,On-line,01/05/2022,31/05/2023,Em Andamento,Autodesenvolvimento,800.0,Empregado,Curso pago de forma particular,Sim,360.0,Pos GraduaÃ§Ã£o,MBA em GestÃ£o Financeira e Controladoria,0.8,0.3,0.35,0.6000000000000001,0.0,0.45250000000000007,Baixa,Desenvolvimento pessoal  Pos GraduaÃ§Ã£o
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175295,Tributos Federais,01/05/2022,31/07/2023,10/05/2022,11/08/2025,Planejado,Cursos e treinamento on the job,Atrasado,PosiÃ§Ã£o Atual,6247.0,Usiminas,on-line,01/05/2022,01/03/2023,Planejado,Benchmarking,0.0,Empregado,Treinamento interno,Sim,40.0,Conhecer sobre apuraÃ§Ã£o do IR/CSLL,Conhecer com o tributÃ¡rio da Usiminas sobre a forma apuraÃ§Ã£o do IR/CSLL.,1.0,0.3,0.45,0.6000000000000001,0.0,0.5275,Baixa,Tributos Federais  Conhecer sobre apuraÃ§Ã£o do IR/CSLL
-MINERACAO USIMINAS S.A. (MUSA),10004713,ALESSANDRA BATISTA VASCONCELOS,10004886,DARLEY ANTONIO ROSA,DINIZ,BRUNO,ALVES SILVA COSTA,175295,Tributos Federais,01/05/2022,31/07/2023,10/05/2022,11/08/2025,Planejado,Cursos e treinamento on the job,Atrasado,PosiÃ§Ã£o Atual,6248.0,Treinamento interno,on-line,01/05/2022,01/03/2023,Planejado,Treinamento On The Job,0.0,Empregado,,Sim,60.0,ApuraÃ§Ã£o PIS/COFINS,Conhecer com o tributÃ¡rio da Usiminas a apuraÃ§Ã£o do PIS/COFINS,0.8500000000000001,0.3428571428571428,0.375,0.6000000000000001,0.0,0.48196428571428573,Baixa,Tributos Federais  ApuraÃ§Ã£o PIS/COFINS
-MINERACAO USIMINAS S.A. (MUSA),10004788,DOUGLAS FERREIRA DOS SANTOS,10004865,CHARLE EZEQUIEL,RODRIGUES,BRUNO,ALVES SILVA COSTA,209743,"Planejar e identificar, aÃ§Ãµes para aperfeiÃ§oamento profissional atual ou futuro da equipe.",01/01/2016,31/12/9999,09/04/2024,11/08/2025,Planejado,"Realizar avaliaÃ§Ã£o da equipe para feedback, com pontos fortes e onde buscarmos melhorias.",Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.32,0.6749999999999999,0.8,0.0,0.61875,Média,"Planejar e identificar, aÃ§Ãµes para aperfeiÃ§oamento profissional atual ou futuro da equipe.  nan"
-MINERACAO USIMINAS S.A. (MUSA),10004865,CHARLE EZEQUIEL RODRIGUES,77435,ADILSON CESAR MELO DE,PAULA,BRUNO,ALVES SILVA COSTA,90779,Fazer um curso de pÃ³s graduaÃ§Ã£o  (Mestrado) para poder ter capacidade de assumir cargos de nÃ­veis superiores.,01/03/2021,01/03/2023,13/08/2019,11/08/2025,Planejado,Procurar uma instituiÃ§Ã£o sÃ©ria que possa trazer maior bagagem e conhecimento.,Atrasado,Desenvolvimento Futuro,,,,,,,,,,,,,,,1.0,0.40714285714285714,0.7999999999999999,0.8,0.0,0.6717857142857142,Média,Fazer um curso de pÃ³s graduaÃ§Ã£o  (Mestrado) para poder ter capacidade de assumir cargos de nÃ­vei...
-MINERACAO USIMINAS S.A. (MUSA),10138620,RODRIGO RODRIGUES MARTINS DUARTE,83278,GLAUCO SABATINI,BODINI,BRUNO,ALVES SILVA COSTA,177424,Aprimorar conhecimentos sobre gestÃ£o de consequÃªncias e melhorar a disciplina operacional do setor.,01/11/2022,31/01/2023,26/10/2022,11/08/2025,Planejado,"- Realizar o treinamento de gestÃ£o de consequÃªncia.
-- Esclarecer o tema o gestÃ£o de consequÃªncias em reuniÃµes com a  equipe, deixando claro o seu proposito",Atrasado,PosiÃ§Ã£o Atual,,,,,,,,,,,,,,,1.0,0.36,0.6749999999999999,0.8,0.0,0.6287499999999999,Média,Aprimorar conhecimentos sobre gestÃ£o de consequÃªncias e melhorar a disciplina operacional do setor...
-MINERACAO USIMINAS S.A. (MUSA),10138620,RODRIGO RODRIGUES MARTINS DUARTE,83278,GLAUCO SABATINI,BODINI,BRUNO,ALVES SILVA COSTA,177415,Aprimorar a gestÃ£o de pessoas e de  lideranÃ§a.,25/10/2022,31/12/2023,25/10/2022,11/08/2025,Planejado,Leituras de livros  ou artigos sobre o assunto e ou realizar cursos disponÃ­veis na empresa.,Atrasado,PosiÃ§Ã£o Atual,7832.0,,,,,Planejado,,,,,Sim,,LideranÃ§a,"A LIDERANÃA Ã UM DOS MAIS IMPORTANTES CAPÃTULOS DA ADMINISTRAÃÃO. BONS LÃDERES SIGNIFICAM EQUIPES MOTIVADAS, BEM GERIDAS E QUE TRAZEM RESULTADOS PARA A ORGANIZAÃÃO. NESTE SENTIDO, Ã NECESSÃRIO IDENTIFICAR E CAPACITAR AS MELHORES PESSOAS DENTRO DAS EMPRESAS.
-
-NO CURSO DE LIDERANÃA Ã EXPLORADO IMPORTANTES CONCEITOS E ATRIBUTOS NECESSÃRIOS PARA O EXERCÃCIO DA LIDERANÃA. ALÃM DAS INFORMAÃÃES EM VÃDEO, O CURSO CONTA COM INFORMAÃÃES E TEXTOS COMPLEMENTARES PARA APROFUNDAR OS CONCEITOS DISCORRIDOS PELO PROFESSOR. SÃO AULAS EM VÃDEOS COM QUESTRO MINUTOS DE DURAÃÃO CADA, QUE PODEM SER ACESSADAS EM DIVERSOS DISPOSITIVOS.
-
-CONTEÃDO:
-
-- PAPÃIS 
-
-- PENSAMENTOS ESTRATÃGICOS 
-
-- ÃTICA 
-
-- AMBIÃÃO 
-
-- INSTRUMENTOS DE LIDERANÃA",1.0,0.25,0.6,0.8,0.0,0.5825,Baixa,Aprimorar a gestÃ£o de pessoas e de  lideranÃ§a.  LideranÃ§a
-MINERACAO USIMINAS S.A. (MUSA),10138620,RODRIGO RODRIGUES MARTINS DUARTE,83278,GLAUCO SABATINI,BODINI,BRUNO,ALVES SILVA COSTA,177415,Aprimorar a gestÃ£o de pessoas e de  lideranÃ§a.,25/10/2022,31/12/2023,25/10/2022,11/08/2025,Planejado,Leituras de livros  ou artigos sobre o assunto e ou realizar cursos disponÃ­veis na empresa.,Atrasado,PosiÃ§Ã£o Atual,7831.0,,,,,Planejado,,,,,Sim,,GestÃ£o de Equipes e LideranÃ§a,"OBJETIVO:
-
-01 - MOSTRAR AO PÃBLICO ALVO OS ESTILOS DE LIDERANÃA E AS POSTURAS ASSOCIADAS A ELES,  NA INTENÃÃO DE MOTIVA -LOS A IDENTIFICAREM SEU ESTILO.
-
-CONTEÃDO:
-01 - GESTÃO E LIDERANÃA SÃO AS MESMAS COISAS?
-
-02 - QUAIS SÃO AS DIFERENÃAS ENTRE LÃDER Ã GESTOR?
-
-03 - OS ESTILOS DE LIDERANÃA: AUTOCRÃTICO, LIBERAL E DEMOCRÃTICO.
-
-04 - POSTURAS ASSOCIADAS A CADA ESTILO DE LIDERANÃA, SUAS VANTAGENS E DESVANTAGENS.
-
-    4.1 - AUTOCRÃTICO, COACHING, DEMOCRÃTICA, EXIGENTE, LIBERAL, MOTIVADORA, SITUACIONAL, TÃCNICA, VISIONÃRIO, SERVIDORA.
-
-05 - QUAL O SEU ESTILO DE LIDERANÃA E QUAIS POSTURAS TEM ADOTADO FRENTE A SUA EQUIPE?
-
-06 - QUAL ESTILO DE LIDERANÃA E QUAIS POSTURAS PODEMOS CHAMAR DE IDEAL?
-",1.0,0.24705882352941175,0.725,0.8,0.0,0.613014705882353,Média,Aprimorar a gestÃ£o de pessoas e de  lideranÃ§a.  GestÃ£o de Equipes e LideranÃ§a
-MINERACAO USIMINAS S.A. (MUSA),10138620,RODRIGO RODRIGUES MARTINS DUARTE,83278,GLAUCO SABATINI,BODINI,BRUNO,ALVES SILVA COSTA,177416,Preparar sucessores da coordenaÃ§Ã£o e inspirar a supervisÃ£o a efetuar o mesmo.,25/10/2022,11/12/2028,25/10/2022,11/08/2025,Planejado,"- Realizar treinamentos disponÃ­veis
-- Inspirar os possÃ­veis sucessores a se capacitarem para o cargo, atravÃ©s de incentivo a realizaÃ§Ãµes  treinamentos voltados para lideranÃ§a, gestÃ£o, seguranÃ§a, etc.
-- Orientar e permitir que os sucessores possam desempenhar a coordenaÃ§Ã£o de reuniÃµes,  debates, workshops e atividades ligadas  a coordenaÃ§Ã£o da qualidade,",Ainda nÃ£o estÃ¡ fora de prazo,PosiÃ§Ã£o Atual,7833.0,,,,,ConcluÃ­do,,,,,Sim,,Liderar MÃ³dulo GestÃ£o de Pessoas - MovimentaÃ§Ãµes e PromoÃ§Ãµes,"MÃ³dulo GestÃ£o de Pessoas â MovimentaÃ§Ãµes/PromoÃ§Ãµes
-
-CONTEÃDO:
-
-01 - ESTRUTURA ORGANIZACIONAL
-
-02 - FAIXA SALARIAL X TABELA SALARIAL
-
-03 - PROCESSO DE REMUNERAÃÃO
-
-04 - COMPOSIÃÃO DE REMUNERAÃÃO
-
-",1.0,0.3,0.7999999999999999,0.8,0.0,0.645,Média,Preparar sucessores da coordenaÃ§Ã£o e inspirar a supervisÃ£o a efetuar o mesmo.  Liderar MÃ³dulo Ge...
-MINERACAO USIMINAS S.A. (MUSA),10138841,JOAO TOMAZ DOS SANTOS FILHO,17000135,MARCELO HECTOR,BARREIRO,BRUNO,ALVES SILVA COSTA,92224,melhorar comunicaÃ§Ã£o.,01/01/2016,31/12/9999,04/12/2019,11/08/2025,Planejado,evidenciar melhor as realizaÃ§Ãµes e as responsabilidades atuais,Ainda nÃ£o estÃ¡ fora de prazo,Desenvolvimento Futuro,,,,,,,,,,,,,,,0.75,0.24,0.125,0.7,0.0,0.38375,Baixa,melhorar comunicaÃ§Ã£o.  nan
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92209,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.,01/01/2020,31/12/2023,27/11/2019,11/08/2025,Em Andamento,Participar em congressos especÃ­ficos de gestÃ£o de pessoas.,Atrasado,PosiÃ§Ã£o Atual,8568.0,Vale,a definir,01/10/2023,30/11/2023,ConcluÃ­do,Benchmarking,1000.0,Empresa,ReuniÃµes realizadas pelo Teams com visÃ£o de indicadores e processos.,Sim,20.0,Visita tÃ©cnica,Visita tÃ©cnica Ã  Samarco com foco nos processos de gestÃ£o de pessoas,1.0,0.32,0.6749999999999999,0.8,0.0,0.61875,Média,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.  Visita tÃ©cnica
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92207,FluÃªncia no idioma inglÃªs.,01/02/2020,31/12/2024,27/11/2019,11/08/2025,Em Andamento,Estudar regularmente o idioma inglÃªs.,Atrasado,Desenvolvimento Futuro,8566.0,Number One,online,02/02/2023,20/12/2023,ConcluÃ­do,Treinamento Formal,2000.0,Empresa,,Sim,200.0,Aulas de inglÃªs,Aulas de inglÃªs em grupo e individuais,0.8500000000000001,0.42857142857142855,0.375,0.8,0.0,0.5333928571428572,Baixa,FluÃªncia no idioma inglÃªs.  Aulas de inglÃªs
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92209,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.,01/01/2020,31/12/2023,27/11/2019,11/08/2025,Em Andamento,Participar em congressos especÃ­ficos de gestÃ£o de pessoas.,Atrasado,PosiÃ§Ã£o Atual,9681.0,Mercer,Online,31/10/2024,31/10/2024,Planejado,Treinamento Online,0.0,Empresa,,Sim,4.0,Jornada Digital de RH,"A Jornada Digital de RH Ã© um evento anual da Mercer Brasil onde os participantes embarcam em uma experiÃªncia diferenciada, com imersÃ£o nas mais atualizadas tendÃªncias do mercado de Recursos Humanos.",1.0,0.3,0.7000000000000001,0.8,0.0,0.62,Média,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.  Jornada Digital de RH
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92207,FluÃªncia no idioma inglÃªs.,01/02/2020,31/12/2024,27/11/2019,11/08/2025,Em Andamento,Estudar regularmente o idioma inglÃªs.,Atrasado,Desenvolvimento Futuro,9680.0,EF Englishlive,Online,25/10/2024,25/09/2025,Em Andamento,Treinamento Formal,4000.0,Empregado,,Sim,200.0,Aulas de inglÃªs,"Aulas de inglÃªs por exercÃ­cio, coletivas e individuais.",0.8500000000000001,0.42857142857142855,0.375,0.8,0.0,0.5333928571428572,Baixa,FluÃªncia no idioma inglÃªs.  Aulas de inglÃªs
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92209,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.,01/01/2020,31/12/2023,27/11/2019,11/08/2025,Em Andamento,Participar em congressos especÃ­ficos de gestÃ£o de pessoas.,Atrasado,PosiÃ§Ã£o Atual,8567.0,Anglo American,ConceiÃ§Ã£o do Mato Dentro,01/08/2023,30/09/2023,ConcluÃ­do,Benchmarking,300.0,Empresa,Realizadas reuniÃµes online com visÃ£o de indicadores e processos.,Sim,12.0,Visita tÃ©cnica,Visita tÃ©cnica Ã  Anglo American com foco nos processos de gestÃ£o de pessoas.,1.0,0.32,0.6749999999999999,0.8,0.0,0.61875,Média,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.  Visita tÃ©cnica
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92207,FluÃªncia no idioma inglÃªs.,01/02/2020,31/12/2024,27/11/2019,11/08/2025,Em Andamento,Estudar regularmente o idioma inglÃªs.,Atrasado,Desenvolvimento Futuro,2064.0,Number ONe,ItaÃºna,03/02/2020,21/12/2022,ConcluÃ­do,Treinamento Formal,1.0,Empresa,,Sim,200.0,Aulas de inglÃªs,Aulas de inglÃªs coletivas e individuais.,0.8500000000000001,0.42857142857142855,0.375,0.8,0.0,0.5333928571428572,Baixa,FluÃªncia no idioma inglÃªs.  Aulas de inglÃªs
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92209,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.,01/01/2020,31/12/2023,27/11/2019,11/08/2025,Em Andamento,Participar em congressos especÃ­ficos de gestÃ£o de pessoas.,Atrasado,PosiÃ§Ã£o Atual,3152.0,Amcham,Online,26/11/2020,26/11/2020,ConcluÃ­do,Autodesenvolvimento,0.0,Empregado,,Sim,2.0,Webinar sobre Engajamento e equipes de Alta Performance,Webinar sobre Engajamento e equipes de Alta Performance,1.0,0.33,0.7999999999999999,0.8,0.0,0.6525,Média,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.  Webinar sobre Engajamento e equi...
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92209,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.,01/01/2020,31/12/2023,27/11/2019,11/08/2025,Em Andamento,Participar em congressos especÃ­ficos de gestÃ£o de pessoas.,Atrasado,PosiÃ§Ã£o Atual,2065.0,Matchbox,Online,10/08/2020,25/08/2020,ConcluÃ­do,Autodesenvolvimento,1.0,Empregado,,Sim,20.0,Webinar,Employee Experience,1.0,0.32307692307692304,0.625,0.8,0.0,0.6070192307692308,Média,Manter-se atualizado nas melhores prÃ¡ticas de gestÃ£o de pessoas.  Webinar
-MINERACAO USIMINAS S.A. (MUSA),10403898,GUSTAVO TORRES DA CUNHA JARDIM,17000132,CARLOS HECTOR,REZZONICO,JAQUELINE CRISTINE VIEIRA,TORRES,92208,DomÃ­nio da legislaÃ§Ã£o trabalhista.,01/01/2020,31/12/2022,27/11/2019,11/08/2025,ConcluÃ­do,"Estudar constantemente a legislaÃ§Ã£o trabalhista, em razÃ£o das constantes alteraÃ§Ãµes.",Atrasado,Desenvolvimento Futuro,3151.0,Ibram,Online,24/11/2020,24/11/2020,ConcluÃ­do,Autodesenvolvimento,0.0,Empregado,,Sim,4.0,Webinar Acidente do Trabalho na LegislaÃ§Ã£o brasileira,Webinar Acidente do Trabalho na LegislaÃ§Ã£o brasileira,1.0,0.2625,0.7000000000000001,0.8,0.0,0.610625,Média,DomÃ­nio da legislaÃ§Ã£o trabalhista.  Webinar Acidente do Trabalho na LegislaÃ§Ã£o brasileira
-MINERACAO USIMINAS S.A. (MUSA),17000135,MARCELO HECTOR BARREIRO,17000132,CARLOS HECTOR,REZZONICO,BRUNO,ALVES SILVA COSTA,119889,Aprofundar no conhecimento dos processos produtivos e geolÃ³gicos da mineraÃ§Ã£o visando o projeto Compactos.,01/02/2021,31/12/2021,21/12/2020,11/08/2025,Planejado,Desenvolvimento in-house,Atrasado,PosiÃ§Ã£o Atual,3502.0,MUSA,MUSA,01/02/2021,31/12/2021,Planejado,Treinamento On The Job,0.0,Empresa,,Sim,40.0,Aprofundar conhecimentos,Plano de visita/treinamento em cada planta e reuniÃµes com o time de geologia,1.0,0.3666666666666667,0.75,0.8,0.0,0.6491666666666667,Média,Aprofundar no conhecimento dos processos produtivos e geolÃ³gicos da mineraÃ§Ã£o visando o projeto C...
-MINERACAO USIMINAS S.A. (MUSA),17000135,MARCELO HECTOR BARREIRO,17000132,CARLOS HECTOR,REZZONICO,BRUNO,ALVES SILVA COSTA,119890,Aprofundar conhecimentos de posiÃ§Ã£o de Conselheiros de AdministraÃ§Ã£o de empresa de capital aberto de modo se preparar para eventual IPO,01/02/2021,31/12/2021,21/12/2020,11/08/2025,Planejado,Curso formal externo,Atrasado,PosiÃ§Ã£o Atual,3503.0,a ser definida,a ser definido,01/02/2021,31/12/2021,Planejado,Treinamento Formal,1.0,Empresa,,Sim,40.0,Aprofundar conhecimentos de Conselheiro de Adm.,Buscar curso especÃ­fico,1.0,0.26,0.7999999999999999,0.8,0.2,0.655,Média,Aprofundar conhecimentos de posiÃ§Ã£o de Conselheiros de AdministraÃ§Ã£o de empresa de capital abert...
-MINERACAO USIMINAS S.A. (MUSA),17000135,MARCELO HECTOR BARREIRO,17000132,CARLOS HECTOR,REZZONICO,BRUNO,ALVES SILVA COSTA,119889,Aprofundar no conhecimento dos processos produtivos e geolÃ³gicos da mineraÃ§Ã£o visando o projeto Compactos.,01/02/2021,31/12/2021,21/12/2020,11/08/2025,Planejado,Desenvolvimento in-house,Atrasado,PosiÃ§Ã£o Atual,3501.0,a definir,a definir,01/02/2021,31/12/2021,Planejado,Visitas tÃ©cnicas,2000.0,Empresa,,Sim,8.0,Aprofundamento de conhecimento,Visita empresa externa,1.0,0.3473684210526316,0.775,0.8,0.0,0.6505921052631579,Média,Aprofundar no conhecimento dos processos produtivos e geolÃ³gicos da mineraÃ§Ã£o visando o projeto C...
