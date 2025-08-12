@@ -55,5 +55,3 @@ app/
 - ✅ Classificação automática (Alta/Média/Baixa)
 
 ### STATUS FINAL: ✅ SISTEMA OTIMIZADO E FUNCIONAL
-
-O projeto está completamente revisado, otimizado e seguindo as melhores práticas de desenvolvimento Python, sem comentários conforme solicitado.
