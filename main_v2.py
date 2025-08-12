@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import sys
 from pathlib import Path
@@ -16,12 +17,30 @@ class PDIAnalysisRunner:
         self.output_dir.mkdir(exist_ok=True)
     
     def run_interactive(self):
-        Executa análise automatizada.
+        print("🚀 SISTEMA DE ANÁLISE DE QUALIDADE PDI")
+        print("=" * 50)
         
-        Args:
-            file_path: Caminho para o arquivo
-            sample_size: Tamanho da amostra (None para completo)
-            output_dir: Diretório de saída
+        while True:
+            print("\n📋 Escolha uma opção:")
+            print("1. Analisar arquivo CSV/Excel")
+            print("2. Análise de texto individual")
+            print("3. Sair")
+            
+            choice = input("\nOpção (1-3): ").strip()
+            
+            if choice == "1":
+                self._analyze_file()
+            elif choice == "2":
+                self._analyze_text()
+            elif choice == "3":
+                print("👋 Encerrando sistema...")
+                break
+            else:
+                print("❌ Opção inválida. Tente novamente.")
+                
+            input("\nPressione Enter para continuar...")
+    
+    def _analyze_file(self):
         file_path = input("📁 Digite o caminho do arquivo: ").strip()
         
         if not file_path:
@@ -29,71 +48,90 @@ class PDIAnalysisRunner:
             return
         
         try:
-            csv_path, json_path, summary = self.analyzer.analyze_file(file_path)
-            self._print_summary(summary)
-            print(f"\n📄 Resultados: {csv_path}")
-            print(f"📋 Resumo: {json_path}")
+            sample_input = input("📊 Tamanho da amostra (Enter para arquivo completo): ").strip()
+            sample_size = int(sample_input) if sample_input else None
             
+            print(f"\n🔄 Analisando arquivo: {Path(file_path).name}")
+            
+            result = self.analyzer.analyze_file(file_path, str(self.output_dir), sample_size)
+            
+            if result.get('success', False):
+                self._display_file_results(result)
+            else:
+                print(f"❌ Erro na análise: {result.get('error', 'Erro desconhecido')}")
+                
         except Exception as e:
-            print(f"❌ Erro: {str(e)}")
+            print(f"❌ Erro: {e}")
     
-    def _analyze_sample(self):
-        print("📝 ANÁLISE DE TEXTO INDIVIDUAL")
+    def _analyze_text(self):
+        print("\n📝 ANÁLISE DE TEXTO INDIVIDUAL")
         
-        objetivo = input("Objetivo de desenvolvimento: ").strip()
+        objetivo = input("🎯 Digite o objetivo: ").strip()
+        acoes = input("📋 Digite as ações: ").strip()
         
-        if not objetivo:
-            print("❌ Objetivo é obrigatório")
+        if not objetivo or not acoes:
+            print("❌ Objetivo e ações são obrigatórios")
             return
-        
-        acoes = input("Ações planejadas (opcional): ").strip()
-        atividade = input("Atividade de aprendizagem (opcional): ").strip()
         
         try:
-            result = self.analyzer.analyze_text(objetivo, acoes, atividade)
-            self._print_individual_result(result)
+            result = self.analyzer.analyze_text(objetivo, acoes)
+            self._display_text_results(result)
             
         except Exception as e:
-            print(f"❌ Erro: {str(e)}")
+            print(f"❌ Erro na análise: {e}")
     
-    def _generate_report(self):
-        print(f"\n📊 RESUMO DA ANÁLISE:")
-        print(f"   📈 Total analisado: {summary['total_analyzed']} PDIs")
+    def _display_file_results(self, result):
+        print("\n📊 RESULTADOS DA ANÁLISE")
+        print("=" * 40)
         
-        percentages = summary.get('quality_percentages', {})
-        print(f"   🟢 Qualidade ALTA: {summary['high_quality']} PDIs ({percentages.get('high', 0):.1f}%)")
-        print(f"   🟡 Qualidade MÉDIA: {summary['medium_quality']} PDIs ({percentages.get('medium', 0):.1f}%)")
-        print(f"   🔴 Qualidade BAIXA: {summary['low_quality']} PDIs ({percentages.get('low', 0):.1f}%)")
+        print(f"📈 Total analisado: {result['total_analyzed']} PDIs")
         
-        avg_scores = summary.get('average_scores', {})
-        print(f"   📊 Score médio geral: {avg_scores.get('overall', 0):.3f}")
+        summary = result.get('summary', {})
+        alta = summary.get('Alta', 0)
+        media = summary.get('Média', 0)
+        baixa = summary.get('Baixa', 0)
+        total = alta + media + baixa
+        
+        if total > 0:
+            print(f"🟢 Qualidade ALTA: {alta} PDIs ({alta/total*100:.1f}%)")
+            print(f"🟡 Qualidade MÉDIA: {media} PDIs ({media/total*100:.1f}%)")
+            print(f"🔴 Qualidade BAIXA: {baixa} PDIs ({baixa/total*100:.1f}%)")
+        
+        if 'output_file' in result:
+            print(f"\n💾 Resultados salvos em: {result['output_file']}")
     
-    def _print_individual_result(self, result: dict):
-        if 'error' in report:
-            print(f"❌ {report['error']}")
-            return
+    def _display_text_results(self, result):
+        print("\n📊 RESULTADO DA ANÁLISE")
+        print("=" * 30)
         
-        print(f"\n📊 RELATÓRIO DETALHADO:")
-        print(f"   📈 Total analisado: {report['total_analyzed']} PDIs")
+        print(f"📈 Score Geral: {result['overall_score']:.2f}")
+        print(f"🏆 Nível de Qualidade: {result['quality_level']}")
         
-        quality_dist = report['quality_distribution']
-        percentages = report['quality_percentages']
+        print(f"\n📋 Detalhamento:")
+        print(f"   📝 Clareza: {result['clarity_score']:.2f}")
+        print(f"   🎯 Especificidade: {result['specificity_score']:.2f}")
+        print(f"   📖 Completude: {result['completeness_score']:.2f}")
+        print(f"   🏗️ Estrutura: {result['structure_score']:.2f}")
+        print(f"   🎯 SMART: {result['smart_criteria_score']:.2f}")
         
-        for level, count in quality_dist.items():
-            percentage = percentages[level]
-            print(f"   📊 {level}: {count} PDIs ({percentage:.1f}%)")
-        
-        print(f"\n📈 ESTATÍSTICAS DE SCORES:")
-        score_stats = report['score_statistics']
-        
-        for metric, stats in score_stats.items():
-            print(f"   {metric.title()}: média={stats['mean']:.3f}, "
-                  f"min={stats['min']:.3f}, max={stats['max']:.3f}")
-        
-        if report['best_pdis']:
-            print(f"\n🏆 TOP 5 MELHORES PDIs:")
-            for i, pdi in enumerate(report['best_pdis'], 1):
-                print(f"   {i}. {pdi['Nome Completo']} - Score: {pdi['overall_score']:.3f}")
+        recommendations = self.analyzer.get_quality_recommendations(result)
+        if recommendations:
+            print(f"\n💡 Recomendações:")
+            for i, rec in enumerate(recommendations, 1):
+                print(f"   {i}. {rec}")
 
 
 def main():
+    try:
+        runner = PDIAnalysisRunner()
+        runner.run_interactive()
+    except KeyboardInterrupt:
+        print("\n\n👋 Sistema encerrado pelo usuário")
+    except Exception as e:
+        print(f"\n❌ Erro crítico: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+if __name__ == "__main__":
+    main()
