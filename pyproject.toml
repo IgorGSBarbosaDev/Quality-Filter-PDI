@@ -1,0 +1,116 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quality-filter-pdi"
+version = "2.0.0"
+description = "Sistema de Análise de Qualidade de PDI com IA"
+authors = [
+    {name = "Quality Filter PDI Team", email = "contato@qualityfilter.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+keywords = ["pdi", "análise", "qualidade", "ia", "hr", "desenvolvimento"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business :: Human Resources",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+dependencies = [
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+    "xlrd>=2.0.0",
+    "chardet>=5.0.0"
+]
+
+[project.optional-dependencies]
+ai = [
+    "spacy>=3.7.0",
+    "nltk>=3.8.0", 
+    "scikit-learn>=1.3.0",
+    "numpy>=1.24.0"
+]
+advanced-ai = [
+    "transformers>=4.35.0",
+    "torch>=2.0.0",
+    "sentence-transformers>=2.2.0"
+]
+cloud-ai = [
+    "requests>=2.31.0",
+    "openai>=1.0.0"
+]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0"
+]
+all = [
+    "quality-filter-pdi[ai,advanced-ai,cloud-ai]"
+]
+
+[project.urls]
+Homepage = "https://github.com/IgorGSBarbosaDev/Quality-Filter-PDI"
+Documentation = "https://github.com/IgorGSBarbosaDev/Quality-Filter-PDI/tree/main/documentation"
+Repository = "https://github.com/IgorGSBarbosaDev/Quality-Filter-PDI"
+Issues = "https://github.com/IgorGSBarbosaDev/Quality-Filter-PDI/issues"
+
+[project.scripts]
+quality-filter-pdi = "cli.main:main"
+pdi-analyzer = "cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["quality_filter_pdi*", "cli*"]
+exclude = ["tests*", "examples*", "documentation*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true

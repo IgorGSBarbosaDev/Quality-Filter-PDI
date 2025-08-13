@@ -12,8 +12,8 @@ from ..services.skill_classifier import SkillClassifier
 from ..utils.text_utils import TextUtils
 
 try:
-    from ..services.ai_text_analyzer import AITextAnalyzer
-    from ..services.advanced_ai_analyzer import AdvancedAIAnalyzer
+    from ..ai.ai_text_analyzer import AITextAnalyzer
+    from ..ai.advanced_ai_analyzer import AdvancedAIAnalyzer
     AI_AVAILABLE = True
 except ImportError:
     AI_AVAILABLE = False

@@ -4,9 +4,9 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-sys.path.append(str(Path(__file__).parent))
+sys.path.append(str(Path(__file__).parent.parent))
 
-from app import PDIAnalyzer
+from quality_filter_pdi import PDIAnalyzer
 
 
 class PDIAnalysisRunner:

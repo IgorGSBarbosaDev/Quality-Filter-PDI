@@ -1,0 +1,37 @@
+# Dependências básicas (obrigatórias)
+pandas>=2.0.0
+openpyxl>=3.1.0
+xlrd>=2.0.0
+chardet>=5.0.0
+
+# IA Básica (spaCy + NLTK)
+spacy>=3.7.0
+nltk>=3.8.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+
+# IA Avançada (Transformers)
+transformers>=4.35.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+
+# APIs de IA (Cloud)
+requests>=2.31.0
+openai>=1.0.0
+
+# Processamento de linguagem natural português
+# Para instalar modelo português do spaCy:
+# python -m spacy download pt_core_news_sm
+
+# Análise avançada
+textstat>=0.7.0
+langdetect>=1.0.9
+
+# Visualização e relatórios
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Opcional: GPU acceleration
+# torch-audio  # Para processamento de áudio
+# accelerate   # Para acelerar transformers
