@@ -1,0 +1,82 @@
+row_index,overall_score,quality_level,clarity_score,specificity_score,completeness_score,structure_score,smart_criteria_score,word_count,sentence_count,has_numbers,negative_impact,score_explanation,objetivo,acoes
+0,78.5,Alta,0.85,0.80,0.75,0.70,0.65,25,2,True,0.0,"
+============================================================
+📊 DETALHAMENTO DA AVALIAÇÃO
+============================================================
+
+🎯 NOTA FINAL: 78.5/100
+
+📋 BREAKDOWN POR CRITÉRIO:
+----------------------------------------
+• Clareza        (25%): 21.3 pontos (base: 85.0/100)
+• Especificidade (25%): 20.0 pontos (base: 80.0/100)
+• Completude     (25%): 18.8 pontos (base: 75.0/100)
+• Estrutura      (15%): 10.5 pontos (base: 70.0/100)
+• Critérios SMART(10%):  6.5 pontos (base: 65.0/100)
+
+🔍 ANÁLISE DETALHADA:
+----------------------------------------
+✅ CLAREZA (EXCELENTE): Texto muito claro e compreensível
+✅ ESPECIFICIDADE (EXCELENTE): Muito específico e detalhado
+✅ COMPLETUDE (BOA): Informações adequadas
+✅ ESTRUTURA (BOA): Bem estruturado
+✅ SMART (BOA): Atende razoavelmente aos critérios SMART
+
+🎯 CLASSIFICAÇÃO GERAL:
+✅ BOM - PDI de boa qualidade
+============================================================
+","Obter certificação AWS Solutions Architect Associate até junho de 2025 com nota mínima de 720 pontos","Estudar documentação oficial AWS 10 horas por semana, realizar 5 simulados práticos, completar curso preparatório de 80 horas"
+1,35.2,Baixa,0.30,0.25,0.20,0.40,0.15,4,1,False,0.0,"
+============================================================
+📊 DETALHAMENTO DA AVALIAÇÃO
+============================================================
+
+🎯 NOTA FINAL: 35.2/100
+
+📋 BREAKDOWN POR CRITÉRIO:
+----------------------------------------
+• Clareza        (25%):  7.5 pontos (base: 30.0/100)
+• Especificidade (25%):  6.3 pontos (base: 25.0/100)
+• Completude     (25%):  5.0 pontos (base: 20.0/100)
+• Estrutura      (15%):  6.0 pontos (base: 40.0/100)
+• Critérios SMART(10%):  1.5 pontos (base: 15.0/100)
+
+🔍 ANÁLISE DETALHADA:
+----------------------------------------
+❌ CLAREZA (BAIXA): Texto confuso, necessita reescrita
+❌ ESPECIFICIDADE (BAIXA): Muito vago, adicionar detalhes
+❌ COMPLETUDE (BAIXA): Informações insuficientes
+⚠️  ESTRUTURA (REGULAR): Estrutura pode melhorar
+❌ SMART (BAIXA): Não atende aos critérios SMART
+
+🎯 CLASSIFICAÇÃO GERAL:
+❌ INADEQUADO - PDI necessita reescrita
+============================================================
+","Melhorar comunicação","Falar melhor"
+2,89.3,Alta,0.95,0.90,0.85,0.80,0.75,45,4,True,0.0,"
+============================================================
+📊 DETALHAMENTO DA AVALIAÇÃO
+============================================================
+
+🎯 NOTA FINAL: 89.3/100
+
+📋 BREAKDOWN POR CRITÉRIO:
+----------------------------------------
+• Clareza        (25%): 23.8 pontos (base: 95.0/100)
+• Especificidade (25%): 22.5 pontos (base: 90.0/100)
+• Completude     (25%): 21.3 pontos (base: 85.0/100)
+• Estrutura      (15%): 12.0 pontos (base: 80.0/100)
+• Critérios SMART(10%):  7.5 pontos (base: 75.0/100)
+
+🔍 ANÁLISE DETALHADA:
+----------------------------------------
+✅ CLAREZA (EXCELENTE): Texto muito claro e compreensível
+✅ ESPECIFICIDADE (EXCELENTE): Muito específico e detalhado
+✅ COMPLETUDE (EXCELENTE): Informações muito completas
+✅ ESTRUTURA (EXCELENTE): Muito bem estruturado
+✅ SMART (BOA): Atende razoavelmente aos critérios SMART
+
+🎯 CLASSIFICAÇÃO GERAL:
+🌟 EXCELENTE - PDI de alta qualidade
+============================================================
+","Desenvolver expertise em análise de dados utilizando Python e Power BI até dezembro de 2025, atingindo nível avançado certificado para liderar projetos de BI na empresa","Completar curso Python para Data Science de 120h na Coursera, obter certificação Microsoft Power BI DA-100, praticar 15h semanais com datasets reais, desenvolver 5 dashboards corporativos, participar de 3 projetos de BI como lead técnico"

@@ -211,12 +211,23 @@ class PDIAnalysisService:
                 'smart_criteria_score': result.get('smart_criteria_score', 0.0)
             }
             
+            # Gerar explicação detalhada da nota
             metadata = result.get('analysis_metadata', {})
+            score_explanation = self.quality_service.generate_score_explanation(
+                result.get('clarity_score', 0.0),
+                result.get('specificity_score', 0.0),
+                result.get('completeness_score', 0.0),
+                result.get('structure_score', 0.0),
+                result.get('smart_criteria_score', 0.0),
+                metadata.get('negative_impact', 0.0)
+            )
+            
             simplified.update({
                 'word_count': metadata.get('word_count', 0),
                 'sentence_count': metadata.get('sentence_count', 0),
                 'has_numbers': metadata.get('has_numbers', False),
-                'negative_impact': metadata.get('negative_impact', 0.0)
+                'negative_impact': metadata.get('negative_impact', 0.0),
+                'score_explanation': score_explanation  # Nova coluna com explicação detalhada
             })
             
             for key, value in result.items():

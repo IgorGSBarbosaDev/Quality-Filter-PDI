@@ -7,10 +7,11 @@ Sistema avançado para análise automatizada de qualidade de Planos de Desenvolv
 ### ✨ **Funcionalidades Principais**
 
 - 🔍 **Análise de Qualidade**: 5 métricas especializadas
-- 🤖 **Classificação de Habilidades**: Hard/Soft Skills com IA
+- 🤖 **Classificação de Habilidades**: Hard/Soft Skills com IA  
 - 📊 **Processamento em Lote**: CSV e Excel
 - 🧠 **IA Integrada**: spaCy, Transformers, APIs Cloud
 - 📈 **Relatórios Detalhados**: Insights e recomendações
+- 🎯 **Explicação de Notas**: Breakdown detalhado de cada avaliação
 
 ## 📁 **Estrutura do Projeto**
 
@@ -105,6 +106,46 @@ resultado = analyzer.analyze_file("pdis.csv")
 | **Completude** | 25% | Presença de informações necessárias |
 | **Estrutura** | 15% | Organização do texto |
 | **SMART** | 10% | Aderência aos critérios SMART |
+
+### 🎯 **Nova Funcionalidade: Explicação Detalhada das Notas**
+
+Cada PDI analisado agora inclui uma **explicação completa** de como a nota foi calculada:
+
+```
+============================================================
+📊 DETALHAMENTO DA AVALIAÇÃO
+============================================================
+
+🎯 NOTA FINAL: 78.5/100
+
+📋 BREAKDOWN POR CRITÉRIO:
+----------------------------------------
+• Clareza        (25%): 21.3 pontos (base: 85.0/100)
+• Especificidade (25%): 20.0 pontos (base: 80.0/100)
+• Completude     (25%): 18.8 pontos (base: 75.0/100)
+• Estrutura      (15%): 10.5 pontos (base: 70.0/100)
+• Critérios SMART(10%):  6.5 pontos (base: 65.0/100)
+
+🔍 ANÁLISE DETALHADA:
+----------------------------------------
+✅ CLAREZA (EXCELENTE): Texto muito claro e compreensível
+✅ ESPECIFICIDADE (EXCELENTE): Muito específico e detalhado
+⚠️  COMPLETUDE (REGULAR): Faltam algumas informações
+✅ ESTRUTURA (BOA): Bem estruturado
+✅ SMART (BOA): Atende razoavelmente aos critérios SMART
+
+🎯 CLASSIFICAÇÃO GERAL:
+✅ BOM - PDI de boa qualidade
+============================================================
+```
+
+**Benefícios:**
+- ✅ **Transparência total** na avaliação
+- ✅ **Feedback específico** para melhorias  
+- ✅ **Compreensão clara** dos critérios
+- ✅ **Facilita correções** direcionadas
+
+A explicação é salva na coluna `score_explanation` do arquivo CSV gerado.
 
 ## 🎯 **Classificação de Habilidades**
 

@@ -197,3 +197,123 @@ class QualityMetricsService:
             'structure_score': structure,
             'smart_criteria_score': smart_criteria
         }
+    
+    def generate_score_explanation(self, clarity: float, specificity: float, 
+                                 completeness: float, structure: float, 
+                                 smart_criteria: float, negative_impact: float = 0.0) -> str:
+        """
+        Gera uma explicação detalhada de como a nota foi calculada
+        """
+        weights = {
+            'clarity': 0.25,
+            'specificity': 0.25,
+            'completeness': 0.25,
+            'structure': 0.15,
+            'smart_criteria': 0.10
+        }
+        
+        # Calcular contribuições de cada critério
+        contributions = {
+            'Clareza': clarity * weights['clarity'] * 100,
+            'Especificidade': specificity * weights['specificity'] * 100,
+            'Completude': completeness * weights['completeness'] * 100,
+            'Estrutura': structure * weights['structure'] * 100,
+            'Critérios SMART': smart_criteria * weights['smart_criteria'] * 100
+        }
+        
+        total_score = sum(contributions.values())
+        
+        # Ajustar por impacto negativo
+        if negative_impact > 0:
+            penalty = negative_impact * 10
+            total_score = max(0, total_score - penalty)
+        
+        explanation = f"\n{'='*60}\n"
+        explanation += "📊 DETALHAMENTO DA AVALIAÇÃO\n"
+        explanation += f"{'='*60}\n\n"
+        
+        explanation += f"🎯 NOTA FINAL: {total_score:.1f}/100\n\n"
+        
+        explanation += "📋 BREAKDOWN POR CRITÉRIO:\n"
+        explanation += "-" * 40 + "\n"
+        
+        for criterion, score in contributions.items():
+            weight_pct = {
+                'Clareza': 25,
+                'Especificidade': 25, 
+                'Completude': 25,
+                'Estrutura': 15,
+                'Critérios SMART': 10
+            }[criterion]
+            
+            raw_score = score / weight_pct * 100
+            
+            explanation += f"• {criterion:15} ({weight_pct:2d}%): {score:5.1f} pontos "
+            explanation += f"(base: {raw_score:.1f}/100)\n"
+        
+        if negative_impact > 0:
+            explanation += f"\n⚠️  PENALIDADES:\n"
+            explanation += f"• Indicadores negativos: -{negative_impact * 10:.1f} pontos\n"
+        
+        explanation += f"\n🔍 ANÁLISE DETALHADA:\n"
+        explanation += "-" * 40 + "\n"
+        
+        # Análise por critério
+        if clarity >= 0.8:
+            explanation += "✅ CLAREZA (EXCELENTE): Texto muito claro e compreensível\n"
+        elif clarity >= 0.6:
+            explanation += "✅ CLAREZA (BOA): Texto claro com pequenos ajustes possíveis\n"
+        elif clarity >= 0.4:
+            explanation += "⚠️  CLAREZA (REGULAR): Texto necessita melhorar clareza\n"
+        else:
+            explanation += "❌ CLAREZA (BAIXA): Texto confuso, necessita reescrita\n"
+        
+        if specificity >= 0.8:
+            explanation += "✅ ESPECIFICIDADE (EXCELENTE): Muito específico e detalhado\n"
+        elif specificity >= 0.6:
+            explanation += "✅ ESPECIFICIDADE (BOA): Razoavelmente específico\n"
+        elif specificity >= 0.4:
+            explanation += "⚠️  ESPECIFICIDADE (REGULAR): Falta mais detalhes específicos\n"
+        else:
+            explanation += "❌ ESPECIFICIDADE (BAIXA): Muito vago, adicionar detalhes\n"
+        
+        if completeness >= 0.8:
+            explanation += "✅ COMPLETUDE (EXCELENTE): Informações muito completas\n"
+        elif completeness >= 0.6:
+            explanation += "✅ COMPLETUDE (BOA): Informações adequadas\n"
+        elif completeness >= 0.4:
+            explanation += "⚠️  COMPLETUDE (REGULAR): Faltam algumas informações\n"
+        else:
+            explanation += "❌ COMPLETUDE (BAIXA): Informações insuficientes\n"
+        
+        if structure >= 0.8:
+            explanation += "✅ ESTRUTURA (EXCELENTE): Muito bem estruturado\n"
+        elif structure >= 0.6:
+            explanation += "✅ ESTRUTURA (BOA): Bem estruturado\n"
+        elif structure >= 0.4:
+            explanation += "⚠️  ESTRUTURA (REGULAR): Estrutura pode melhorar\n"
+        else:
+            explanation += "❌ ESTRUTURA (BAIXA): Estrutura inadequada\n"
+        
+        if smart_criteria >= 0.8:
+            explanation += "✅ SMART (EXCELENTE): Atende muito bem aos critérios SMART\n"
+        elif smart_criteria >= 0.6:
+            explanation += "✅ SMART (BOA): Atende razoavelmente aos critérios SMART\n"
+        elif smart_criteria >= 0.4:
+            explanation += "⚠️  SMART (REGULAR): Alguns critérios SMART presentes\n"
+        else:
+            explanation += "❌ SMART (BAIXA): Não atende aos critérios SMART\n"
+        
+        explanation += f"\n🎯 CLASSIFICAÇÃO GERAL:\n"
+        if total_score >= 80:
+            explanation += "🌟 EXCELENTE - PDI de alta qualidade\n"
+        elif total_score >= 60:
+            explanation += "✅ BOM - PDI de boa qualidade\n"
+        elif total_score >= 40:
+            explanation += "⚠️  REGULAR - PDI necessita melhorias\n"
+        else:
+            explanation += "❌ INADEQUADO - PDI necessita reescrita\n"
+        
+        explanation += f"\n{'='*60}\n"
+        
+        return explanation

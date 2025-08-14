@@ -45,7 +45,7 @@ class PDIAnalysisRunner:
         
         if not file_path:
             print("❌ Caminho do arquivo é obrigatório")
-            return
+            return 
         
         try:
             sample_input = input("📊 Tamanho da amostra (Enter para arquivo completo): ").strip()
