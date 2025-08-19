@@ -12,6 +12,7 @@ Sistema avançado para análise automatizada de qualidade de Planos de Desenvolv
 - 🧠 **IA Integrada**: spaCy, Transformers, APIs Cloud
 - 📈 **Relatórios Detalhados**: Insights e recomendações
 - 🎯 **Explicação de Notas**: Breakdown detalhado de cada avaliação
+- 💬 **Feedback Personalizado**: Orientações diretas para o responsável pelo PDI
 
 ## 📁 **Estrutura do Projeto**
 
@@ -146,6 +147,42 @@ Cada PDI analisado agora inclui uma **explicação completa** de como a nota foi
 - ✅ **Facilita correções** direcionadas
 
 A explicação é salva na coluna `score_explanation` do arquivo CSV gerado.
+
+### 💬 **Nova Funcionalidade: Feedback Personalizado para o Responsável**
+
+Cada PDI analisado agora inclui um **feedback direto e personalizado** para o responsável, explicando de forma clara o motivo da nota recebida:
+
+```
+🌟 FEEDBACK PARA O SEU PDI - NOTA: 85.2/100 (EXCELENTE)
+
+🎉 PARABÉNS! Seu PDI está excelente!
+Seu objetivo está muito bem definido e suas ações são claras e específicas.
+
+💡 PRINCIPAIS MOTIVOS DA SUA NOTA:
+
+🔍 CLAREZA - Muito bom! ✅
+• Seu objetivo está claro e fácil de entender
+
+🎯 ESPECIFICIDADE - Excelente! ✅  
+• Seu PDI tem detalhes específicos e mensuráveis
+
+🚀 PRÓXIMOS PASSOS PARA MELHORAR:
+1. Continue mantendo este excelente padrão
+2. Use seu PDI como exemplo para futuros objetivos
+3. Acompanhe regularmente seu progresso
+```
+
+**Características do Feedback:**
+- ✅ **Linguagem direta e amigável** para o colaborador
+- ✅ **Orientações práticas** para cada critério
+- ✅ **Ações específicas** para melhoria
+- ✅ **Tom motivacional** e construtivo
+
+**Duas colunas complementares no arquivo:**
+- `score_explanation`: Explicação técnica detalhada (para analistas/RH)
+- `feedback_responsavel`: Feedback direto para o responsável do PDI
+
+O feedback é salvo na coluna `feedback_responsavel` do arquivo CSV gerado.
 
 ## 🎯 **Classificação de Habilidades**
 

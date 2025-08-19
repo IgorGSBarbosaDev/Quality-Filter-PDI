@@ -222,12 +222,24 @@ class PDIAnalysisService:
                 metadata.get('negative_impact', 0.0)
             )
             
+            # Gerar feedback específico para o responsável pelo PDI
+            feedback_responsavel = self.quality_service.generate_feedback_for_responsible(
+                result.get('clarity_score', 0.0),
+                result.get('specificity_score', 0.0),
+                result.get('completeness_score', 0.0),
+                result.get('structure_score', 0.0),
+                result.get('smart_criteria_score', 0.0),
+                metadata.get('negative_impact', 0.0),
+                result.get('overall_score', 0.0) * 100  # Converter para escala 0-100
+            )
+            
             simplified.update({
                 'word_count': metadata.get('word_count', 0),
                 'sentence_count': metadata.get('sentence_count', 0),
                 'has_numbers': metadata.get('has_numbers', False),
                 'negative_impact': metadata.get('negative_impact', 0.0),
-                'score_explanation': score_explanation  # Nova coluna com explicação detalhada
+                'score_explanation': score_explanation,  # Explicação técnica detalhada
+                'feedback_responsavel': feedback_responsavel  # Nova coluna: Feedback direto para o responsável
             })
             
             for key, value in result.items():
