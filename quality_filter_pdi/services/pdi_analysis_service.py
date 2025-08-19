@@ -196,19 +196,51 @@ class PDIAnalysisService:
         
         return summary
     
+    def _format_score(self, score: float, max_digits: int = 4) -> float:
+        """
+        Formata um score para garantir que não passe do número máximo de dígitos
+        
+        Args:
+            score: Score original (float)
+            max_digits: Número máximo de dígitos (default: 4)
+            
+        Returns:
+            Score formatado limitado aos dígitos especificados
+        """
+        if score is None or score == 0:
+            return 0.0
+        
+        # Garantir que é um número positivo
+        score = abs(float(score))
+        
+        # Para scores na escala 0-1 (scores individuais), máximo 0.99
+        if score <= 1.0:
+            return min(round(score, 2), 0.99)  # Máximo 4 dígitos: 0.99
+        
+        # Para scores na escala 0-100, máximo 99.9
+        if score <= 100.0:
+            return min(round(score, 1), 99.9)  # Máximo 4 dígitos: 99.9
+        
+        # Para valores maiores que 100, máximo 999
+        if score <= 1000.0:
+            return min(float(int(score)), 999.0)  # Máximo 3 dígitos: 999
+        
+        # Para valores muito grandes, limitar a 999
+        return 999.0
+
     def _create_results_dataframe(self, results: List[Dict]) -> pd.DataFrame:
         simplified_results = []
         
         for result in results:
             simplified = {
                 'row_index': result.get('row_index', 0),
-                'overall_score': result.get('overall_score', 0.0),
+                'overall_score': self._format_score(result.get('overall_score', 0.0)),
                 'quality_level': result.get('quality_level', 'Baixa'),
-                'clarity_score': result.get('clarity_score', 0.0),
-                'specificity_score': result.get('specificity_score', 0.0),
-                'completeness_score': result.get('completeness_score', 0.0),
-                'structure_score': result.get('structure_score', 0.0),
-                'smart_criteria_score': result.get('smart_criteria_score', 0.0)
+                'clarity_score': self._format_score(result.get('clarity_score', 0.0)),
+                'specificity_score': self._format_score(result.get('specificity_score', 0.0)),
+                'completeness_score': self._format_score(result.get('completeness_score', 0.0)),
+                'structure_score': self._format_score(result.get('structure_score', 0.0)),
+                'smart_criteria_score': self._format_score(result.get('smart_criteria_score', 0.0))
             }
             
             # Gerar explicação detalhada da nota
@@ -230,7 +262,7 @@ class PDIAnalysisService:
                 result.get('structure_score', 0.0),
                 result.get('smart_criteria_score', 0.0),
                 metadata.get('negative_impact', 0.0),
-                result.get('overall_score', 0.0) * 100  # Converter para escala 0-100
+                self._format_score(result.get('overall_score', 0.0) * 100)  # Converter para escala 0-100 e formatar
             )
             
             # Gerar motivos concisos para o CSV (sem emojis, texto direto)
@@ -241,7 +273,7 @@ class PDIAnalysisService:
                 result.get('structure_score', 0.0),
                 result.get('smart_criteria_score', 0.0),
                 metadata.get('negative_impact', 0.0),
-                result.get('overall_score', 0.0) * 100  # Converter para escala 0-100
+                self._format_score(result.get('overall_score', 0.0) * 100)  # Converter para escala 0-100 e formatar
             )
             
             simplified.update({
