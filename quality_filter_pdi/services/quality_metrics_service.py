@@ -479,3 +479,127 @@ class QualityMetricsService:
             feedback += "3. Acompanhe regularmente seu progresso\n"
         
         return feedback
+    
+    def generate_concise_reasons(self, clarity: float, specificity: float, 
+                                completeness: float, structure: float, 
+                                smart_criteria: float, negative_impact: float = 0.0,
+                                overall_score: float = 0.0) -> dict:
+        """
+        Gera 3 motivos concisos e diretos para a nota recebida
+        Sem emojis, sem textos longos - apenas os pontos principais
+        """
+        # Calcular nota final se não fornecida
+        if overall_score == 0.0:
+            weights = {
+                'clarity': 0.25,
+                'specificity': 0.25,
+                'completeness': 0.25,
+                'structure': 0.15,
+                'smart_criteria': 0.10
+            }
+            
+            overall_score = (
+                clarity * weights['clarity'] +
+                specificity * weights['specificity'] +
+                completeness * weights['completeness'] +
+                structure * weights['structure'] +
+                smart_criteria * weights['smart_criteria']
+            ) * 100
+            
+            if negative_impact > 0:
+                overall_score = max(0, overall_score - (negative_impact * 10))
+        
+        # Identificar os 3 principais problemas/pontos fortes
+        criteria_scores = {
+            'clareza': clarity,
+            'especificidade': specificity,
+            'completude': completeness,
+            'estrutura': structure,
+            'smart': smart_criteria
+        }
+        
+        # Ordenar critérios por pontuação (do menor para o maior)
+        sorted_criteria = sorted(criteria_scores.items(), key=lambda x: x[1])
+        
+        motivos = []
+        
+        # Analisar os 3 critérios com menor pontuação para identificar problemas
+        for criterio, score in sorted_criteria[:3]:
+            if criterio == 'clareza':
+                if score < 0.4:
+                    motivos.append("Objetivo muito vago e confuso")
+                elif score < 0.7:
+                    motivos.append("Objetivo precisa ser mais claro")
+                else:
+                    motivos.append("Clareza adequada")
+            
+            elif criterio == 'especificidade':
+                if score < 0.4:
+                    motivos.append("Faltam detalhes específicos e números")
+                elif score < 0.7:
+                    motivos.append("Precisa mais detalhes específicos")
+                else:
+                    motivos.append("Especificidade adequada")
+            
+            elif criterio == 'completude':
+                if score < 0.4:
+                    motivos.append("Informações muito incompletas")
+                elif score < 0.7:
+                    motivos.append("Faltam informações importantes")
+                else:
+                    motivos.append("Informações suficientes")
+            
+            elif criterio == 'estrutura':
+                if score < 0.4:
+                    motivos.append("Texto mal organizado")
+                elif score < 0.7:
+                    motivos.append("Estrutura pode melhorar")
+                else:
+                    motivos.append("Bem estruturado")
+            
+            elif criterio == 'smart':
+                if score < 0.4:
+                    motivos.append("Não atende critérios SMART")
+                elif score < 0.7:
+                    motivos.append("Parcialmente atende critérios SMART")
+                else:
+                    motivos.append("Atende critérios SMART")
+        
+        # Se a nota é muito baixa, focar nos problemas mais críticos
+        if overall_score < 40:
+            motivos = [
+                "Objetivo extremamente vago",
+                "Faltam detalhes essenciais",
+                "Não especifica como executar"
+            ]
+        
+        # Se a nota é boa, focar nos pontos de melhoria
+        elif overall_score >= 70:
+            # Para notas altas, identificar pequenos ajustes
+            lowest_criteria = sorted_criteria[0]
+            if lowest_criteria[1] < 0.8:  # Se o critério mais baixo ainda pode melhorar
+                if lowest_criteria[0] == 'especificidade':
+                    motivos[0] = "Pode adicionar mais números e datas"
+                elif lowest_criteria[0] == 'smart':
+                    motivos[0] = "Pode melhorar métricas SMART"
+                elif lowest_criteria[0] == 'completude':
+                    motivos[0] = "Pode detalhar mais as ações"
+            else:
+                motivos[0] = "PDI de boa qualidade geral"
+        
+        # Considerar impacto negativo
+        if negative_impact > 0.1:
+            motivos[-1] = "Contém termos negativos ou vagos"
+        
+        # Garantir que temos exatamente 3 motivos
+        while len(motivos) < 3:
+            motivos.append("Análise complementar necessária")
+        
+        # Limitar a 3 motivos
+        motivos = motivos[:3]
+        
+        return {
+            'motivo_1': motivos[0],
+            'motivo_2': motivos[1],
+            'motivo_3': motivos[2]
+        }
