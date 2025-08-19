@@ -247,8 +247,6 @@ class PDIAnalysisService:
             simplified.update({
                 'word_count': metadata.get('word_count', 0),
                 'sentence_count': metadata.get('sentence_count', 0),
-                'has_numbers': metadata.get('has_numbers', False),
-                'negative_impact': metadata.get('negative_impact', 0.0),
                 'score_explanation': score_explanation,  # Explicação técnica detalhada
                 'feedback_responsavel': feedback_responsavel,  # Feedback direto para o responsável
                 'motivo_1': motivos_concisos['motivo_1'],  # Novo: Motivo 1 conciso
