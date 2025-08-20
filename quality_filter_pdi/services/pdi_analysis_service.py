@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Tuple, Any, Optional
 from datetime import datetime
 import json
 
@@ -11,6 +11,14 @@ from ..services.quality_metrics_service import QualityMetricsService
 from ..services.skill_classifier import SkillClassifier
 from ..utils.text_utils import TextUtils
 
+# Importação condicional de performance
+try:
+    from ..core.parallel_processor import ParallelProcessor, create_parallel_analyzer, process_single_pdi_worker
+    from ..core.performance_cache import get_cache_stats, clear_all_caches
+    PERFORMANCE_AVAILABLE = True
+except ImportError:
+    PERFORMANCE_AVAILABLE = False
+
 try:
     from ..ai.ai_text_analyzer import AITextAnalyzer
     from ..ai.advanced_ai_analyzer import AdvancedAIAnalyzer
@@ -21,12 +29,25 @@ except ImportError:
 
 class PDIAnalysisService:
     
-    def __init__(self):
-        self.quality_service = QualityMetricsService()
-        self.skill_classifier = SkillClassifier()
-        self.thresholds = QUALITY_THRESHOLDS
+    def __init__(self, 
+                 quality_service: Optional[QualityMetricsService] = None,
+                 skill_classifier: Optional[SkillClassifier] = None,
+                 thresholds: Optional[Dict] = None,
+                 ai_enabled: bool = True,
+                 enable_parallel: bool = True,
+                 enable_cache: bool = True):
+        """
+        Args:
+            enable_parallel: Habilitar processamento paralelo para lotes
+            enable_cache: Habilitar cache de performance
+        """
+        self.quality_service = quality_service or QualityMetricsService(enable_cache=enable_cache)
+        self.skill_classifier = skill_classifier or SkillClassifier()
+        self.thresholds = thresholds or QUALITY_THRESHOLDS
         self.weights = METRIC_WEIGHTS
         self.column_mapping = COLUMN_MAPPING
+        self.enable_parallel = enable_parallel and PERFORMANCE_AVAILABLE
+        self.enable_cache = enable_cache
         
         if AI_AVAILABLE:
             try:
@@ -223,6 +244,127 @@ class PDIAnalysisService:
         
         # Para valores muito grandes, limitar a 999
         return 999.0
+    
+    def analyze_dataframe_optimized(self, df: pd.DataFrame, use_parallel: bool = None) -> pd.DataFrame:
+        """
+        Análise otimizada de DataFrame com cache e processamento paralelo
+        
+        Args:
+            df: DataFrame com colunas 'objetivo' e 'acoes'
+            use_parallel: Forçar uso (True) ou não uso (False) de paralelo. None = automático
+        """
+        if use_parallel is None:
+            use_parallel = self.enable_parallel and len(df) >= 20
+        
+        print(f"🔍 Analisando {len(df)} PDIs...")
+        if use_parallel and self.enable_parallel:
+            print("⚡ Usando processamento paralelo")
+            return self._analyze_parallel(df)
+        else:
+            print("🔄 Usando processamento sequencial")
+            return self._analyze_sequential(df)
+    
+    def _analyze_parallel(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Análise paralela otimizada"""
+        try:
+            # Preparar dados para processamento paralelo
+            pdi_data = []
+            for idx, row in df.iterrows():
+                pdi_data.append({
+                    'objetivo': row.get('objetivo', ''),
+                    'acoes': row.get('acoes', ''),
+                    'atividade': row.get('atividade', ''),
+                    'row_index': idx
+                })
+            
+            # Criar processador paralelo otimizado
+            processor = create_parallel_analyzer(use_threads=False)
+            
+            # Processar em paralelo
+            results = processor.process_batch(
+                pdi_data,
+                process_single_pdi_worker,
+                chunk_size=max(1, len(pdi_data) // (processor.max_workers * 2))
+            )
+            
+            # Converter para DataFrame
+            results_df = pd.DataFrame(results)
+            
+            # Aplicar formatação de scores
+            return self._apply_score_formatting(results_df)
+            
+        except Exception as e:
+            print(f"⚠️ Erro no processamento paralelo: {e}")
+            print("🔄 Fallback para processamento sequencial")
+            return self._analyze_sequential(df)
+    
+    def _analyze_sequential(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Análise sequencial com cache"""
+        results = []
+        
+        for idx, row in df.iterrows():
+            if idx % 50 == 0 and idx > 0:
+                print(f"📊 Processados {idx}/{len(df)} PDIs...")
+            
+            try:
+                result = self.analyze_single_pdi(
+                    row.get('objetivo', ''),
+                    row.get('acoes', ''),
+                    row.get('atividade', '')
+                )
+                result['row_index'] = idx
+                results.append(result)
+                
+            except Exception as e:
+                print(f"⚠️ Erro no PDI {idx}: {e}")
+                results.append({
+                    'row_index': idx,
+                    'overall_score': 0.0,
+                    'quality_level': 'Baixa',
+                    'clarity_score': 0.0,
+                    'specificity_score': 0.0,
+                    'completeness_score': 0.0,
+                    'structure_score': 0.0,
+                    'error': str(e)
+                })
+        
+        results_df = pd.DataFrame(results)
+        return self._apply_score_formatting(results_df)
+    
+    def _apply_score_formatting(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Aplica formatação de scores ao DataFrame"""
+        score_columns = ['overall_score', 'clarity_score', 'specificity_score', 
+                        'completeness_score', 'structure_score']
+        
+        for col in score_columns:
+            if col in df.columns:
+                df[col] = df[col].apply(lambda x: self._format_score(x))
+        
+        return df
+    
+    def get_performance_stats(self) -> Dict[str, Any]:
+        """Retorna estatísticas de performance"""
+        if not self.enable_cache:
+            return {'cache_enabled': False}
+        
+        try:
+            from ..core.performance_cache import get_cache_stats
+            stats = get_cache_stats()
+            stats['cache_enabled'] = True
+            stats['parallel_enabled'] = self.enable_parallel
+            return stats
+        except ImportError:
+            return {'cache_enabled': False, 'error': 'Performance cache not available'}
+    
+    def clear_performance_cache(self):
+        """Limpa cache de performance"""
+        if self.enable_cache:
+            try:
+                from ..core.performance_cache import clear_all_caches
+                clear_all_caches()
+                print("✅ Cache de performance limpo")
+            except ImportError:
+                print("⚠️ Cache de performance não disponível")
 
     def _create_results_dataframe(self, results: List[Dict]) -> pd.DataFrame:
         simplified_results = []

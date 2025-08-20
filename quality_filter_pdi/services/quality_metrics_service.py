@@ -2,25 +2,44 @@ from typing import Dict, List
 from ..core.config import POSITIVE_INDICATORS, NEGATIVE_INDICATORS
 from ..utils.text_utils import TextUtils
 
+# Importação condicional do cache para performance
+try:
+    from ..core.performance_cache import cached_metric, cached_tokenize, cached_sentence_count, cached_avg_word_length
+    CACHE_AVAILABLE = True
+except ImportError:
+    # Fallback se cache não estiver disponível
+    CACHE_AVAILABLE = False
+    def cached_metric(method_name):
+        def decorator(func):
+            return func
+        return decorator
+
 
 class QualityMetricsService:
     
-    def __init__(self):
+    def __init__(self, enable_cache: bool = True):
         self.positive_indicators = POSITIVE_INDICATORS
         self.negative_indicators = NEGATIVE_INDICATORS
+        self.cache_enabled = enable_cache and CACHE_AVAILABLE
     
+    @cached_metric('clarity')
     def calculate_clarity(self, text: str) -> float:
         if not TextUtils.validate_text_quality(text):
             return 0.0
         
         try:
-            words = TextUtils.tokenize(text)
-            sentences = TextUtils.count_sentences(text)
+            if self.cache_enabled:
+                words = list(cached_tokenize(text))
+                sentences = cached_sentence_count(text)
+                avg_word_length = cached_avg_word_length(text)
+            else:
+                words = TextUtils.tokenize(text)
+                sentences = TextUtils.count_sentences(text)
+                avg_word_length = TextUtils.calculate_avg_word_length(text)
             
             if not words or sentences == 0:
                 return 0.0
             
-            avg_word_length = TextUtils.calculate_avg_word_length(text)
             words_per_sentence = len(words) / sentences
             
             if len(words) < 3:
@@ -44,6 +63,7 @@ class QualityMetricsService:
         except Exception:
             return 0.0
     
+    @cached_metric('specificity')
     def calculate_specificity(self, text: str) -> float:
         if not TextUtils.validate_text_quality(text):
             return 0.0
@@ -70,13 +90,20 @@ class QualityMetricsService:
         except Exception:
             return 0.0
     
+    @cached_metric('completeness')
     def calculate_completeness(self, text: str) -> float:
         if not TextUtils.validate_text_quality(text):
             return 0.0
         
         try:
-            word_count = TextUtils.count_words(text)
-            sentence_count = TextUtils.count_sentences(text)
+            if self.cache_enabled:
+                words = list(cached_tokenize(text))
+                sentences = cached_sentence_count(text)
+                word_count = len(words)
+                sentence_count = sentences
+            else:
+                word_count = TextUtils.count_words(text)
+                sentence_count = TextUtils.count_sentences(text)
             
             if word_count < 5:
                 return 0.1
@@ -98,6 +125,7 @@ class QualityMetricsService:
         except Exception:
             return 0.0
     
+    @cached_metric('structure')
     def calculate_structure(self, text: str) -> float:
         if not TextUtils.validate_text_quality(text):
             return 0.0
@@ -116,7 +144,11 @@ class QualityMetricsService:
             if TextUtils.has_punctuation(text):
                 structure_score += 0.2
             
-            sentences = TextUtils.count_sentences(text)
+            if self.cache_enabled:
+                sentences = cached_sentence_count(text)
+            else:
+                sentences = TextUtils.count_sentences(text)
+                
             if sentences > 1:
                 structure_score += min(0.3, sentences * 0.1)
             

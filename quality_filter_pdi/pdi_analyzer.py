@@ -6,13 +6,29 @@ from .core.config import COLUMN_MAPPING
 from .services.pdi_analysis_service import PDIAnalysisService
 from .services.file_service import FileService
 
+# Importação condicional de performance
+try:
+    from .core.performance_cache import get_cache_stats, clear_all_caches
+    PERFORMANCE_AVAILABLE = True
+except ImportError:
+    PERFORMANCE_AVAILABLE = False
+
 
 class PDIAnalyzer:
     
-    def __init__(self):
-        self.analysis_service = PDIAnalysisService()
+    def __init__(self, enable_cache: bool = True, enable_parallel: bool = True):
+        """
+        Args:
+            enable_cache: Habilitar cache de performance
+            enable_parallel: Habilitar processamento paralelo
+        """
+        self.analysis_service = PDIAnalysisService(
+            enable_cache=enable_cache,
+            enable_parallel=enable_parallel
+        )
         self.file_service = FileService()
         self.column_mapping = COLUMN_MAPPING
+        self.performance_enabled = PERFORMANCE_AVAILABLE
     
     def analyze_file(
         self, 
@@ -176,3 +192,79 @@ class PDIAnalyzer:
             },
             'individual_results': batch_results
         }
+    
+    def analyze_pdis_from_dataframe(self, df: pd.DataFrame, use_parallel: bool = None) -> pd.DataFrame:
+        """
+        Análise otimizada de DataFrame com cache e processamento paralelo
+        
+        Args:
+            df: DataFrame com colunas 'objetivo' e 'acoes'
+            use_parallel: Forçar uso (True) ou não uso (False) de paralelo. None = automático
+        """
+        return self.analysis_service.analyze_dataframe_optimized(df, use_parallel)
+    
+    def analyze_single_pdi(self, objetivo: str, acoes: str, atividade: str = "") -> Dict[str, Any]:
+        """Análise de PDI individual otimizada"""
+        return self.analysis_service.analyze_single_pdi(objetivo, acoes, atividade)
+    
+    def get_performance_stats(self) -> Dict[str, Any]:
+        """Retorna estatísticas de performance"""
+        stats = {
+            'performance_enabled': self.performance_enabled
+        }
+        
+        if self.performance_enabled:
+            stats.update(self.analysis_service.get_performance_stats())
+        
+        return stats
+    
+    def clear_cache(self):
+        """Limpa cache de performance"""
+        if self.performance_enabled:
+            self.analysis_service.clear_performance_cache()
+        else:
+            print("⚠️ Cache de performance não está habilitado")
+    
+    def benchmark_performance(self, sample_size: int = 100) -> Dict[str, Any]:
+        """
+        Executa benchmark de performance
+        
+        Args:
+            sample_size: Número de PDIs para teste
+        """
+        import time
+        
+        # Gerar dados de teste
+        test_data = []
+        for i in range(sample_size):
+            test_data.append({
+                'objetivo': f"Objetivo de teste {i+1} para análise de performance com detalhamento específico",
+                'acoes': f"Ações específicas {i+1} com cronograma detalhado e metodologia definida"
+            })
+        
+        df = pd.DataFrame(test_data)
+        
+        # Teste sequencial
+        start = time.time()
+        result_seq = self.analyze_pdis_from_dataframe(df, use_parallel=False)
+        time_seq = time.time() - start
+        
+        # Teste paralelo (se disponível)
+        time_par = None
+        if self.performance_enabled:
+            start = time.time()
+            result_par = self.analyze_pdis_from_dataframe(df, use_parallel=True)
+            time_par = time.time() - start
+        
+        # Estatísticas
+        stats = {
+            'sample_size': sample_size,
+            'sequential_time': time_seq,
+            'sequential_rate': sample_size / time_seq,
+            'parallel_time': time_par,
+            'parallel_rate': sample_size / time_par if time_par else None,
+            'speedup': time_seq / time_par if time_par else None,
+            'cache_stats': self.get_performance_stats() if self.performance_enabled else None
+        }
+        
+        return stats

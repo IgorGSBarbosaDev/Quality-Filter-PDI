@@ -17,12 +17,38 @@ try:
 except ImportError:
     AI_AVAILABLE = False
 
-__version__ = "2.0.0"
+# Importação condicional de performance
+try:
+    from .core.performance_cache import get_cache_stats, clear_all_caches
+    from .core.parallel_processor import ParallelProcessor
+    PERFORMANCE_AVAILABLE = True
+except ImportError:
+    PERFORMANCE_AVAILABLE = False
+
+__version__ = "2.1.0"
 __author__ = "Quality Filter PDI Team"
-__description__ = "Sistema de Análise de Qualidade de PDI com IA"
+__description__ = "Sistema de Análise de Qualidade de PDI com IA e Otimizações de Performance"
+
+# Wrapper de compatibilidade para manter API existente
+class QualityFilterPDI(PDIAnalyzer):
+    """
+    Wrapper de compatibilidade que mantém a API original
+    com melhorias de performance opcionais
+    """
+    
+    def __init__(self, enable_performance: bool = True):
+        """
+        Args:
+            enable_performance: Habilitar otimizações de performance (cache + paralelo)
+        """
+        super().__init__(
+            enable_cache=enable_performance,
+            enable_parallel=enable_performance
+        )
 
 __all__ = [
     "PDIAnalyzer",
+    "QualityFilterPDI",  # Wrapper de compatibilidade
     "PDIAnalysisService", 
     "QualityMetricsService",
     "FileService",
@@ -31,5 +57,6 @@ __all__ = [
     "QUALITY_THRESHOLDS",
     "METRIC_WEIGHTS",
     "COLUMN_MAPPING",
-    "AI_AVAILABLE"
+    "AI_AVAILABLE",
+    "PERFORMANCE_AVAILABLE"
 ]
