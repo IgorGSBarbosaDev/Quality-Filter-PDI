@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Relatório final dos resultados da análise de qualidade PDI
-"""
-
 import pandas as pd
 import json
 
