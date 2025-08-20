@@ -1,4 +1,9 @@
-# 📊 Quality Filter PDI - Sistema de Análise de Qualidade de PDI
+# 📊 Quality Filter PDI - Sistema de Análise ├── 🎨 examples/              # Exemplos práticos de uso
+│   ├── 01_uso_basico.py           # Uso básico do sistema
+│   ├── 02_motivos_concisos.py     # Motivos de avaliação
+│   ├── 03_explicacao_notas.py     # Explicações detalhadas
+│   ├── 04_relatorio_completo.py   # Relatório completo
+│   └── *.csv                      # Dados de exemploidade de PDI
 
 ## 🎯 **Visão Geral**
 
@@ -45,10 +50,9 @@ Quality Filter PDI/
 │   └── integration/               # Testes de integração
 ├── 🎨 examples/                    # Exemplos práticos de uso
 │   ├── 01_uso_basico.py           # Uso básico do sistema
-│   ├── 02_feedback_responsavel.py # Feedback personalizado
-│   ├── 03_motivos_concisos.py     # Motivos de avaliação
-│   ├── 04_explicacao_notas.py     # Explicações detalhadas
-│   ├── 05_relatorio_completo.py   # Relatório completo
+│   ├── 02_motivos_concisos.py     # Motivos de avaliação
+│   ├── 03_explicacao_notas.py     # Explicações detalhadas
+│   ├── 04_relatorio_completo.py   # Relatório completo
 │   └── *.csv                      # Dados de exemplo
 ├── 🔧 setup/                       # Scripts de configuração
 └── 📄 output/                      # Resultados de análise
@@ -175,18 +179,6 @@ Seu objetivo está muito bem definido e suas ações são claras e específicas.
 2. Use seu PDI como exemplo para futuros objetivos
 3. Acompanhe regularmente seu progresso
 ```
-
-**Características do Feedback:**
-- ✅ **Linguagem direta e amigável** para o colaborador
-- ✅ **Orientações práticas** para cada critério
-- ✅ **Ações específicas** para melhoria
-- ✅ **Tom motivacional** e construtivo
-
-**Duas colunas complementares no arquivo:**
-- `score_explanation`: Explicação técnica detalhada (para analistas/RH)
-- `feedback_responsavel`: Feedback direto para o responsável do PDI
-
-O feedback é salvo na coluna `feedback_responsavel` do arquivo CSV gerado.
 
 ## 🎯 **Classificação de Habilidades**
 

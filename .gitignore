@@ -107,6 +107,8 @@ temp_*.py
 output.csv
 temp.csv
 *.log
+*feedback_responsavel*
+*_feedback.csv
 
 # IDEs
 .vscode/settings.json

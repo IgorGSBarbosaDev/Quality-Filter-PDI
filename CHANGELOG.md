@@ -1,5 +1,49 @@
 # 📋 CHANGELOG - Quality Filter PDI
 
+## [v2.2.0] - 2025-08-20 - Remoção de feedback_responsavel
+
+### 🗑️ **REMOÇÃO COMPLETA DE feedback_responsavel**
+
+#### Funcionalidade Removida
+- ❌ **Coluna `feedback_responsavel`** - Removida do CSV de saída
+- ❌ **Método `generate_feedback_for_responsible()`** - Removido completamente
+- ❌ **Geração de feedback** - Todo código relacionado removido
+- ❌ **Documentação `FEEDBACK_RESPONSAVEL.md`** - Arquivo removido
+- ❌ **Exemplo `02_feedback_responsavel.py`** - Arquivo removido
+
+#### Motivo da Remoção
+- 📊 **Dados não úteis** para planilha conforme solicitado
+- 🎯 **Simplificação do CSV** - Foco apenas nos motivos concisos
+- 🚀 **Otimização de performance** - Menos processamento desnecessário
+
+#### Impacto
+- ✅ **CSV mais limpo** - Apenas colunas essenciais
+- ✅ **Performance melhorada** - Sem geração de feedback longo
+- ✅ **Foco nos motivos** - 3 motivos concisos mantidos
+
+### 📊 **ESTRUTURA FINAL ATUAL**
+
+#### Colunas no CSV Final
+1. `row_index` - Índice da linha
+2. `overall_score` - Nota geral (formatada 4 dígitos)
+3. `quality_level` - Nível de qualidade
+4. `clarity_score` - Nota de clareza
+5. `specificity_score` - Nota de especificidade  
+6. `completeness_score` - Nota de completude
+7. `structure_score` - Nota de estrutura
+8. `smart_criteria_score` - 0.0 (removido)
+9. `word_count` - Contagem de palavras
+10. `sentence_count` - Contagem de sentenças
+11. `motivo_1` - Primeiro motivo conciso
+12. `motivo_2` - Segundo motivo conciso
+13. `motivo_3` - Terceiro motivo conciso
+
+#### Examples Reorganizados
+- ✅ `01_uso_basico.py` - Uso básico
+- ✅ `02_motivos_concisos.py` - Motivos (ex: 03_)
+- ✅ `03_explicacao_notas.py` - Explicações (ex: 04_)
+- ✅ `04_relatorio_completo.py` - Relatório (ex: 05_)
+
 ## [v2.1.0] - 2025-08-20 - Limpeza e Otimização
 
 ### 🧹 **LIMPEZA REALIZADA**

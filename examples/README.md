@@ -9,22 +9,17 @@ Esta pasta contém exemplos práticos de como usar o sistema Quality Filter PDI.
 - **Funcionalidades**: Análise simples de PDIs e geração de CSV
 - **Ideal para**: Primeiros passos e testes rápidos
 
-### `02_feedback_responsavel.py`
-- **Propósito**: Mostra como gerar feedback personalizado para responsáveis
-- **Funcionalidades**: Feedback direto e específico para cada PDI
-- **Ideal para**: RH e gestores que precisam de feedback prático
-
-### `03_motivos_concisos.py`
+### `02_motivos_concisos.py`
 - **Propósito**: Demonstra a geração de motivos concisos (3 pontos principais)
 - **Funcionalidades**: Motivos claros e diretos para cada avaliação
 - **Ideal para**: Relatórios executivos e dashboards
 
-### `04_explicacao_notas.py`
+### `03_explicacao_notas.py`
 - **Propósito**: Mostra explicações detalhadas das notas
 - **Funcionalidades**: Análise completa dos critérios de avaliação
 - **Ideal para**: Análises detalhadas e auditorias
 
-### `05_relatorio_completo.py`
+### `04_relatorio_completo.py`
 - **Propósito**: Exemplo de relatório completo com todas as funcionalidades
 - **Funcionalidades**: Análise completa, gráficos e exportação
 - **Ideal para**: Relatórios finais e apresentações
