@@ -83,17 +83,6 @@ def get_system_status():
     }
 
 def quick_analyze(objetivo: str, acoes: str, enable_ai: bool = True):
-    """
-    Análise rápida de PDI sem instanciar classe
-    
-    Args:
-        objetivo: Objetivo do PDI
-        acoes: Ações planejadas
-        enable_ai: Usar IA (recomendado)
-    
-    Returns:
-        Dict com resultado da análise
-    """
     analyzer = PDIAnalyzer(enable_ai=enable_ai)
     return analyzer.analyze_text(objetivo, acoes)
 
