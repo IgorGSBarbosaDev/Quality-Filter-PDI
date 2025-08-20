@@ -243,16 +243,16 @@ class PDIAnalysisService:
                 'smart_criteria_score': self._format_score(result.get('smart_criteria_score', 0.0))
             }
             
-            # Gerar explicação detalhada da nota
+            # Gerar explicação detalhada da nota - REMOVIDA do CSV final
             metadata = result.get('analysis_metadata', {})
-            score_explanation = self.quality_service.generate_score_explanation(
-                result.get('clarity_score', 0.0),
-                result.get('specificity_score', 0.0),
-                result.get('completeness_score', 0.0),
-                result.get('structure_score', 0.0),
-                result.get('smart_criteria_score', 0.0),
-                metadata.get('negative_impact', 0.0)
-            )
+            # score_explanation = self.quality_service.generate_score_explanation(
+            #     result.get('clarity_score', 0.0),
+            #     result.get('specificity_score', 0.0),
+            #     result.get('completeness_score', 0.0),
+            #     result.get('structure_score', 0.0),
+            #     result.get('smart_criteria_score', 0.0),
+            #     metadata.get('negative_impact', 0.0)
+            # )
             
             # Gerar feedback específico para o responsável pelo PDI
             feedback_responsavel = self.quality_service.generate_feedback_for_responsible(
@@ -279,7 +279,6 @@ class PDIAnalysisService:
             simplified.update({
                 'word_count': metadata.get('word_count', 0),
                 'sentence_count': metadata.get('sentence_count', 0),
-                'score_explanation': score_explanation,  # Explicação técnica detalhada
                 'feedback_responsavel': feedback_responsavel,  # Feedback direto para o responsável
                 'motivo_1': motivos_concisos['motivo_1'],  # Novo: Motivo 1 conciso
                 'motivo_2': motivos_concisos['motivo_2'],  # Novo: Motivo 2 conciso
