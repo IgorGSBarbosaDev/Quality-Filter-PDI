@@ -7,11 +7,10 @@ QUALITY_THRESHOLDS: Dict[str, float] = {
 }
 
 METRIC_WEIGHTS: Dict[str, float] = {
-    'clarity': 0.25,
-    'specificity': 0.25,
-    'completeness': 0.25,
-    'structure': 0.15,
-    'smart_criteria': 0.10
+    'clarity': 0.278,        # 27.8% (rebalanceado)
+    'specificity': 0.278,    # 27.8% (rebalanceado)
+    'completeness': 0.278,   # 27.8% (rebalanceado)
+    'structure': 0.167       # 16.7% (rebalanceado)
 }
 
 MIN_WORD_COUNT: int = 10
@@ -26,14 +25,6 @@ COLUMN_MAPPING: Dict[str, str] = {
     'objetivo_desenvolvimento': 'Objetivo de Desenvolvimento (GAP)',
     'atividade_aprendizagem': 'Atividade de Aprendizagem',
     'descricao': 'Descrição'
-}
-
-SMART_KEYWORDS: Dict[str, List[str]] = {
-    'specific': ['específico', 'especifica', 'claro', 'preciso', 'definido', 'detalhado'],
-    'measurable': ['medir', 'mensurar', 'métrica', 'indicador', 'quantidade', 'percentual', '%', 'prazo'],
-    'achievable': ['possível', 'viável', 'realista', 'alcançável', 'factível'],
-    'relevant': ['importante', 'relevante', 'necessário', 'estratégico', 'essencial'],
-    'time_bound': ['prazo', 'até', 'em', 'durante', 'mês', 'ano', 'trimestre', 'semestre', 'data']
 }
 
 POSITIVE_INDICATORS: List[str] = [

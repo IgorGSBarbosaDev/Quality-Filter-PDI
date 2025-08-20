@@ -138,37 +138,6 @@ class AdvancedAIAnalyzer:
         else:
             return 'medium'
     
-    def generate_smart_suggestions(self, objetivo: str, current_score: float) -> List[str]:
-        suggestions = []
-        
-        if current_score < 0.5:
-            suggestions.extend([
-                "🎯 Especifique mais claramente o que deseja alcançar",
-                "📅 Adicione prazos e marcos específicos",
-                "📊 Inclua métricas mensuráveis de sucesso"
-            ])
-        
-        if 'certificação' in objetivo.lower():
-            suggestions.append("📜 Mencione a instituição certificadora e validade")
-        
-        if any(tech in objetivo.lower() for tech in ['python', 'excel', 'sap']):
-            suggestions.extend([
-                "💻 Especifique a versão ou nível de proficiência desejado",
-                "🛠️ Inclua projetos práticos para aplicação"
-            ])
-        
-        if any(soft in objetivo.lower() for soft in ['liderança', 'comunicação']):
-            suggestions.extend([
-                "👥 Defina situações específicas de aplicação",
-                "📋 Estabeleça indicadores comportamentais observáveis"
-            ])
-        
-        learning_objectives = self.extract_learning_objectives(objetivo)
-        if len(learning_objectives) > 1:
-            suggestions.append("🎯 Considere focar em um objetivo principal por PDI")
-        
-        return suggestions[:6]  # Máximo 6 sugestões
-    
     def analyze_action_alignment(self, objetivo: str, acoes: str) -> Dict:
         if not acoes:
             return {

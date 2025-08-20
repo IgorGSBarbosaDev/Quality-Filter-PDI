@@ -54,8 +54,7 @@ class PDIAnalysisService:
             self.quality_service.calculate_clarity(texto_completo),
             self.quality_service.calculate_specificity(texto_completo),
             self.quality_service.calculate_completeness(texto_completo),
-            self.quality_service.calculate_structure(texto_completo),
-            self.quality_service.calculate_smart_criteria(texto_completo)
+            self.quality_service.calculate_structure(texto_completo)
         )
         
         negative_impact = self.quality_service.calculate_negative_impact(texto_completo)
@@ -76,12 +75,10 @@ class PDIAnalysisService:
             try:
                 ai_enhancement = self.ai_analyzer.enhance_quality_analysis(texto_completo, metrics)
                 ai_intent = self.advanced_ai.analyze_pdi_intent(objetivo, acoes)
-                ai_suggestions = self.advanced_ai.generate_smart_suggestions(objetivo, metrics['overall_score'])
                 
                 ai_insights = {
                     'enhancement': ai_enhancement.get('ai_enhancement', {}),
                     'intent_analysis': ai_intent,
-                    'smart_suggestions': ai_suggestions,
                     'ai_boosted_score': ai_enhancement.get('enhanced_overall_score', metrics['overall_score'])
                 }
                 
@@ -175,7 +172,6 @@ class PDIAnalysisService:
             'specificity_score': 0.0,
             'completeness_score': 0.0,
             'structure_score': 0.0,
-            'smart_criteria_score': 0.0,
             'original_text': text,
             'analysis_metadata': {
                 'word_count': 0,
@@ -239,8 +235,7 @@ class PDIAnalysisService:
                 'clarity_score': self._format_score(result.get('clarity_score', 0.0)),
                 'specificity_score': self._format_score(result.get('specificity_score', 0.0)),
                 'completeness_score': self._format_score(result.get('completeness_score', 0.0)),
-                'structure_score': self._format_score(result.get('structure_score', 0.0)),
-                'smart_criteria_score': self._format_score(result.get('smart_criteria_score', 0.0))
+                'structure_score': self._format_score(result.get('structure_score', 0.0))
             }
             
             # Gerar explicação detalhada da nota - REMOVIDA do CSV final
@@ -260,7 +255,6 @@ class PDIAnalysisService:
                 result.get('specificity_score', 0.0),
                 result.get('completeness_score', 0.0),
                 result.get('structure_score', 0.0),
-                result.get('smart_criteria_score', 0.0),
                 metadata.get('negative_impact', 0.0),
                 self._format_score(result.get('overall_score', 0.0) * 100)  # Converter para escala 0-100 e formatar
             )
@@ -319,9 +313,6 @@ class PDIAnalysisService:
         
         if analysis_result.get('structure_score', 0) < 0.5:
             recommendations.append("Melhore a estrutura: use conectores e organize melhor as ideias")
-        
-        if analysis_result.get('smart_criteria_score', 0) < 0.5:
-            recommendations.append("Aplique critérios SMART: torne os objetivos mais específicos, mensuráveis e com prazo")
         
         if not recommendations:
             recommendations.append("PDI de boa qualidade! Continue mantendo este padrão.")

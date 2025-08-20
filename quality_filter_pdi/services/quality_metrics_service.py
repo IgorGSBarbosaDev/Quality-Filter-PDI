@@ -1,12 +1,11 @@
 from typing import Dict, List
-from ..core.config import SMART_KEYWORDS, POSITIVE_INDICATORS, NEGATIVE_INDICATORS
+from ..core.config import POSITIVE_INDICATORS, NEGATIVE_INDICATORS
 from ..utils.text_utils import TextUtils
 
 
 class QualityMetricsService:
     
     def __init__(self):
-        self.smart_keywords = SMART_KEYWORDS
         self.positive_indicators = POSITIVE_INDICATORS
         self.negative_indicators = NEGATIVE_INDICATORS
     
@@ -126,25 +125,6 @@ class QualityMetricsService:
         except Exception:
             return 0.0
     
-    def calculate_smart_criteria(self, text: str) -> float:
-        if not TextUtils.validate_text_quality(text):
-            return 0.0
-        
-        try:
-            smart_score = 0.0
-            text_lower = text.lower()
-            
-            for category, keywords in self.smart_keywords.items():
-                for keyword in keywords:
-                    if keyword.lower() in text_lower:
-                        smart_score += 0.15
-                        break
-            
-            return min(1.0, smart_score)
-            
-        except Exception:
-            return 0.0
-    
     def calculate_negative_impact(self, text: str) -> float:
         if not TextUtils.validate_text_quality(text):
             return 0.0
@@ -163,21 +143,15 @@ class QualityMetricsService:
             return 0.0
     
     def calculate_overall_quality(self, clarity: float, specificity: float, 
-                                completeness: float, structure: float, 
-                                smart_criteria: float = 0.0) -> Dict[str, float]:
+                                completeness: float, structure: float) -> Dict[str, float]:
         """
         Calcula a qualidade geral do PDI com base nos critérios principais.
-        
-        NOTA: O parâmetro smart_criteria é mantido para compatibilidade, 
-        mas não é mais usado no cálculo (peso = 0.0).
-        Análise mostrou que remover SMART melhora as notas em 100% dos casos.
         """
         weights = {
-            'clarity': 0.278,       # 27.8% (anteriormente 25.0%)
-            'specificity': 0.278,   # 27.8% (anteriormente 25.0%)
-            'completeness': 0.278,  # 27.8% (anteriormente 25.0%)
-            'structure': 0.167,     # 16.7% (anteriormente 15.0%)
-            'smart_criteria': 0.0   # 0.0% (anteriormente 10.0%) - REMOVIDO
+            'clarity': 0.278,       # 27.8%
+            'specificity': 0.278,   # 27.8%
+            'completeness': 0.278,  # 27.8%
+            'structure': 0.167      # 16.7%
         }
         
         overall_score = (
@@ -185,7 +159,6 @@ class QualityMetricsService:
             specificity * weights['specificity'] +
             completeness * weights['completeness'] +
             structure * weights['structure']
-            # smart_criteria removido do cálculo
         )
         
         if overall_score >= 0.6:
@@ -201,23 +174,20 @@ class QualityMetricsService:
             'clarity_score': clarity,
             'specificity_score': specificity,
             'completeness_score': completeness,
-            'structure_score': structure,
-            'smart_criteria_score': smart_criteria  # Mantido para compatibilidade
+            'structure_score': structure
         }
     
     def generate_score_explanation(self, clarity: float, specificity: float, 
                                  completeness: float, structure: float, 
-                                 smart_criteria: float, negative_impact: float = 0.0) -> str:
+                                 negative_impact: float = 0.0) -> str:
         """
         Gera uma explicação detalhada de como a nota foi calculada
-        NOTA: smart_criteria é mantido para compatibilidade mas tem peso 0
         """
         weights = {
-            'clarity': 0.278,       # 27.8% (rebalanceado)
-            'specificity': 0.278,   # 27.8% (rebalanceado)
-            'completeness': 0.278,  # 27.8% (rebalanceado)
-            'structure': 0.167,     # 16.7% (rebalanceado)
-            'smart_criteria': 0.0   # 0.0% (removido)
+            'clarity': 0.278,       # 27.8%
+            'specificity': 0.278,   # 27.8%
+            'completeness': 0.278,  # 27.8%
+            'structure': 0.167      # 16.7%
         }
         
         # Calcular contribuições de cada critério
@@ -226,7 +196,6 @@ class QualityMetricsService:
             'Especificidade': specificity * weights['specificity'] * 100,
             'Completude': completeness * weights['completeness'] * 100,
             'Estrutura': structure * weights['structure'] * 100
-            # SMART removido do cálculo
         }
         
         total_score = sum(contributions.values())
@@ -321,21 +290,19 @@ class QualityMetricsService:
     
     def generate_concise_reasons(self, clarity: float, specificity: float, 
                                 completeness: float, structure: float, 
-                                smart_criteria: float, negative_impact: float = 0.0,
+                                negative_impact: float = 0.0,
                                 overall_score: float = 0.0) -> dict:
         """
         Gera 3 motivos concisos e diretos para a nota recebida
         Sem emojis, sem textos longos - apenas os pontos principais
-        NOTA: smart_criteria é mantido para compatibilidade mas tem peso 0
         """
         # Calcular nota final se não fornecida
         if overall_score == 0.0:
             weights = {
-                'clarity': 0.278,       # 27.8% (rebalanceado)
-                'specificity': 0.278,   # 27.8% (rebalanceado)
-                'completeness': 0.278,  # 27.8% (rebalanceado)
-                'structure': 0.167,     # 16.7% (rebalanceado)
-                'smart_criteria': 0.0   # 0.0% (removido)
+                'clarity': 0.278,       # 27.8%
+                'specificity': 0.278,   # 27.8%
+                'completeness': 0.278,  # 27.8%
+                'structure': 0.167      # 16.7%
             }
             
             overall_score = (
@@ -343,14 +310,12 @@ class QualityMetricsService:
                 specificity * weights['specificity'] +
                 completeness * weights['completeness'] +
                 structure * weights['structure']
-                # smart_criteria removido do cálculo
             ) * 100
             
             if negative_impact > 0:
                 overall_score = max(0, overall_score - (negative_impact * 10))
         
         # Identificar os 3 principais problemas/pontos fortes
-        # SMART removido da análise
         criteria_scores = {
             'clareza': clarity,
             'especificidade': specificity,

@@ -39,13 +39,11 @@ def gerar_relatorio_final():
             specificity_avg = df_result['specificity_score'].mean()
             completeness_avg = df_result['completeness_score'].mean()
             structure_avg = df_result['structure_score'].mean()
-            smart_avg = df_result['smart_criteria_score'].mean()
             
             print(f"   📝 Clareza média:           {clarity_avg:.3f}")
             print(f"   🎯 Especificidade média:    {specificity_avg:.3f}")
             print(f"   📋 Completude média:        {completeness_avg:.3f}")
             print(f"   🏗️  Estrutura média:         {structure_avg:.3f}")
-            print(f"   ⭐ Critérios SMART médios:  {smart_avg:.3f}")
         
         # Exemplos de cada categoria
         print(f"\n📋 EXEMPLOS POR CATEGORIA DE QUALIDADE:")
