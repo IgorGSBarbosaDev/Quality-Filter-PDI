@@ -13,14 +13,22 @@ try:
 except ImportError:
     PERFORMANCE_AVAILABLE = False
 
+# Importação condicional de IA
+try:
+    from .ai.simple_ai_analyzer import SimpleAIAnalyzer
+    AI_AVAILABLE = True
+except ImportError:
+    AI_AVAILABLE = False
+
 
 class PDIAnalyzer:
     
-    def __init__(self, enable_cache: bool = True, enable_parallel: bool = True):
+    def __init__(self, enable_cache: bool = True, enable_parallel: bool = True, enable_ai: bool = True):
         """
         Args:
             enable_cache: Habilitar cache de performance
             enable_parallel: Habilitar processamento paralelo
+            enable_ai: Habilitar análise com IA (recomendado)
         """
         self.analysis_service = PDIAnalysisService(
             enable_cache=enable_cache,
@@ -29,6 +37,21 @@ class PDIAnalyzer:
         self.file_service = FileService()
         self.column_mapping = COLUMN_MAPPING
         self.performance_enabled = PERFORMANCE_AVAILABLE
+        
+        # 🤖 Inicializar IA Simples
+        self.ai_enabled = enable_ai and AI_AVAILABLE
+        if self.ai_enabled:
+            try:
+                self.ai_analyzer = SimpleAIAnalyzer()
+                print("🤖 IA Simples ativada - Análise aprimorada disponível!")
+            except Exception as e:
+                print(f"⚠️ Erro ao inicializar IA: {e}")
+                self.ai_enabled = False
+                self.ai_analyzer = None
+        else:
+            self.ai_analyzer = None
+            if enable_ai and not AI_AVAILABLE:
+                print("⚠️ IA não disponível - execute: pip install spacy scikit-learn nltk")
     
     def analyze_file(
         self, 
@@ -80,6 +103,17 @@ class PDIAnalyzer:
             }
     
     def analyze_text(self, objetivo: str, acoes: str, **kwargs) -> Dict[str, Any]:
+        """
+        Analisa um PDI específico com análise de qualidade + IA (se disponível)
+        
+        Args:
+            objetivo: Texto do objetivo de desenvolvimento
+            acoes: Texto das ações planejadas
+            **kwargs: Dados adicionais do PDI
+            
+        Returns:
+            Dict com análise completa incluindo insights de IA
+        """
         pdi_data = {
             self.column_mapping['objetivo_desenvolvimento']: objetivo,
             self.column_mapping['acoes_planejadas']: acoes
@@ -88,7 +122,64 @@ class PDIAnalyzer:
         for key, value in kwargs.items():
             pdi_data[key] = value
         
-        return self.analysis_service.analyze_single_pdi(pdi_data)
+        # Análise tradicional
+        base_result = self.analysis_service.analyze_single_pdi(pdi_data)
+        
+        # 🤖 Análise com IA (se disponível)
+        if self.ai_enabled and self.ai_analyzer:
+            try:
+                # Combinar objetivo + ações para análise de IA
+                combined_text = f"{objetivo}. {acoes}".strip()
+                
+                if len(combined_text) > 10:  # Mínimo de texto
+                    ai_analysis = self.ai_analyzer.analyze_pdi_text(combined_text)
+                    
+                    # Integrar resultados da IA
+                    base_result['ai_analysis'] = ai_analysis
+                    base_result['ai_insights'] = ai_analysis.get('ai_insights', {})
+                    base_result['ai_recommendations'] = ai_analysis.get('recommendations', [])
+                    base_result['ai_overall_score'] = ai_analysis.get('overall_score', 0)
+                    base_result['ai_confidence'] = ai_analysis.get('confidence', 0)
+                    
+                    # Combinar pontuações
+                    traditional_score = base_result.get('scores', {}).get('overall_score', 0)
+                    ai_score = ai_analysis.get('overall_score', 0)
+                    
+                    # Score híbrido (70% tradicional + 30% IA)
+                    hybrid_score = (traditional_score * 0.7) + (ai_score * 0.3)
+                    base_result['hybrid_score'] = round(hybrid_score, 3)
+                    
+                    print(f"🤖 IA aplicada - Score: {ai_score:.2f} | Híbrido: {hybrid_score:.2f}")
+                
+            except Exception as e:
+                print(f"⚠️ Erro na análise de IA: {e}")
+                base_result['ai_error'] = str(e)
+        
+        return base_result
+    
+    def analyze_text_with_ai_only(self, texto: str) -> Dict[str, Any]:
+        """
+        Análise exclusiva com IA (útil para testes rápidos)
+        
+        Args:
+            texto: Texto do PDI para análise
+            
+        Returns:
+            Dict com análise completa de IA
+        """
+        if not self.ai_enabled or not self.ai_analyzer:
+            return {
+                'error': 'IA não disponível',
+                'recommendation': 'Execute: pip install spacy scikit-learn nltk'
+            }
+        
+        try:
+            return self.ai_analyzer.analyze_pdi_text(texto)
+        except Exception as e:
+            return {
+                'error': f'Erro na análise de IA: {str(e)}',
+                'ai_available': False
+            }
     
     def get_quality_recommendations(self, analysis_result: Dict[str, Any]) -> List[str]:
         return self.analysis_service.get_quality_recommendations(analysis_result)
@@ -268,3 +359,96 @@ class PDIAnalyzer:
         }
         
         return stats
+    
+    # ===== MÉTODOS DE IA =====
+    
+    def get_ai_info(self) -> Dict[str, Any]:
+        """
+        Retorna informações sobre o sistema de IA
+        
+        Returns:
+            Dict com status e capacidades da IA
+        """
+        if not self.ai_enabled or not self.ai_analyzer:
+            return {
+                'ai_available': False,
+                'status': 'IA não disponível',
+                'recommendation': 'Execute: pip install spacy scikit-learn nltk',
+                'setup_command': 'python -m spacy download pt_core_news_sm'
+            }
+        
+        ai_info = self.ai_analyzer.get_model_info()
+        ai_info['ai_available'] = True
+        ai_info['status'] = 'IA Simples ativada'
+        ai_info['integration'] = 'Híbrida (Tradicional + IA)'
+        
+        return ai_info
+    
+    def test_ai_analysis(self, texto_exemplo: str = None) -> Dict[str, Any]:
+        """
+        Testa a análise de IA com texto de exemplo
+        
+        Args:
+            texto_exemplo: Texto personalizado para teste (opcional)
+            
+        Returns:
+            Dict com resultado do teste
+        """
+        if not texto_exemplo:
+            texto_exemplo = "Desenvolver habilidades em Python para análise de dados usando pandas e numpy durante 3 meses para melhorar eficiência na geração de relatórios."
+        
+        print(f"🧪 Testando IA com: '{texto_exemplo[:50]}...'")
+        
+        if not self.ai_enabled:
+            return {
+                'test_successful': False,
+                'error': 'IA não disponível'
+            }
+        
+        try:
+            result = self.ai_analyzer.analyze_pdi_text(texto_exemplo)
+            
+            return {
+                'test_successful': True,
+                'input_text': texto_exemplo,
+                'ai_result': result,
+                'overall_score': result.get('overall_score', 0),
+                'confidence': result.get('confidence', 0),
+                'main_insights': result.get('ai_insights', {}).get('strengths', [])[:3]
+            }
+            
+        except Exception as e:
+            return {
+                'test_successful': False,
+                'error': f'Erro no teste de IA: {str(e)}'
+            }
+    
+    def enable_ai(self) -> bool:
+        """
+        Ativa a IA se ela estiver disponível
+        
+        Returns:
+            bool: True se ativada com sucesso
+        """
+        if not AI_AVAILABLE:
+            print("❌ IA não pode ser ativada - dependências não instaladas")
+            return False
+        
+        if not self.ai_enabled:
+            try:
+                self.ai_analyzer = SimpleAIAnalyzer()
+                self.ai_enabled = True
+                print("✅ IA ativada com sucesso!")
+                return True
+            except Exception as e:
+                print(f"❌ Erro ao ativar IA: {e}")
+                return False
+        
+        print("ℹ️ IA já está ativada")
+        return True
+    
+    def disable_ai(self):
+        """Desativa a IA para economizar recursos"""
+        self.ai_enabled = False
+        self.ai_analyzer = None
+        print("🔇 IA desativada")
