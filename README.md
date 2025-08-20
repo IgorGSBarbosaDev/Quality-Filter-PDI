@@ -43,10 +43,14 @@ Quality Filter PDI/
 ├── 🧪 tests/                       # Testes automatizados
 │   ├── unit/                      # Testes unitários
 │   └── integration/               # Testes de integração
-├── 🎨 examples/                    # Exemplos de uso
+├── 🎨 examples/                    # Exemplos práticos de uso
+│   ├── 01_uso_basico.py           # Uso básico do sistema
+│   ├── 02_feedback_responsavel.py # Feedback personalizado
+│   ├── 03_motivos_concisos.py     # Motivos de avaliação
+│   ├── 04_explicacao_notas.py     # Explicações detalhadas
+│   ├── 05_relatorio_completo.py   # Relatório completo
+│   └── *.csv                      # Dados de exemplo
 ├── 🔧 setup/                       # Scripts de configuração
-├── 📂 data/                        # Dados de exemplo
-│   └── samples/                   # Amostras de PDI
 └── 📄 output/                      # Resultados de análise
 ```
 
