@@ -178,3 +178,292 @@ class AdvancedAIAnalyzer:
             'missing_actions': False,
             'suggestions': suggestions
         }
+    
+    def analyze_goal_cohesion_ai(self, objetivo: str, acoes: str, atividades: str = "") -> Dict:
+        """
+        Análise de coesão da meta usando IA avançada.
+        
+        Utiliza análise semântica profunda para avaliar alinhamento entre objetivo e ações.
+        """
+        if hasattr(self, 'use_fallback'):
+            return self._fallback_cohesion_analysis(objetivo, acoes, atividades)
+        
+        try:
+            # Combinar campos com conteúdo (lógica inteligente)
+            campos_com_conteudo = []
+            if acoes and acoes.strip():
+                campos_com_conteudo.append(acoes.strip())
+            if atividades and atividades.strip():
+                campos_com_conteudo.append(atividades.strip())
+            
+            if not campos_com_conteudo:
+                return {
+                    'cohesion_score': 0.0,
+                    'cohesion_level': 'muito ruim',
+                    'ai_confidence': 1.0,
+                    'analysis_details': 'Nenhuma ação ou atividade encontrada'
+                }
+            
+            acoes_combined = " ".join(campos_com_conteudo)
+            
+            # 1. Análise de Sentimento e Intenção
+            objetivo_analysis = self._analyze_text_intent(objetivo)
+            acoes_analysis = self._analyze_text_intent(acoes_combined)
+            
+            # 2. Análise de Similaridade Semântica
+            semantic_similarity = self._calculate_semantic_similarity(objetivo, acoes_combined)
+            
+            # 3. Análise de Categorias e Domínios
+            objetivo_categories = self._extract_categories(objetivo)
+            acoes_categories = self._extract_categories(acoes_combined)
+            category_overlap = self._calculate_category_overlap(objetivo_categories, acoes_categories)
+            
+            # 4. Análise de Completude das Ações
+            completeness_score = self._analyze_action_completeness(objetivo, acoes_combined)
+            
+            # 5. Análise de Especificidade e Praticidade
+            practicality_score = self._analyze_action_practicality(acoes_combined)
+            
+            # Calcular score final com pesos baseados em IA
+            final_score = (
+                semantic_similarity * 0.35 +      # 35% - Similaridade semântica
+                category_overlap * 0.25 +         # 25% - Overlap de categorias
+                completeness_score * 0.20 +       # 20% - Completude das ações
+                practicality_score * 0.15 +       # 15% - Praticidade das ações
+                self._calculate_intent_alignment(objetivo_analysis, acoes_analysis) * 0.05  # 5% - Alinhamento de intenção
+            )
+            
+            # Garantir que o score esteja entre 0 e 1
+            final_score = max(0.0, min(1.0, final_score))
+            
+            # Classificar em níveis
+            if final_score >= 0.85:
+                level = 'otimo'
+            elif final_score >= 0.70:
+                level = 'bom'
+            elif final_score >= 0.50:
+                level = 'medio'
+            elif final_score >= 0.25:
+                level = 'ruim'
+            else:
+                level = 'muito ruim'
+            
+            # Calcular confiança da IA
+            confidence = min(1.0, (semantic_similarity + category_overlap) / 2)
+            
+            return {
+                'cohesion_score': final_score,
+                'cohesion_level': level,
+                'ai_confidence': confidence,
+                'analysis_details': {
+                    'semantic_similarity': semantic_similarity,
+                    'category_overlap': category_overlap,
+                    'completeness_score': completeness_score,
+                    'practicality_score': practicality_score,
+                    'objective_categories': objetivo_categories,
+                    'actions_categories': acoes_categories,
+                    'used_fields': len(campos_com_conteudo)
+                }
+            }
+            
+        except Exception as e:
+            print(f"⚠️ Erro na análise AI de coesão: {e}")
+            return self._fallback_cohesion_analysis(objetivo, acoes, atividades)
+    
+    def _analyze_text_intent(self, text: str) -> Dict:
+        """Analisa a intenção do texto usando IA"""
+        try:
+            if self.sentiment_analyzer:
+                sentiment = self.sentiment_analyzer(text)
+                return {
+                    'sentiment': sentiment[0]['label'],
+                    'confidence': sentiment[0]['score']
+                }
+        except:
+            pass
+        
+        return {'sentiment': 'NEUTRAL', 'confidence': 0.5}
+    
+    def _calculate_semantic_similarity(self, text1: str, text2: str) -> float:
+        """Calcula similaridade semântica entre dois textos"""
+        try:
+            # Análise baseada em palavras-chave semânticas aprimorada
+            keywords_tech = {
+                'python', 'java', 'javascript', 'react', 'node', 'sql', 'aws', 'azure',
+                'excel', 'powerbi', 'tableau', 'sap', 'salesforce', 'git', 'docker'
+            }
+            
+            keywords_soft = {
+                'lideranca', 'gestao', 'comunicacao', 'apresentacao', 'negociacao',
+                'vendas', 'marketing', 'atendimento', 'relacionamento', 'equipe'
+            }
+            
+            keywords_process = {
+                'processo', 'melhoria', 'otimizacao', 'eficiencia', 'produtividade',
+                'qualidade', 'metodologia', 'agil', 'scrum', 'lean'
+            }
+            
+            text1_lower = text1.lower()
+            text2_lower = text2.lower()
+            
+            # Verificar sobreposição em cada categoria
+            tech_overlap = self._check_keyword_overlap(text1_lower, text2_lower, keywords_tech)
+            soft_overlap = self._check_keyword_overlap(text1_lower, text2_lower, keywords_soft)
+            process_overlap = self._check_keyword_overlap(text1_lower, text2_lower, keywords_process)
+            
+            # Score baseado na melhor categoria
+            max_overlap = max(tech_overlap, soft_overlap, process_overlap)
+            
+            # Bonus por palavras de ação alinhadas
+            action_words = {
+                'desenvolver', 'aprender', 'melhorar', 'implementar', 'criar',
+                'estudar', 'praticar', 'dominar', 'aplicar', 'executar'
+            }
+            action_overlap = self._check_keyword_overlap(text1_lower, text2_lower, action_words)
+            
+            return min(1.0, max_overlap + (action_overlap * 0.3))
+            
+        except Exception:
+            return 0.3  # Fallback básico
+    
+    def _check_keyword_overlap(self, text1: str, text2: str, keywords: set) -> float:
+        """Verifica sobreposição de palavras-chave entre dois textos"""
+        text1_keywords = {word for word in keywords if word in text1}
+        text2_keywords = {word for word in keywords if word in text2}
+        
+        if not text1_keywords or not text2_keywords:
+            return 0.0
+        
+        intersection = text1_keywords.intersection(text2_keywords)
+        union = text1_keywords.union(text2_keywords)
+        
+        return len(intersection) / len(union) if union else 0.0
+    
+    def _extract_categories(self, text: str) -> List[str]:
+        """Extrai categorias do texto"""
+        categories = []
+        text_lower = text.lower()
+        
+        category_keywords = {
+            'tecnologia': ['python', 'java', 'sql', 'excel', 'powerbi', 'aws', 'programacao'],
+            'gestao': ['lideranca', 'gestao', 'equipe', 'gerenciamento', 'coordenacao'],
+            'vendas': ['vendas', 'comercial', 'negociacao', 'cliente', 'prospeccao'],
+            'comunicacao': ['apresentacao', 'comunicacao', 'oratoria', 'redacao'],
+            'analise': ['analise', 'dados', 'relatorio', 'dashboard', 'metricas'],
+            'processo': ['processo', 'melhoria', 'otimizacao', 'metodologia'],
+        }
+        
+        for category, keywords in category_keywords.items():
+            if any(keyword in text_lower for keyword in keywords):
+                categories.append(category)
+        
+        return categories
+    
+    def _calculate_category_overlap(self, categories1: List[str], categories2: List[str]) -> float:
+        """Calcula sobreposição entre categorias"""
+        if not categories1 or not categories2:
+            return 0.0
+        
+        set1 = set(categories1)
+        set2 = set(categories2)
+        
+        intersection = set1.intersection(set2)
+        union = set1.union(set2)
+        
+        return len(intersection) / len(union) if union else 0.0
+    
+    def _analyze_action_completeness(self, objetivo: str, acoes: str) -> float:
+        """Analisa se as ações são completas em relação ao objetivo"""
+        # Verifica se as ações incluem elementos de execução
+        execution_indicators = {
+            'fazer', 'executar', 'realizar', 'implementar', 'praticar',
+            'estudar', 'curso', 'treinamento', 'projeto', 'exercicio'
+        }
+        
+        acoes_lower = acoes.lower()
+        execution_count = sum(1 for indicator in execution_indicators if indicator in acoes_lower)
+        
+        # Bonus por detalhes específicos
+        detail_indicators = {
+            'horas', 'dias', 'semanas', 'meses', 'ate', 'durante',
+            'online', 'presencial', 'certificacao', 'diploma'
+        }
+        
+        detail_count = sum(1 for detail in detail_indicators if detail in acoes_lower)
+        
+        # Score baseado na presença de indicadores
+        completeness = (execution_count * 0.3) + (detail_count * 0.2)
+        
+        return min(1.0, completeness)
+    
+    def _analyze_action_practicality(self, acoes: str) -> float:
+        """Analisa a praticidade das ações propostas"""
+        practical_indicators = {
+            'curso', 'treinamento', 'workshop', 'certificacao', 'livro',
+            'documentacao', 'tutorial', 'video', 'online', 'presencial',
+            'projeto', 'pratica', 'exercicio', 'estudo'
+        }
+        
+        acoes_lower = acoes.lower()
+        practical_count = sum(1 for indicator in practical_indicators if indicator in acoes_lower)
+        
+        # Penalizar ações muito vagas
+        vague_indicators = {'melhorar', 'desenvolver', 'aprender'} 
+        vague_count = sum(1 for vague in vague_indicators if vague in acoes_lower)
+        
+        practicality = (practical_count * 0.2) - (vague_count * 0.1)
+        
+        return max(0.0, min(1.0, practicality))
+    
+    def _calculate_intent_alignment(self, objetivo_analysis: Dict, acoes_analysis: Dict) -> float:
+        """Calcula alinhamento de intenção entre objetivo e ações"""
+        # Se ambos têm sentimento positivo, há melhor alinhamento
+        if (objetivo_analysis.get('sentiment') == 'POSITIVE' and 
+            acoes_analysis.get('sentiment') == 'POSITIVE'):
+            return 0.8
+        elif (objetivo_analysis.get('sentiment') == acoes_analysis.get('sentiment')):
+            return 0.6
+        else:
+            return 0.3
+    
+    def _fallback_cohesion_analysis(self, objetivo: str, acoes: str, atividades: str) -> Dict:
+        """Análise de fallback quando IA não está disponível"""
+        # Usar análise básica por palavras-chave
+        objetivo_words = set(objetivo.lower().split())
+        
+        campos_com_conteudo = []
+        if acoes and acoes.strip():
+            campos_com_conteudo.append(acoes.strip())
+        if atividades and atividades.strip():
+            campos_com_conteudo.append(atividades.strip())
+        
+        if not campos_com_conteudo:
+            return {
+                'cohesion_score': 0.0,
+                'cohesion_level': 'muito ruim',
+                'ai_confidence': 1.0,
+                'analysis_details': 'Análise básica - campos vazios'
+            }
+        
+        acoes_words = set(" ".join(campos_com_conteudo).lower().split())
+        
+        # Cálculo simples de sobreposição
+        intersection = objetivo_words.intersection(acoes_words)
+        union = objetivo_words.union(acoes_words)
+        
+        basic_score = len(intersection) / len(union) if union else 0.0
+        
+        # Classificação
+        if basic_score >= 0.4:
+            level = 'bom'
+        elif basic_score >= 0.2:
+            level = 'medio'
+        else:
+            level = 'ruim'
+        
+        return {
+            'cohesion_score': basic_score,
+            'cohesion_level': level,
+            'ai_confidence': 0.5,
+            'analysis_details': 'Análise básica por palavras-chave'
+        }

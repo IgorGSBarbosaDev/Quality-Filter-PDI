@@ -327,39 +327,36 @@ class QualityMetricsService:
         }
     
     @cached_metric('overall_quality')
-    def calculate_overall_quality(self, clarity: float, specificity: float, 
-                                completeness: float) -> Dict[str, float]:
-        """
-        Calcula a qualidade geral do PDI com base nos critérios principais.
+    def calculate_overall_quality(self, clarity: float, specificity: float,
         
-        Critérios rebalanceados (3 critérios):
-        - Clareza: 35%
-        - Especificidade: 35% 
-        - Completude: 30%
-        """
-        weights = {
-            'clarity': 0.35,      # 35%
-            'specificity': 0.35,  # 35%
-            'completeness': 0.30  # 30%
+        # Verificar alinhamento semântico básico
+        # Palavras relacionadas a desenvolvimento e aprendizagem
+        development_terms = {
+            'desenvolver', 'melhorar', 'aprender', 'estudar', 'capacitar',
+            'treinar', 'praticar', 'dominar', 'adquirir', 'habilidade',
+            'competencia', 'conhecimento', 'skill', 'curso', 'treinamento'
         }
         
-        overall_score = (
-            clarity * weights['clarity'] +
-            specificity * weights['specificity'] +
-            completeness * weights['completeness']
-        )
+        objetivo_has_dev = any(term in objetivo_clean for term in development_terms)
+        acoes_has_dev = any(term in acoes_atividades_combined for term in development_terms)
         
-        return {
-            'overall_score': overall_score,
-            'clarity_score': clarity,
-            'specificity_score': specificity,
-            'completeness_score': completeness,
-            'scores': {
-                'overall_score': overall_score
-            }
+        semantic_alignment = 0.3 if (objetivo_has_dev and acoes_has_dev) else 0.0
+        
+        # Verificar consistência de domínio/área
+        # Termos técnicos que podem indicar área específica
+        tech_terms = {
+            'python', 'programacao', 'software', 'gestao', 'lideranca',
+            'vendas', 'marketing', 'financeiro', 'operacional', 'tecnico',
+            'comunicacao', 'apresentacao', 'analise', 'dados', 'excel'
         }
-    
-    def generate_score_explanation(self, clarity: float, specificity: float,
+        
+        objetivo_tech = {term for term in tech_terms if term in objetivo_clean}
+        acoes_tech = {term for term in tech_terms if term in acoes_atividades_combined}
+        
+        domain_consistency = 0.0
+        if objetivo_tech and acoes_tech:
+            domain_overlap = len(objetivo_tech.intersection(acoes_tech))
+            domain_consistency = domain_overlap / max(len(objetivo_tech), len(acoes_tech))
         
         # Verificar especificidade das ações em relação ao objetivo
         specificity_bonus = 0.0
