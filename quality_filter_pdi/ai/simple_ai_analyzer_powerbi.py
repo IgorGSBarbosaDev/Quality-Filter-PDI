@@ -127,38 +127,230 @@ class SimpleAIAnalyzer:
     
     def analyze_pdi_text(self, text: str) -> Dict:
         """
-        Análise principal de texto PDI com IA Simples - Feedbacks para Power BI
+        Análise simplificada para Power BI - dados categóricos e numéricos diretos
         
         Args:
             text: Texto do PDI para análise
             
         Returns:
-            Dict com métricas de qualidade e insights diretos para dashboards
+            Dict com dados otimizados para dashboards Power BI
         """
-        if not text or len(text.strip()) < 10:
-            return self._empty_analysis()
+        if not text or len(text.strip()) < 5:
+            return self._empty_powerbi_analysis()
         
-        # 🔍 Análises principais
+        # 🔍 Análises básicas
         basic_metrics = self._calculate_basic_metrics(text)
-        semantic_analysis = self._semantic_analysis(text)
-        intent_classification = self._classify_intent(text)
-        quality_assessment = self._assess_quality(text)
-        ai_insights = self._generate_powerbi_insights(text, basic_metrics, semantic_analysis)
+        semantic_features = self._extract_semantic_features(text)
+        intent_data = self._get_intent_category(text)
         
-        # 📊 Pontuação final
-        overall_score = self._calculate_overall_score(
-            basic_metrics, semantic_analysis, intent_classification, quality_assessment
-        )
+        # 📊 Criar dados diretos para Power BI
+        powerbi_data = self._create_powerbi_data(text, basic_metrics, semantic_features, intent_data)
+        
+        return powerbi_data
+    
+    def _extract_semantic_features(self, text: str) -> Dict:
+        """Extrai características semânticas simplificadas"""
+        text_lower = text.lower()
+        
+        # Contadores diretos
+        tech_terms = self._count_technical_terms(text_lower)
+        time_expressions = self._count_time_expressions(text_lower)
+        action_verbs = self._count_action_verbs(text_lower)
         
         return {
-            'basic_metrics': basic_metrics,
-            'semantic_analysis': semantic_analysis,
-            'intent_classification': intent_classification,
-            'quality_assessment': quality_assessment,
-            'ai_insights': ai_insights,
-            'overall_score': overall_score,
-            'confidence': self._calculate_confidence(text),
-            'powerbi_feedback': self._generate_powerbi_feedback(ai_insights, overall_score)
+            'tech_count': tech_terms,
+            'time_count': time_expressions,
+            'action_count': action_verbs,
+            'has_tech': tech_terms > 0,
+            'has_time': time_expressions > 0,
+            'has_action': action_verbs > 0
+        }
+    
+    def _get_intent_category(self, text: str) -> Dict:
+        """Classifica intenção em categorias simples"""
+        text_lower = text.lower()
+        
+        # Palavras-chave por categoria
+        learning_words = ['aprender', 'estudar', 'curso', 'treinamento', 'conhecimento']
+        improving_words = ['melhorar', 'aprimorar', 'desenvolver', 'fortalecer']
+        obtaining_words = ['obter', 'conseguir', 'certificação', 'diploma', 'título']
+        applying_words = ['aplicar', 'praticar', 'implementar', 'utilizar', 'usar']
+        
+        # Contagem
+        learning_score = sum(1 for word in learning_words if word in text_lower)
+        improving_score = sum(1 for word in improving_words if word in text_lower)
+        obtaining_score = sum(1 for word in obtaining_words if word in text_lower)
+        applying_score = sum(1 for word in applying_words if word in text_lower)
+        
+        # Categoria principal
+        scores = {
+            'Aprender': learning_score,
+            'Melhorar': improving_score,
+            'Obter': obtaining_score,
+            'Aplicar': applying_score
+        }
+        
+        primary_intent = max(scores, key=scores.get) if max(scores.values()) > 0 else 'Indefinido'
+        intent_strength = max(scores.values())
+        
+        return {
+            'categoria': primary_intent,
+            'forca': intent_strength,
+            'clareza': 'Alta' if intent_strength >= 2 else 'Média' if intent_strength >= 1 else 'Baixa'
+        }
+    
+    def _create_powerbi_data(self, text: str, basic_metrics: Dict, semantic_features: Dict, intent_data: Dict) -> Dict:
+        """Cria estrutura de dados otimizada para Power BI"""
+        
+        # Cálculo do score simplificado (0-100)
+        word_count = basic_metrics['word_count']
+        
+        # Score baseado em fatores objetivos
+        score_base = min(word_count * 5, 30)  # Máximo 30 pontos por palavras
+        score_tech = 20 if semantic_features['has_tech'] else 0
+        score_time = 25 if semantic_features['has_time'] else 0
+        score_action = 25 if semantic_features['has_action'] else 0
+        
+        score_total = score_base + score_tech + score_time + score_action
+        score_normalizado = min(score_total, 100)
+        
+        # Categoria de qualidade
+        if score_normalizado >= 80:
+            categoria_qualidade = 'Excelente'
+        elif score_normalizado >= 60:
+            categoria_qualidade = 'Bom'
+        elif score_normalizado >= 40:
+            categoria_qualidade = 'Regular'
+        else:
+            categoria_qualidade = 'Inadequado'
+        
+        # Problema principal identificado
+        principal_problema = self._identify_main_issue(semantic_features, word_count)
+        
+        # Sugestão principal
+        principal_sugestao = self._get_main_suggestion(semantic_features, word_count)
+        
+        return {
+            # 📊 SCORES NUMÉRICOS (0-100 para Power BI)
+            'score_ia': round(score_normalizado, 1),
+            'score_palavras': min(word_count * 5, 30),
+            'score_tecnico': score_tech,
+            'score_temporal': score_time,
+            'score_acao': score_action,
+            
+            # 🏷️ CATEGORIAS (para filtros Power BI)
+            'categoria_qualidade': categoria_qualidade,
+            'categoria_intencao': intent_data['categoria'],
+            'clareza_intencao': intent_data['clareza'],
+            
+            # ✅ INDICADORES SIM/NÃO (para filtros)
+            'tem_tecnologia': 'Sim' if semantic_features['has_tech'] else 'Não',
+            'tem_prazo': 'Sim' if semantic_features['has_time'] else 'Não',
+            'tem_acoes': 'Sim' if semantic_features['has_action'] else 'Não',
+            'adequado_powerbi': 'Sim' if score_normalizado >= 60 else 'Não',
+            
+            # 📊 CONTADORES (para gráficos)
+            'qtd_palavras': word_count,
+            'qtd_tecnologias': semantic_features['tech_count'],
+            'qtd_prazos': semantic_features['time_count'],
+            'qtd_verbos_acao': semantic_features['action_count'],
+            
+            # 📝 TEXTO DIRETO (para tooltips)
+            'principal_problema': principal_problema,
+            'principal_sugestao': principal_sugestao,
+            
+            # ⚠️ ALERTAS (para dashboards)
+            'precisa_revisao': 'Sim' if score_normalizado < 60 else 'Não',
+            'nivel_urgencia': self._get_urgency_level(score_normalizado)
+        }
+    
+    def _count_technical_terms(self, text: str) -> int:
+        """Conta termos técnicos"""
+        tech_terms = [
+            'python', 'java', 'javascript', 'sql', 'html', 'css', 'react', 'angular', 
+            'node', 'docker', 'kubernetes', 'aws', 'azure', 'git', 'scrum', 'agile',
+            'machine learning', 'ia', 'inteligencia artificial', 'big data', 'analytics'
+        ]
+        return sum(1 for term in tech_terms if term in text)
+    
+    def _count_time_expressions(self, text: str) -> int:
+        """Conta expressões temporais"""
+        time_patterns = [
+            'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+            'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro',
+            'semana', 'mes', 'mês', 'trimestre', 'semestre', 'ano',
+            'até', 'prazo', 'deadline', 'cronograma'
+        ]
+        return sum(1 for pattern in time_patterns if pattern in text)
+    
+    def _count_action_verbs(self, text: str) -> int:
+        """Conta verbos de ação"""
+        action_verbs = [
+            'aprender', 'estudar', 'desenvolver', 'implementar', 'criar', 'construir',
+            'melhorar', 'aplicar', 'praticar', 'dominar', 'certificar', 'obter'
+        ]
+        return sum(1 for verb in action_verbs if verb in text)
+    
+    def _identify_main_issue(self, semantic_features: Dict, word_count: int) -> str:
+        """Identifica o principal problema do PDI"""
+        if word_count < 5:
+            return 'Muito curto'
+        elif not semantic_features['has_action']:
+            return 'Falta verbos de ação'
+        elif not semantic_features['has_time']:
+            return 'Falta prazo definido'
+        elif not semantic_features['has_tech']:
+            return 'Falta especificidade técnica'
+        else:
+            return 'Estrutura adequada'
+    
+    def _get_main_suggestion(self, semantic_features: Dict, word_count: int) -> str:
+        """Retorna a principal sugestão de melhoria"""
+        if word_count < 5:
+            return 'Adicionar mais detalhes'
+        elif not semantic_features['has_action']:
+            return 'Incluir verbos de ação específicos'
+        elif not semantic_features['has_time']:
+            return 'Definir prazos ou cronograma'
+        elif not semantic_features['has_tech']:
+            return 'Especificar tecnologias ou ferramentas'
+        else:
+            return 'Manter estrutura atual'
+    
+    def _get_urgency_level(self, score: float) -> str:
+        """Define nível de urgência para revisão"""
+        if score < 30:
+            return 'Crítico'
+        elif score < 60:
+            return 'Alto'
+        elif score < 80:
+            return 'Médio'
+        else:
+            return 'Baixo'
+    
+    def _empty_powerbi_analysis(self) -> Dict:
+        """Retorna análise vazia otimizada para Power BI"""
+        return {
+            'score_ia': 0.0,
+            'score_palavras': 0,
+            'score_tecnico': 0,
+            'score_temporal': 0,
+            'score_acao': 0,
+            'categoria_qualidade': 'Inadequado',
+            'categoria_intencao': 'Indefinido',
+            'clareza_intencao': 'Baixa',
+            'tem_tecnologia': 'Não',
+            'tem_prazo': 'Não',
+            'tem_acoes': 'Não',
+            'adequado_powerbi': 'Não',
+            'qtd_palavras': 0,
+            'qtd_tecnologias': 0,
+            'qtd_prazos': 0,
+            'qtd_verbos_acao': 0,
+            'principal_problema': 'Texto vazio ou muito curto',
+            'principal_sugestao': 'Escrever um PDI completo',
+            'precisa_revisao': 'Sim',
+            'nivel_urgencia': 'Crítico'
         }
     
     def _generate_powerbi_insights(self, text: str, basic_metrics: Dict, semantic_analysis: Dict) -> Dict:

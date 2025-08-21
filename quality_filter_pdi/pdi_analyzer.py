@@ -15,7 +15,7 @@ except ImportError:
 
 # Importação condicional de IA
 try:
-    from .ai.simple_ai_analyzer import SimpleAIAnalyzer
+    from .ai.simple_ai_analyzer_powerbi import SimpleAIAnalyzer
     AI_AVAILABLE = True
 except ImportError:
     AI_AVAILABLE = False
@@ -131,29 +131,31 @@ class PDIAnalyzer:
                 # Combinar objetivo + ações para análise de IA
                 combined_text = f"{objetivo}. {acoes}".strip()
                 
-                if len(combined_text) > 10:  # Mínimo de texto
+                if len(combined_text) > 5:  # Mínimo de texto reduzido
                     ai_analysis = self.ai_analyzer.analyze_pdi_text(combined_text)
                     
-                    # Integrar resultados da IA
-                    base_result['ai_analysis'] = ai_analysis
-                    base_result['ai_insights'] = ai_analysis.get('ai_insights', {})
-                    base_result['ai_recommendations'] = ai_analysis.get('recommendations', [])
-                    base_result['ai_overall_score'] = ai_analysis.get('overall_score', 0)
-                    base_result['ai_confidence'] = ai_analysis.get('confidence', 0)
+                    # 📊 Integrar dados da IA otimizados para Power BI
+                    # Os dados já vêm estruturados para dashboards
+                    base_result.update(ai_analysis)  # Adiciona todos os campos da IA
                     
-                    # Combinar pontuações
+                    # Score híbrido para manter compatibilidade
                     traditional_score = base_result.get('scores', {}).get('overall_score', 0)
-                    ai_score = ai_analysis.get('overall_score', 0)
+                    ai_score = ai_analysis.get('score_ia', 0) / 100  # Normalizar para 0-1
                     
                     # Score híbrido (70% tradicional + 30% IA)
                     hybrid_score = (traditional_score * 0.7) + (ai_score * 0.3)
-                    base_result['hybrid_score'] = round(hybrid_score, 3)
+                    base_result['score_hibrido'] = round(hybrid_score, 3)
                     
-                    print(f"🤖 IA aplicada - Score: {ai_score:.2f} | Híbrido: {hybrid_score:.2f}")
+                    print(f"🤖 IA aplicada - Score: {ai_analysis.get('score_ia', 0)}% | Categoria: {ai_analysis.get('categoria_qualidade', 'N/A')}")
                 
             except Exception as e:
                 print(f"⚠️ Erro na análise de IA: {e}")
+                # Adicionar dados padrão em caso de erro
+                base_result.update(self._get_default_ai_data())
                 base_result['ai_error'] = str(e)
+        else:
+            # Adicionar dados padrão quando IA não disponível
+            base_result.update(self._get_default_ai_data())
         
         return base_result
     
@@ -422,6 +424,46 @@ class PDIAnalyzer:
                 'test_successful': False,
                 'error': f'Erro no teste de IA: {str(e)}'
             }
+    
+    def _get_default_ai_data(self) -> Dict:
+        """
+        Retorna dados padrão da IA quando não está disponível
+        Mantém estrutura consistente para Power BI
+        
+        Returns:
+            Dict com valores padrão para todos os campos da IA
+        """
+        return {
+            # 📊 Scores numéricos
+            'score_ia': 0.0,
+            'score_palavras': 0,
+            'score_tecnico': 0,
+            'score_temporal': 0,
+            'score_acao': 0,
+            
+            # 🏷️ Categorias
+            'categoria_qualidade': 'N/A',
+            'categoria_intencao': 'N/A',
+            'clareza_intencao': 'N/A',
+            'nivel_urgencia': 'N/A',
+            
+            # ✅ Indicadores Sim/Não
+            'tem_tecnologia': 'N/A',
+            'tem_prazo': 'N/A',
+            'tem_acoes': 'N/A',
+            'adequado_powerbi': 'N/A',
+            'precisa_revisao': 'N/A',
+            
+            # 📊 Contadores
+            'qtd_palavras': 0,
+            'qtd_tecnologias': 0,
+            'qtd_prazos': 0,
+            'qtd_verbos_acao': 0,
+            
+            # 📝 Texto
+            'principal_problema': 'IA não disponível',
+            'principal_sugestao': 'Instalar dependências de IA'
+        }
     
     def enable_ai(self) -> bool:
         """
