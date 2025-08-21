@@ -118,7 +118,6 @@ class PDIAnalysisRunner:
         print(f"   📝 Clareza: {result['clarity_score']:.2f}")
         print(f"   🎯 Especificidade: {result['specificity_score']:.2f}")
         print(f"   📖 Completude: {result['completeness_score']:.2f}")
-        print(f"   🏗️ Estrutura: {result['structure_score']:.2f}")
         
         recommendations = self.analyzer.get_quality_recommendations(result)
         if recommendations:

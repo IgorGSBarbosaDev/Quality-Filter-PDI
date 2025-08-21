@@ -74,8 +74,7 @@ class PDIAnalysisService:
         metrics = self.quality_service.calculate_overall_quality(
             self.quality_service.calculate_clarity(texto_completo),
             self.quality_service.calculate_specificity(texto_completo),
-            self.quality_service.calculate_completeness(texto_completo),
-            self.quality_service.calculate_structure(texto_completo)
+            self.quality_service.calculate_completeness(texto_completo)
         )
         
         negative_impact = self.quality_service.calculate_negative_impact(texto_completo)
@@ -192,7 +191,6 @@ class PDIAnalysisService:
             'clarity_score': 0.0,
             'specificity_score': 0.0,
             'completeness_score': 0.0,
-            'structure_score': 0.0,
             'original_text': text,
             'analysis_metadata': {
                 'word_count': 0,
@@ -324,7 +322,6 @@ class PDIAnalysisService:
                     'clarity_score': 0.0,
                     'specificity_score': 0.0,
                     'completeness_score': 0.0,
-                    'structure_score': 0.0,
                     'error': str(e)
                 })
         
@@ -334,7 +331,7 @@ class PDIAnalysisService:
     def _apply_score_formatting(self, df: pd.DataFrame) -> pd.DataFrame:
         """Aplica formatação de scores ao DataFrame"""
         score_columns = ['overall_score', 'clarity_score', 'specificity_score', 
-                        'completeness_score', 'structure_score']
+                        'completeness_score']
         
         for col in score_columns:
             if col in df.columns:
@@ -376,8 +373,7 @@ class PDIAnalysisService:
                 'quality_level': result.get('quality_level', 'Baixa'),
                 'clarity_score': self._format_score(result.get('clarity_score', 0.0)),
                 'specificity_score': self._format_score(result.get('specificity_score', 0.0)),
-                'completeness_score': self._format_score(result.get('completeness_score', 0.0)),
-                'structure_score': self._format_score(result.get('structure_score', 0.0))
+                'completeness_score': self._format_score(result.get('completeness_score', 0.0))
             }
             
             # Gerar explicação detalhada da nota - REMOVIDA do CSV final
@@ -386,8 +382,6 @@ class PDIAnalysisService:
             #     result.get('clarity_score', 0.0),
             #     result.get('specificity_score', 0.0),
             #     result.get('completeness_score', 0.0),
-            #     result.get('structure_score', 0.0),
-            #     result.get('smart_criteria_score', 0.0),
             #     metadata.get('negative_impact', 0.0)
             # )
             
@@ -396,7 +390,6 @@ class PDIAnalysisService:
                 result.get('clarity_score', 0.0),
                 result.get('specificity_score', 0.0),
                 result.get('completeness_score', 0.0),
-                result.get('structure_score', 0.0),
                 metadata.get('negative_impact', 0.0),
                 self._format_score(result.get('overall_score', 0.0) * 100)  # Converter para escala 0-100 e formatar
             )
@@ -453,8 +446,7 @@ class PDIAnalysisService:
         if analysis_result.get('completeness_score', 0) < 0.5:
             recommendations.append("Expanda o conteúdo: inclua mais informações sobre o 'como', 'quando' e 'onde'")
         
-        if analysis_result.get('structure_score', 0) < 0.5:
-            recommendations.append("Melhore a estrutura: use conectores e organize melhor as ideias")
+        # Removida verificação de structure_score
         
         if not recommendations:
             recommendations.append("PDI de boa qualidade! Continue mantendo este padrão.")

@@ -64,7 +64,6 @@ def demonstrar_explicacao_notas():
             result['clarity_score'],
             result['specificity_score'],
             result['completeness_score'], 
-            result['structure_score'],
             result['smart_criteria_score'],
             result.get('analysis_metadata', {}).get('negative_impact', 0.0)
         )

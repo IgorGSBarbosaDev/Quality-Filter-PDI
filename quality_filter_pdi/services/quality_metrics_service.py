@@ -125,38 +125,6 @@ class QualityMetricsService:
         except Exception:
             return 0.0
     
-    @cached_metric('structure')
-    def calculate_structure(self, text: str) -> float:
-        if not TextUtils.validate_text_quality(text):
-            return 0.0
-        
-        try:
-            structure_score = 0.2
-            
-            connectors = ['e', 'mas', 'porém', 'então', 'assim', 'portanto', 'além disso']
-            for connector in connectors:
-                if connector.lower() in text.lower():
-                    structure_score += 0.1
-            
-            if TextUtils.has_proper_case(text):
-                structure_score += 0.2
-            
-            if TextUtils.has_punctuation(text):
-                structure_score += 0.2
-            
-            if self.cache_enabled:
-                sentences = cached_sentence_count(text)
-            else:
-                sentences = TextUtils.count_sentences(text)
-                
-            if sentences > 1:
-                structure_score += min(0.3, sentences * 0.1)
-            
-            return min(1.0, structure_score)
-            
-        except Exception:
-            return 0.0
-    
     def calculate_negative_impact(self, text: str) -> float:
         if not TextUtils.validate_text_quality(text):
             return 0.0
@@ -175,22 +143,25 @@ class QualityMetricsService:
             return 0.0
     
     def calculate_overall_quality(self, clarity: float, specificity: float, 
-                                completeness: float, structure: float) -> Dict[str, float]:
+                                completeness: float) -> Dict[str, float]:
         """
         Calcula a qualidade geral do PDI com base nos critérios principais.
+        
+        Critérios rebalanceados (3 critérios):
+        - Clareza: 35%
+        - Especificidade: 35% 
+        - Completude: 30%
         """
         weights = {
-            'clarity': 0.278,       # 27.8%
-            'specificity': 0.278,   # 27.8%
-            'completeness': 0.278,  # 27.8%
-            'structure': 0.167      # 16.7%
+            'clarity': 0.35,        # 35%
+            'specificity': 0.35,    # 35%
+            'completeness': 0.30    # 30%
         }
         
         overall_score = (
             clarity * weights['clarity'] +
             specificity * weights['specificity'] +
-            completeness * weights['completeness'] +
-            structure * weights['structure']
+            completeness * weights['completeness']
         )
         
         if overall_score >= 0.6:
@@ -205,29 +176,31 @@ class QualityMetricsService:
             'quality_level': quality_level,
             'clarity_score': clarity,
             'specificity_score': specificity,
-            'completeness_score': completeness,
-            'structure_score': structure
+            'completeness_score': completeness
         }
     
     def generate_score_explanation(self, clarity: float, specificity: float, 
-                                 completeness: float, structure: float, 
+                                 completeness: float, 
                                  negative_impact: float = 0.0) -> str:
         """
         Gera uma explicação detalhada de como a nota foi calculada
+        
+        Pesos rebalanceados (3 critérios):
+        - Clareza: 35%
+        - Especificidade: 35%
+        - Completude: 30%
         """
         weights = {
-            'clarity': 0.278,       # 27.8%
-            'specificity': 0.278,   # 27.8%
-            'completeness': 0.278,  # 27.8%
-            'structure': 0.167      # 16.7%
+            'clarity': 0.35,        # 35%
+            'specificity': 0.35,    # 35%
+            'completeness': 0.30    # 30%
         }
         
         # Calcular contribuições de cada critério
         contributions = {
             'Clareza': clarity * weights['clarity'] * 100,
             'Especificidade': specificity * weights['specificity'] * 100,
-            'Completude': completeness * weights['completeness'] * 100,
-            'Estrutura': structure * weights['structure'] * 100
+            'Completude': completeness * weights['completeness'] * 100
         }
         
         total_score = sum(contributions.values())
@@ -248,11 +221,9 @@ class QualityMetricsService:
         
         for criterion, score in contributions.items():
             weight_pct = {
-                'Clareza': 27.8,
-                'Especificidade': 27.8, 
-                'Completude': 27.8,
-                'Estrutura': 16.7
-                # SMART removido (era 10%)
+                'Clareza': 35.0,
+                'Especificidade': 35.0, 
+                'Completude': 30.0
             }[criterion]
             
             raw_score = score / weight_pct * 100
@@ -295,15 +266,6 @@ class QualityMetricsService:
         else:
             explanation += "❌ COMPLETUDE (BAIXA): Informações insuficientes\n"
         
-        if structure >= 0.8:
-            explanation += "✅ ESTRUTURA (EXCELENTE): Muito bem estruturado\n"
-        elif structure >= 0.6:
-            explanation += "✅ ESTRUTURA (BOA): Bem estruturado\n"
-        elif structure >= 0.4:
-            explanation += "⚠️  ESTRUTURA (REGULAR): Estrutura pode melhorar\n"
-        else:
-            explanation += "❌ ESTRUTURA (BAIXA): Estrutura inadequada\n"
-        
         # SMART removido das explicações - não é mais usado no cálculo
         
         explanation += f"\n🎯 CLASSIFICAÇÃO GERAL:\n"
@@ -321,27 +283,30 @@ class QualityMetricsService:
         return explanation
     
     def generate_concise_reasons(self, clarity: float, specificity: float, 
-                                completeness: float, structure: float, 
+                                completeness: float, 
                                 negative_impact: float = 0.0,
                                 overall_score: float = 0.0) -> dict:
         """
         Gera 3 motivos concisos e diretos para a nota recebida
         Sem emojis, sem textos longos - apenas os pontos principais
+        
+        Critérios rebalanceados (3 critérios):
+        - Clareza: 35%
+        - Especificidade: 35%
+        - Completude: 30%
         """
         # Calcular nota final se não fornecida
         if overall_score == 0.0:
             weights = {
-                'clarity': 0.278,       # 27.8%
-                'specificity': 0.278,   # 27.8%
-                'completeness': 0.278,  # 27.8%
-                'structure': 0.167      # 16.7%
+                'clarity': 0.35,        # 35%
+                'specificity': 0.35,    # 35%
+                'completeness': 0.30    # 30%
             }
             
             overall_score = (
                 clarity * weights['clarity'] +
                 specificity * weights['specificity'] +
-                completeness * weights['completeness'] +
-                structure * weights['structure']
+                completeness * weights['completeness']
             ) * 100
             
             if negative_impact > 0:
@@ -351,8 +316,7 @@ class QualityMetricsService:
         criteria_scores = {
             'clareza': clarity,
             'especificidade': specificity,
-            'completude': completeness,
-            'estrutura': structure
+            'completude': completeness
         }
         
         # Ordenar critérios por pontuação (do menor para o maior)
