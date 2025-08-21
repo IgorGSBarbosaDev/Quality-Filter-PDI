@@ -71,11 +71,15 @@ class PDIAnalysisService:
         if not TextUtils.validate_text_quality(texto_completo):
             return self._create_empty_result(texto_completo)
         
+        # Calcular métricas de qualidade existentes
         metrics = self.quality_service.calculate_overall_quality(
             self.quality_service.calculate_clarity(texto_completo),
             self.quality_service.calculate_specificity(texto_completo),
             self.quality_service.calculate_completeness(texto_completo)
         )
+        
+        # Calcular coesão da meta (novo critério)
+        cohesion_result = self.quality_service.calculate_goal_cohesion(objetivo, acoes, atividade)
         
         negative_impact = self.quality_service.calculate_negative_impact(texto_completo)
         metrics['overall_score'] = max(0, metrics['overall_score'] - negative_impact)
@@ -112,6 +116,8 @@ class PDIAnalysisService:
         
         result = {
             **metrics,
+            'cohesion_score': cohesion_result['cohesion_score'],
+            'coesao_da_meta': cohesion_result['cohesion_level'],
             'original_text': {
                 'objetivo': objetivo,
                 'acoes': acoes,
@@ -125,7 +131,8 @@ class PDIAnalysisService:
                 'has_numbers': TextUtils.has_numbers(texto_completo),
                 'technical_terms': TextUtils.extract_technical_terms(texto_completo),
                 'negative_impact': negative_impact,
-                'ai_enabled': self.ai_enabled
+                'ai_enabled': self.ai_enabled,
+                'cohesion_analysis': cohesion_result
             }
         }
         
@@ -191,6 +198,8 @@ class PDIAnalysisService:
             'clarity_score': 0.0,
             'specificity_score': 0.0,
             'completeness_score': 0.0,
+            'cohesion_score': 0.0,
+            'coesao_da_meta': 'muito ruim',
             'original_text': text,
             'analysis_metadata': {
                 'word_count': 0,
@@ -331,7 +340,7 @@ class PDIAnalysisService:
     def _apply_score_formatting(self, df: pd.DataFrame) -> pd.DataFrame:
         """Aplica formatação de scores ao DataFrame"""
         score_columns = ['overall_score', 'clarity_score', 'specificity_score', 
-                        'completeness_score']
+                        'completeness_score', 'cohesion_score']
         
         for col in score_columns:
             if col in df.columns:

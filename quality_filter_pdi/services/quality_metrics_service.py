@@ -142,6 +142,132 @@ class QualityMetricsService:
         except Exception:
             return 0.0
     
+    @cached_metric('goal_cohesion')
+    def calculate_goal_cohesion(self, objetivo: str, acoes: str, atividades: str = "") -> Dict[str, float]:
+        """
+        Avalia a coesão entre o objetivo de desenvolvimento e as ações/atividades planejadas.
+        
+        Args:
+            objetivo: Texto do objetivo de desenvolvimento
+            acoes: Texto das ações a serem realizadas  
+            atividades: Texto das atividades de aprendizagem (opcional)
+            
+        Returns:
+            Dict com score numérico e classificação textual
+        """
+        if not objetivo or not acoes:
+            return {
+                'cohesion_score': 0.0,
+                'cohesion_level': 'muito ruim'
+            }
+        
+        # Normalizar textos
+        objetivo_clean = TextUtils.clean_text(objetivo.lower())
+        acoes_clean = TextUtils.clean_text(acoes.lower()) if acoes and acoes.strip() else ""
+        atividades_clean = TextUtils.clean_text(atividades.lower()) if atividades and atividades.strip() else ""
+        
+        # Lógica inteligente: considerar apenas campos com conteúdo
+        campos_com_conteudo = []
+        
+        if acoes_clean:
+            campos_com_conteudo.append(acoes_clean)
+        
+        if atividades_clean:
+            campos_com_conteudo.append(atividades_clean)
+        
+        # Se nenhum campo tem conteúdo, retorna score muito baixo
+        if not campos_com_conteudo:
+            return {
+                'cohesion_score': 0.0,
+                'cohesion_level': 'muito ruim'
+            }
+        
+        # Combinar apenas os campos que têm conteúdo
+        acoes_atividades_combined = " ".join(campos_com_conteudo).strip()
+        
+        # Extrair palavras-chave do objetivo
+        objetivo_keywords = set(TextUtils.tokenize(objetivo_clean))
+        objetivo_keywords = {word for word in objetivo_keywords if len(word) > 3}
+        
+        # Extrair palavras-chave das ações e atividades (apenas campos com conteúdo)
+        action_keywords = set(TextUtils.tokenize(acoes_atividades_combined))
+        action_keywords = {word for word in action_keywords if len(word) > 3}
+        action_keywords = {word for word in action_keywords if len(word) > 3}
+        
+        if not objetivo_keywords or not action_keywords:
+            return {
+                'cohesion_score': 0.1,
+                'cohesion_level': 'muito ruim'
+            }
+        
+        # Calcular overlap de palavras-chave
+        intersection = objetivo_keywords.intersection(action_keywords)
+        union = objetivo_keywords.union(action_keywords)
+        
+        keyword_overlap = len(intersection) / len(union) if union else 0
+        
+        # Verificar alinhamento semântico básico
+        # Palavras relacionadas a desenvolvimento e aprendizagem
+        development_terms = {
+            'desenvolver', 'melhorar', 'aprender', 'estudar', 'capacitar',
+            'treinar', 'praticar', 'dominar', 'adquirir', 'habilidade',
+            'competencia', 'conhecimento', 'skill', 'curso', 'treinamento'
+        }
+        
+        objetivo_has_dev = any(term in objetivo_clean for term in development_terms)
+        acoes_has_dev = any(term in acoes_atividades_combined for term in development_terms)
+        
+        semantic_alignment = 0.3 if (objetivo_has_dev and acoes_has_dev) else 0.0
+        
+        # Verificar consistência de domínio/área
+        # Termos técnicos que podem indicar área específica
+        tech_terms = {
+            'python', 'programacao', 'software', 'gestao', 'lideranca',
+            'vendas', 'marketing', 'financeiro', 'operacional', 'tecnico',
+            'comunicacao', 'apresentacao', 'analise', 'dados', 'excel'
+        }
+        
+        objetivo_tech = {term for term in tech_terms if term in objetivo_clean}
+        acoes_tech = {term for term in tech_terms if term in acoes_atividades_combined}
+        
+        domain_consistency = 0.0
+        if objetivo_tech and acoes_tech:
+            domain_overlap = len(objetivo_tech.intersection(acoes_tech))
+            domain_consistency = domain_overlap / max(len(objetivo_tech), len(acoes_tech))
+        
+        # Verificar especificidade das ações em relação ao objetivo
+        specificity_bonus = 0.0
+        if len(acoes_atividades_combined) > len(objetivo_clean) * 0.8:  # Ações detalhadas
+            specificity_bonus = 0.1
+        
+        # Calcular score final
+        final_score = (
+            keyword_overlap * 0.4 +           # 40% - overlap de palavras-chave
+            semantic_alignment * 0.3 +        # 30% - alinhamento semântico
+            domain_consistency * 0.2 +        # 20% - consistência de domínio
+            specificity_bonus * 0.1           # 10% - especificidade
+        )
+        
+        # Garantir que o score esteja entre 0 e 1
+        final_score = max(0.0, min(1.0, final_score))
+        
+        # Classificar em níveis
+        if final_score >= 0.8:
+            level = 'otimo'
+        elif final_score >= 0.6:
+            level = 'bom'
+        elif final_score >= 0.4:
+            level = 'medio'
+        elif final_score >= 0.2:
+            level = 'ruim'
+        else:
+            level = 'muito ruim'
+        
+        return {
+            'cohesion_score': final_score,
+            'cohesion_level': level
+        }
+    
     def calculate_overall_quality(self, clarity: float, specificity: float, 
                                 completeness: float) -> Dict[str, float]:
         """
