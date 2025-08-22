@@ -1,0 +1,11 @@
+# IA AVANÇADA - QUALITY FILTER PDI (OPCIONAL)
+# Para usuários que queiram evoluir para IA mais sofisticada
+
+# IA com Transformers/BERT
+transformers>=4.35.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+
+# APIs de IA Cloud (apenas se necessário)
+requests>=2.31.0
+openai>=1.0.0

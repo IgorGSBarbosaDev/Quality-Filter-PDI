@@ -99,16 +99,33 @@ dmypy.json
 *.txt
 !requirements.txt
 !requirements_ai.txt
+!requirements_advanced_ai.txt
 *_test.py
 test_*.py
 analyze_*.py
 cleanup_*.py
 temp_*.py
+teste_*.py
+*_teste.py
 output.csv
 temp.csv
 *.log
 *feedback_responsavel*
 *_feedback.csv
+
+# Temporary documentation
+IMPLEMENTACAO_*.md
+MELHORIA_*.md
+RESUMO_*.md
+*_TEMP.md
+
+# Backup files
+backup/
+backup_*/
+backup_files_old/
+*_backup.*
+*.bak
+*.orig
 
 # IDEs
 .vscode/settings.json
