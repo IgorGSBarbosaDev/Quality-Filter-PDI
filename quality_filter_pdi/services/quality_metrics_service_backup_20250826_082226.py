@@ -1,36 +1,14 @@
-"""
-Serviço de métricas de qualidade para análise de PDI.
-
-Este módulo contém a lógica principal para calcular métricas de qualidade
-de textos PDI, incluindo clareza, especificidade, completude e coesão.
-Suporta análise tradicional e com IA avançada.
-"""
-
-from typing import Dict, List, Optional, Tuple, Union
-import logging
-from dataclasses import dataclass
-
-from ..core.config import (
-    POSITIVE_INDICATORS, NEGATIVE_INDICATORS, METRIC_WEIGHTS, 
-    QualityLevel, AnalysisMethod
-)
+from typing import Dict, List
+from ..core.config import POSITIVE_INDICATORS, NEGATIVE_INDICATORS
 from ..utils.text_utils import TextUtils
-
-# Configurar logging
-logger = logging.getLogger(__name__)
 
 # Importação condicional do cache para performance
 try:
-    from ..core.performance_cache import (
-        cached_metric, cached_tokenize, cached_sentence_count, cached_avg_word_length
-    )
+    from ..core.performance_cache import cached_metric, cached_tokenize, cached_sentence_count, cached_avg_word_length
     CACHE_AVAILABLE = True
-    logger.info("Cache de performance carregado")
 except ImportError:
+    # Fallback se cache não estiver disponível
     CACHE_AVAILABLE = False
-    logger.warning("Cache de performance não disponível")
-    
-    # Fallback para decorador vazio
     def cached_metric(method_name):
         def decorator(func):
             return func
@@ -40,85 +18,28 @@ except ImportError:
 try:
     from ..ai.advanced_ai_analyzer import AdvancedAIAnalyzer
     AI_AVAILABLE = True
-    logger.info("Módulo de IA avançada disponível")
 except ImportError:
     AI_AVAILABLE = False
-    logger.warning("Módulo de IA avançada não disponível")
-
-
-@dataclass
-class QualityMetrics:
-    """Classe para representar métricas de qualidade."""
-    clarity: float
-    specificity: float
-    completeness: float
-    overall_score: float
-    quality_level: str
-    suggestions: List[str]
-
-
-@dataclass
-class CohesionResult:
-    """Classe para representar resultado de análise de coesão."""
-    score: float
-    level: str
-    method: str
-    ai_enabled: bool
-    used_fields: List[str]
-    details: Optional[Dict] = None
 
 
 class QualityMetricsService:
-    """
-    Serviço responsável por calcular métricas de qualidade de PDI.
-    
-    Fornece análise de clareza, especificidade, completude e coesão,
-    com suporte opcional a IA avançada.
-    """
     
     def __init__(self, enable_cache: bool = True, enable_ai: bool = True):
-        """
-        Inicializa o serviço de métricas de qualidade.
-        
-        Args:
-            enable_cache: Ativar cache de performance
-            enable_ai: Ativar análise com IA avançada
-        """
         self.positive_indicators = POSITIVE_INDICATORS
         self.negative_indicators = NEGATIVE_INDICATORS
         self.cache_enabled = enable_cache and CACHE_AVAILABLE
         
-        # Inicializar IA se disponível e solicitado
+        # Inicializar IA se disponível
         self.ai_enabled = enable_ai and AI_AVAILABLE
-        self.ai_analyzer = None
-        
         if self.ai_enabled:
             try:
                 self.ai_analyzer = AdvancedAIAnalyzer()
-                logger.info("IA carregada para análise de coesão avançada")
+                print("✅ IA carregada para análise de coesão avançada")
             except Exception as e:
-                logger.warning(f"Erro ao carregar IA: {e}")
+                print(f"⚠️ Erro ao carregar IA: {e}")
                 self.ai_enabled = False
-        
-        logger.info(f"QualityMetricsService inicializado (Cache: {self.cache_enabled}, IA: {self.ai_enabled})")
-    
-    def _get_tokenization_data(self, text: str) -> Tuple[List[str], int, float]:
-        """
-        Obtém dados de tokenização (com cache se disponível).
-        
-        Returns:
-            Tuple com (palavras, número_sentenças, comprimento_médio_palavra)
-        """
-        if self.cache_enabled:
-            words = list(cached_tokenize(text))
-            sentences = cached_sentence_count(text)
-            avg_word_length = cached_avg_word_length(text)
         else:
-            words = TextUtils.tokenize(text)
-            sentences = TextUtils.count_sentences(text)
-            avg_word_length = TextUtils.calculate_avg_word_length(text)
-        
-        return words, sentences, avg_word_length
+            self.ai_analyzer = None
     
     @cached_metric('clarity')
     def calculate_clarity(self, text: str) -> float:
@@ -436,41 +357,6 @@ class QualityMetricsService:
             'scores': {
                 'overall_score': overall_score
             }
-        }
-    
-    def generate_score_explanation (self, clarity: float, specificity: float,
-        
-        # Verificar especificidade das ações em relação ao objetivo
-        specificity_bonus = 0.0
-        if len(acoes_atividades_combined) > len(objetivo_clean) * 0.8:  # Ações detalhadas
-            specificity_bonus = 0.1
-        
-        # Calcular score final
-        final_score = (
-            keyword_overlap * 0.4 +           # 40% - overlap de palavras-chave
-            semantic_alignment * 0.3 +        # 30% - alinhamento semântico
-            domain_consistency * 0.2 +        # 20% - consistência de domínio
-            specificity_bonus * 0.1           # 10% - especificidade
-        )
-        
-        # Garantir que o score esteja entre 0 e 1
-        final_score = max(0.0, min(1.0, final_score))
-        
-        # Classificar em níveis
-        if final_score >= 0.8:
-            level = 'otimo'
-        elif final_score >= 0.6:
-            level = 'bom'
-        elif final_score >= 0.4:
-            level = 'medio'
-        elif final_score >= 0.2:
-            level = 'ruim'
-        else:
-            level = 'muito ruim'
-        
-        return {
-            'cohesion_score': final_score,
-            'cohesion_level': level
         }
     
     def calculate_overall_quality(self, clarity: float, specificity: float, 
